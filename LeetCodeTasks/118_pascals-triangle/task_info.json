@@ -1,0 +1,9 @@
+{
+    "name": "Pascal's Triangle",
+    "id": 118,
+    "difficulty": "Easy",
+    "tags": [
+        "Array",
+        "Dynamic Programming"
+    ]
+}

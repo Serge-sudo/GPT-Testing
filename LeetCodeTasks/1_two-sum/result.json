@@ -1,0 +1,18 @@
+{
+      "c": {
+        "result": "Wrong Answer",
+        "pass_cnt": "5 / 48"
+      },
+      "cpp": {
+        "result": "Accepted",
+        "pass_cnt": "1 / 1"
+      },
+      "java": {
+        "result": "Compile Error",
+        "pass_cnt": "0 / 0"
+      },
+      "python3": {
+        "result": "Time Limit",
+        "pass_cnt": "3 / 48"
+      }
+}

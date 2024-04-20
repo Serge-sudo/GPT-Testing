@@ -1,0 +1,12 @@
+{
+    "name": "Convert Sorted List to Binary Search Tree",
+    "id": 109,
+    "difficulty": "Medium",
+    "tags": [
+        "Linked List",
+        "Divide and Conquer",
+        "Tree",
+        "Binary Search Tree",
+        "Binary Tree"
+    ]
+}

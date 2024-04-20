@@ -1,0 +1,10 @@
+{
+    "name": "4Sum",
+    "id": 18,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Two Pointers",
+        "Sorting"
+    ]
+}

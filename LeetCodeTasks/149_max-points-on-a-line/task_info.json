@@ -1,0 +1,11 @@
+{
+    "name": "Max Points on a Line",
+    "id": 149,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "Math",
+        "Geometry"
+    ]
+}

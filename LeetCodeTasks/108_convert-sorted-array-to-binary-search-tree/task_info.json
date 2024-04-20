@@ -1,0 +1,12 @@
+{
+    "name": "Convert Sorted Array to Binary Search Tree",
+    "id": 108,
+    "difficulty": "Easy",
+    "tags": [
+        "Array",
+        "Divide and Conquer",
+        "Tree",
+        "Binary Search Tree",
+        "Binary Tree"
+    ]
+}

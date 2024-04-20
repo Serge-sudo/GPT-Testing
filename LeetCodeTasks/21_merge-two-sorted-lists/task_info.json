@@ -1,0 +1,9 @@
+{
+    "name": "Merge Two Sorted Lists",
+    "id": 21,
+    "difficulty": "Easy",
+    "tags": [
+        "Linked List",
+        "Recursion"
+    ]
+}

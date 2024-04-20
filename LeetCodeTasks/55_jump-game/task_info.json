@@ -1,0 +1,10 @@
+{
+    "name": "Jump Game",
+    "id": 55,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Dynamic Programming",
+        "Greedy"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Letter Combinations of a Phone Number",
+    "id": 17,
+    "difficulty": "Medium",
+    "tags": [
+        "Hash Table",
+        "String",
+        "Backtracking"
+    ]
+}

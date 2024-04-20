@@ -1,0 +1,10 @@
+{
+    "name": "Subsets",
+    "id": 78,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Backtracking",
+        "Bit Manipulation"
+    ]
+}

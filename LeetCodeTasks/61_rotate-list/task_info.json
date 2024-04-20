@@ -1,0 +1,9 @@
+{
+    "name": "Rotate List",
+    "id": 61,
+    "difficulty": "Medium",
+    "tags": [
+        "Linked List",
+        "Two Pointers"
+    ]
+}

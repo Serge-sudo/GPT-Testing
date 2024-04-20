@@ -1,0 +1,10 @@
+{
+    "name": "Maximum Subarray",
+    "id": 53,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Divide and Conquer",
+        "Dynamic Programming"
+    ]
+}

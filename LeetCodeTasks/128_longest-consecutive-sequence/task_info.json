@@ -1,0 +1,10 @@
+{
+    "name": "Longest Consecutive Sequence",
+    "id": 128,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "Union Find"
+    ]
+}

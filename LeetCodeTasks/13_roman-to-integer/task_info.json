@@ -1,0 +1,10 @@
+{
+    "name": "Roman to Integer",
+    "id": 13,
+    "difficulty": "Easy",
+    "tags": [
+        "Hash Table",
+        "Math",
+        "String"
+    ]
+}

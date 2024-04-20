@@ -1,0 +1,9 @@
+{
+    "name": "Longest Common Prefix",
+    "id": 14,
+    "difficulty": "Easy",
+    "tags": [
+        "String",
+        "Trie"
+    ]
+}

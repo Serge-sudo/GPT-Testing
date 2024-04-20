@@ -1,0 +1,10 @@
+{
+    "name": "Largest Rectangle in Histogram",
+    "id": 84,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Stack",
+        "Monotonic Stack"
+    ]
+}

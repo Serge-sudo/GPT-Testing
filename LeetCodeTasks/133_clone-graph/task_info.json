@@ -1,0 +1,11 @@
+{
+    "name": "Clone Graph",
+    "id": 133,
+    "difficulty": "Medium",
+    "tags": [
+        "Hash Table",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Graph"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Valid Parentheses",
+    "id": 20,
+    "difficulty": "Easy",
+    "tags": [
+        "String",
+        "Stack"
+    ]
+}

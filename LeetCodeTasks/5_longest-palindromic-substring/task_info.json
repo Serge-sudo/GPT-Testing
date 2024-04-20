@@ -1,0 +1,10 @@
+{
+    "name": "Longest Palindromic Substring",
+    "id": 5,
+    "difficulty": "Medium",
+    "tags": [
+        "Two Pointers",
+        "String",
+        "Dynamic Programming"
+    ]
+}

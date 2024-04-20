@@ -1,0 +1,11 @@
+{
+    "name": "Symmetric Tree",
+    "id": 101,
+    "difficulty": "Easy",
+    "tags": [
+        "Tree",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Binary Tree"
+    ]
+}

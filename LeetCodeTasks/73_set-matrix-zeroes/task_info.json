@@ -1,0 +1,10 @@
+{
+    "name": "Set Matrix Zeroes",
+    "id": 73,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "Matrix"
+    ]
+}

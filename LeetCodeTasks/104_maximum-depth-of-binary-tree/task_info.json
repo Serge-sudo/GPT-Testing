@@ -1,0 +1,11 @@
+{
+    "name": "Maximum Depth of Binary Tree",
+    "id": 104,
+    "difficulty": "Easy",
+    "tags": [
+        "Tree",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Binary Tree"
+    ]
+}

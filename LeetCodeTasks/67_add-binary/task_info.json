@@ -1,0 +1,11 @@
+{
+    "name": "Add Binary",
+    "id": 67,
+    "difficulty": "Easy",
+    "tags": [
+        "Math",
+        "String",
+        "Bit Manipulation",
+        "Simulation"
+    ]
+}

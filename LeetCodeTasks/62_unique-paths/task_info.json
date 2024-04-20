@@ -1,0 +1,10 @@
+{
+    "name": "Unique Paths",
+    "id": 62,
+    "difficulty": "Medium",
+    "tags": [
+        "Math",
+        "Dynamic Programming",
+        "Combinatorics"
+    ]
+}

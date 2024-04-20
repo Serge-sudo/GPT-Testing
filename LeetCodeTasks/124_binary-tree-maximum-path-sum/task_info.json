@@ -1,0 +1,11 @@
+{
+    "name": "Binary Tree Maximum Path Sum",
+    "id": 124,
+    "difficulty": "Hard",
+    "tags": [
+        "Dynamic Programming",
+        "Tree",
+        "Depth-First Search",
+        "Binary Tree"
+    ]
+}

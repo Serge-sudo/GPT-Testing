@@ -1,0 +1,9 @@
+{
+    "name": "Permutations II",
+    "id": 47,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Backtracking"
+    ]
+}

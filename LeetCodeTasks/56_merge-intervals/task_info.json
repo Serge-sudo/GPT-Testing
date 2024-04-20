@@ -1,0 +1,9 @@
+{
+    "name": "Merge Intervals",
+    "id": 56,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Sorting"
+    ]
+}

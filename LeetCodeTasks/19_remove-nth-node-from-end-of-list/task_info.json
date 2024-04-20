@@ -1,0 +1,9 @@
+{
+    "name": "Remove Nth Node From End of List",
+    "id": 19,
+    "difficulty": "Medium",
+    "tags": [
+        "Linked List",
+        "Two Pointers"
+    ]
+}

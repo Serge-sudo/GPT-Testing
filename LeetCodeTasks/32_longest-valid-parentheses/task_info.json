@@ -1,0 +1,10 @@
+{
+    "name": "Longest Valid Parentheses",
+    "id": 32,
+    "difficulty": "Hard",
+    "tags": [
+        "String",
+        "Dynamic Programming",
+        "Stack"
+    ]
+}

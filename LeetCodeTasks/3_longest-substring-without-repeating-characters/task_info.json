@@ -1,0 +1,10 @@
+{
+    "name": "Longest Substring Without Repeating Characters",
+    "id": 3,
+    "difficulty": "Medium",
+    "tags": [
+        "Hash Table",
+        "String",
+        "Sliding Window"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Recover Binary Search Tree",
+    "id": 99,
+    "difficulty": "Medium",
+    "tags": [
+        "Tree",
+        "Depth-First Search",
+        "Binary Search Tree",
+        "Binary Tree"
+    ]
+}

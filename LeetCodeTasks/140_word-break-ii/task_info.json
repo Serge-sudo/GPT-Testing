@@ -1,0 +1,14 @@
+{
+    "name": "Word Break II",
+    "id": 140,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "String",
+        "Dynamic Programming",
+        "Backtracking",
+        "Trie",
+        "Memoization"
+    ]
+}

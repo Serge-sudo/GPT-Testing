@@ -1,0 +1,11 @@
+{
+    "name": "Word Ladder II",
+    "id": 126,
+    "difficulty": "Hard",
+    "tags": [
+        "Hash Table",
+        "String",
+        "Backtracking",
+        "Breadth-First Search"
+    ]
+}

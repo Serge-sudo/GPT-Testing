@@ -1,0 +1,9 @@
+{
+    "name": "Search in Rotated Sorted Array",
+    "id": 33,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Binary Search"
+    ]
+}

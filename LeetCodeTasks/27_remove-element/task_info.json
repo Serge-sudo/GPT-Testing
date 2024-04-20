@@ -1,0 +1,9 @@
+{
+    "name": "Remove Element",
+    "id": 27,
+    "difficulty": "Easy",
+    "tags": [
+        "Array",
+        "Two Pointers"
+    ]
+}

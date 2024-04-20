@@ -1,0 +1,10 @@
+{
+    "name": "Rotate Image",
+    "id": 48,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Math",
+        "Matrix"
+    ]
+}

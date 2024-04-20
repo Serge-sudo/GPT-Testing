@@ -1,0 +1,10 @@
+{
+    "name": "Valid Sudoku",
+    "id": 36,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "Matrix"
+    ]
+}

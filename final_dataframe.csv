@@ -1,0 +1,5 @@
+task_id,task_name,difficulty,tags,language,result,pass_cnt
+1,Two Sum,Easy,"Array, Hash Table",c,Wrong Answer,5 / 48
+1,Two Sum,Easy,"Array, Hash Table",cpp,Accepted,1 / 1
+1,Two Sum,Easy,"Array, Hash Table",java,Compile Error,0 / 0
+1,Two Sum,Easy,"Array, Hash Table",python3,Time Limit,3 / 48

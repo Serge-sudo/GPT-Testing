@@ -1,0 +1,10 @@
+{
+    "name": "Best Time to Buy and Sell Stock II",
+    "id": 122,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Dynamic Programming",
+        "Greedy"
+    ]
+}

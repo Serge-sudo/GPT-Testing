@@ -1,0 +1,10 @@
+{
+    "name": "Minimum Path Sum",
+    "id": 64,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Dynamic Programming",
+        "Matrix"
+    ]
+}

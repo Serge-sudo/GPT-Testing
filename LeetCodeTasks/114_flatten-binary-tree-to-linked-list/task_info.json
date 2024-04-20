@@ -1,0 +1,12 @@
+{
+    "name": "Flatten Binary Tree to Linked List",
+    "id": 114,
+    "difficulty": "Medium",
+    "tags": [
+        "Linked List",
+        "Stack",
+        "Tree",
+        "Depth-First Search",
+        "Binary Tree"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Reverse Nodes in k-Group",
+    "id": 25,
+    "difficulty": "Hard",
+    "tags": [
+        "Linked List",
+        "Recursion"
+    ]
+}

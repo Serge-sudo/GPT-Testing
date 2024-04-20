@@ -1,0 +1,11 @@
+{
+    "name": "Word Search",
+    "id": 79,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "String",
+        "Backtracking",
+        "Matrix"
+    ]
+}

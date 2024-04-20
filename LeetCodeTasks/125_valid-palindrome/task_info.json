@@ -1,0 +1,9 @@
+{
+    "name": "Valid Palindrome",
+    "id": 125,
+    "difficulty": "Easy",
+    "tags": [
+        "Two Pointers",
+        "String"
+    ]
+}

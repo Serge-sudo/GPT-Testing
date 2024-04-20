@@ -1,0 +1,10 @@
+{
+    "name": "Spiral Matrix",
+    "id": 54,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Matrix",
+        "Simulation"
+    ]
+}

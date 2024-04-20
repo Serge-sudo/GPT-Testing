@@ -1,0 +1,10 @@
+{
+    "name": "Container With Most Water",
+    "id": 11,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Two Pointers",
+        "Greedy"
+    ]
+}

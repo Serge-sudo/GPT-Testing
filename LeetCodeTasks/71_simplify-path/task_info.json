@@ -1,0 +1,9 @@
+{
+    "name": "Simplify Path",
+    "id": 71,
+    "difficulty": "Medium",
+    "tags": [
+        "String",
+        "Stack"
+    ]
+}

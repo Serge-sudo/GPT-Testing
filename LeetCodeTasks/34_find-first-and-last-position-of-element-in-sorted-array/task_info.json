@@ -1,0 +1,9 @@
+{
+    "name": "Find First and Last Position of Element in Sorted Array",
+    "id": 34,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Binary Search"
+    ]
+}

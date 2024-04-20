@@ -1,0 +1,11 @@
+{
+    "name": "Binary Tree Preorder Traversal",
+    "id": 144,
+    "difficulty": "Easy",
+    "tags": [
+        "Stack",
+        "Tree",
+        "Depth-First Search",
+        "Binary Tree"
+    ]
+}

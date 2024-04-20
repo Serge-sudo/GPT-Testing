@@ -1,0 +1,9 @@
+{
+    "name": "Pow(x, n)",
+    "id": 50,
+    "difficulty": "Medium",
+    "tags": [
+        "Math",
+        "Recursion"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Decode Ways",
+    "id": 91,
+    "difficulty": "Medium",
+    "tags": [
+        "String",
+        "Dynamic Programming"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Palindrome Partitioning",
+    "id": 131,
+    "difficulty": "Medium",
+    "tags": [
+        "String",
+        "Dynamic Programming",
+        "Backtracking"
+    ]
+}

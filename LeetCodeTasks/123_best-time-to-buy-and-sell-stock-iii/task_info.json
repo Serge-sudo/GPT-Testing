@@ -1,0 +1,9 @@
+{
+    "name": "Best Time to Buy and Sell Stock III",
+    "id": 123,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Dynamic Programming"
+    ]
+}

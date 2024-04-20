@@ -1,0 +1,9 @@
+{
+    "name": "Scramble String",
+    "id": 87,
+    "difficulty": "Hard",
+    "tags": [
+        "String",
+        "Dynamic Programming"
+    ]
+}

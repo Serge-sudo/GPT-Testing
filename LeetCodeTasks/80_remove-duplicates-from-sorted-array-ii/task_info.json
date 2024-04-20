@@ -1,0 +1,9 @@
+{
+    "name": "Remove Duplicates from Sorted Array II",
+    "id": 80,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Two Pointers"
+    ]
+}

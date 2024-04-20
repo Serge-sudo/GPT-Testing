@@ -1,0 +1,10 @@
+{
+    "name": "Regular Expression Matching",
+    "id": 10,
+    "difficulty": "Hard",
+    "tags": [
+        "String",
+        "Dynamic Programming",
+        "Recursion"
+    ]
+}

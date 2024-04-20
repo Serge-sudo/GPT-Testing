@@ -1,0 +1,10 @@
+{
+    "name": "Substring with Concatenation of All Words",
+    "id": 30,
+    "difficulty": "Hard",
+    "tags": [
+        "Hash Table",
+        "String",
+        "Sliding Window"
+    ]
+}

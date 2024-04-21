@@ -437,15 +437,21 @@ class ChatGPT:
             EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-testid="send-button"]'))
         )
         clickable_button.click()
+        while True:
+            WebDriverWait(self.driver, 10).until(
+                EC.invisibility_of_element_located((By.CSS_SELECTOR, '[data-testid="send-button"]'))
+            )
 
-        WebDriverWait(self.driver, 10).until(
-            EC.invisibility_of_element_located((By.CSS_SELECTOR, '[data-testid="send-button"]'))
-        )
-
-        WebDriverWait(self.driver, 200).until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="send-button"]'))
-        )
-
+            WebDriverWait(self.driver, 300).until(
+                EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="send-button"]'))
+            )
+            try:
+                continue_btn = self.driver.find_element(By.XPATH, '//div[text()="Continue generating"]')
+                actions = ActionChains(self.driver)
+                actions.move_to_element(continue_btn).click().perform()
+            except SeleniumExceptions.NoSuchElementException:
+                break
+            
         if stream:
             for i in self.__stream_message():
                 print(i, end='')

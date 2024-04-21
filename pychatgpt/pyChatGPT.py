@@ -6,6 +6,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 import pyperclip
+from selenium import webdriver
 import undetected_chromedriver as uc
 from markdownify import markdownify
 from threading import Thread
@@ -41,7 +42,7 @@ chatgpt_chats_list_first_node = (
     '//div[substring(@class, string-length(@class) - string-length("text-sm") + 1)  = "text-sm"]//a',
 )
 
-chatgpt_chat_url = 'https://chat.openai.com/chat'
+chatgpt_chat_url = 'https://chat.openai.com/?temporary-chat=true'
 
 
 class ChatGPT:
@@ -179,6 +180,8 @@ class ChatGPT:
         self.logger.debug('Initializing browser...')
         options = uc.ChromeOptions()
         options.add_argument('--window-size=1024,768')
+        options.add_argument("--disable-notifications")
+        options.add_argument('--disable-features=PrivacySandboxSettings4')
         if self.__proxy:
             options.add_argument(f'--proxy-server={self.__proxy}')
         for arg in self.__chrome_args:
@@ -511,7 +514,9 @@ class ChatGPT:
 
         self.logger.debug('Resetting conversation...')
         try:
-            self.driver.find_elements(*chatgpt_new_chat)[1].click()
+            self.driver.get(chatgpt_chat_url)
+            time.sleep(2)
+            # self.driver.find_elements(*chatgpt_new_chat)[1].click()
         except SeleniumExceptions.NoSuchElementException:
             self.logger.debug('New chat button not found')
             self.driver.save_screenshot('reset_conversation_failed.png')

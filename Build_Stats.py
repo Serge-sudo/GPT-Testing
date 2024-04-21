@@ -1,63 +1,60 @@
 import os
 import json
 import pandas as pd
+import plotly.express as px
+import pandas as pd
 
 # Path to the LeetCodeTasks directory
 dir_path = 'LeetCodeTasks'
 
 # Check if the final DataFrame file already exists
 final_dataframe_path = 'final_dataframe.csv'
-if os.path.exists(final_dataframe_path):
-    print("Final DataFrame already exists.")
+
+# Get all folders in the directory
+folders = [f for f in os.listdir(dir_path) if os.path.isdir(os.path.join(dir_path, f))]
+# Sort folders based on the numeric part of the folder name
+folders.sort(key=lambda x: int(x.split('_')[0]))
+print("Folders sorted.")
+folders = folders[:100]
+# List to keep track of all task data
+all_tasks = []
+
+for folder in folders:
+    folder_path = os.path.join(dir_path, folder)
+    print(f"Processing folder: {folder}")
+
+    # Paths to the JSON files
+    task_info_path = os.path.join(folder_path, 'task_info.json')
+    result_path = os.path.join(folder_path, 'result.json')
+
+    # Read task_info.json
+    with open(task_info_path, 'r') as file:
+        task_info = json.load(file)
+
+    # Read result.json
+    with open(result_path, 'r') as file:
+        results = json.load(file)
+
+    # Extract results for different programming languages
+    for lang, lang_data in results.items():
+        task_dict = {
+            'task_id': task_info['id'],
+            'task_name': task_info['name'],
+            'difficulty': task_info['difficulty'],
+            'tags': ', '.join(task_info['tags']),
+            'language': lang,
+            'result': lang_data['result'],
+            'pass_cnt': lang_data['pass_cnt']
+        }
+        all_tasks.append(task_dict)
+# Create a DataFrame from all collected task data
+if all_tasks:
+    df = pd.DataFrame(all_tasks)
+    df.to_csv(final_dataframe_path, index=False)
+    print(f"Final DataFrame saved to {final_dataframe_path}")
 else:
-    # Get all folders in the directory
-    folders = [f for f in os.listdir(dir_path) if os.path.isdir(os.path.join(dir_path, f))]
-    # Sort folders based on the numeric part of the folder name
-    folders.sort(key=lambda x: int(x.split('_')[0]))
-    print("Folders sorted.")
+    print("No task data collected.")
 
-    # List to keep track of all task data
-    all_tasks = []
-
-    for folder in folders:
-        folder_path = os.path.join(dir_path, folder)
-        print(f"Processing folder: {folder}")
-
-        # Paths to the JSON files
-        task_info_path = os.path.join(folder_path, 'task_info.json')
-        result_path = os.path.join(folder_path, 'result.json')
-
-        # Read task_info.json
-        with open(task_info_path, 'r') as file:
-            task_info = json.load(file)
-
-        # Read result.json
-        with open(result_path, 'r') as file:
-            results = json.load(file)
-
-        # Extract results for different programming languages
-        for lang, lang_data in results.items():
-            task_dict = {
-                'task_id': task_info['id'],
-                'task_name': task_info['name'],
-                'difficulty': task_info['difficulty'],
-                'tags': ', '.join(task_info['tags']),
-                'language': lang,
-                'result': lang_data['result'],
-                'pass_cnt': lang_data['pass_cnt']
-            }
-            all_tasks.append(task_dict)
-        break    
-    # Create a DataFrame from all collected task data
-    if all_tasks:
-        df = pd.DataFrame(all_tasks)
-        df.to_csv(final_dataframe_path, index=False)
-        print(f"Final DataFrame saved to {final_dataframe_path}")
-    else:
-        print("No task data collected.")
-
-
-import os
 
 # Base directory for charts
 charts_dir = 'plotly_charts'
@@ -68,8 +65,6 @@ html_dir = os.path.join(charts_dir, 'html')
 png_dir = os.path.join(charts_dir, 'png')
 os.makedirs(html_dir, exist_ok=True)
 os.makedirs(png_dir, exist_ok=True)
-import plotly.express as px
-import pandas as pd
 # Assuming df is your DataFrame
 df = pd.read_csv(final_dataframe_path)
 

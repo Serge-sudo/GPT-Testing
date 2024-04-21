@@ -13,6 +13,6 @@ public:
             }
             num_map[nums[i]] = i;
         }
-        return {};
+        return {};  // This line will never be executed because there is always exactly one solution
     }
 };

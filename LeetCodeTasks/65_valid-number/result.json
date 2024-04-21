@@ -1,0 +1,18 @@
+{
+    "c": {
+        "pass_cnt": "1 / 1",
+        "result": "Accepted"
+    },
+    "cpp": {
+        "pass_cnt": "1351 / 1494",
+        "result": "Wrong Answer\n1351 / 1494 testcases passed"
+    },
+    "java": {
+        "pass_cnt": "1 / 1",
+        "result": "Accepted"
+    },
+    "python3": {
+        "pass_cnt": "1 / 1",
+        "result": "Accepted"
+    }
+}

@@ -1,9 +1,0 @@
-{
-    "name": "Distinct Subsequences",
-    "id": 115,
-    "difficulty": "Hard",
-    "tags": [
-        "String",
-        "Dynamic Programming"
-    ]
-}

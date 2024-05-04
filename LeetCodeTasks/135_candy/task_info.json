@@ -1,9 +1,0 @@
-{
-    "name": "Candy",
-    "id": 135,
-    "difficulty": "Hard",
-    "tags": [
-        "Array",
-        "Greedy"
-    ]
-}

@@ -1,0 +1,10 @@
+{
+    "name": "Minimum Operations to Exceed Threshold Value II",
+    "id": 3066,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Heap (Priority Queue)",
+        "Simulation"
+    ]
+}

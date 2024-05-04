@@ -1,0 +1,13 @@
+{
+    "name": "Maximum Palindromes After Operations",
+    "id": 3035,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "String",
+        "Greedy",
+        "Sorting",
+        "Counting"
+    ]
+}

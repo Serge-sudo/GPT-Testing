@@ -1,0 +1,10 @@
+{
+    "name": "Find the Sum of Subsequence Powers",
+    "id": 3098,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Dynamic Programming",
+        "Sorting"
+    ]
+}

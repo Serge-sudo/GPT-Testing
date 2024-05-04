@@ -181,6 +181,7 @@ class GetQuestionsList:
         """Adds the `topicTags` column containing the comma-separated string of
         the list of topic tags relevant to the given questions and the `category`
         column that includes the category relevant to the given question"""
+        return
         self.questions["topicTags"] = self.questions["topicTags"].apply(
             lambda w: ",".join(w)
         )

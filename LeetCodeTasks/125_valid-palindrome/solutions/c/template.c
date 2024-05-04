@@ -1,3 +1,0 @@
-bool isPalindrome(char* s) {
-    
-}

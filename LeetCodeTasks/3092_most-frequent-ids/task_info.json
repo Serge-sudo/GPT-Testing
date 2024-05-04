@@ -1,0 +1,11 @@
+{
+    "name": "Most Frequent IDs",
+    "id": 3092,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "Heap (Priority Queue)",
+        "Ordered Set"
+    ]
+}

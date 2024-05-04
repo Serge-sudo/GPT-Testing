@@ -1,0 +1,11 @@
+{
+    "name": "Minimum Operations to Write the Letter Y on a Grid",
+    "id": 3071,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "Matrix",
+        "Counting"
+    ]
+}

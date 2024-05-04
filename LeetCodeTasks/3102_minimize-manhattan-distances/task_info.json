@@ -1,0 +1,12 @@
+{
+    "name": "Minimize Manhattan Distances",
+    "id": 3102,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Math",
+        "Geometry",
+        "Sorting",
+        "Ordered Set"
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "name": "Find Edges in Shortest Paths",
+    "id": 3123,
+    "difficulty": "Hard",
+    "tags": [
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Graph",
+        "Heap (Priority Queue)",
+        "Shortest Path"
+    ]
+}

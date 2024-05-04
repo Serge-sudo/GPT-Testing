@@ -1,9 +1,0 @@
-{
-    "name": "Triangle",
-    "id": 120,
-    "difficulty": "Medium",
-    "tags": [
-        "Array",
-        "Dynamic Programming"
-    ]
-}

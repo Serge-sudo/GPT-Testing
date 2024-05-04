@@ -1,9 +1,0 @@
-{
-    "name": "Gas Station",
-    "id": 134,
-    "difficulty": "Medium",
-    "tags": [
-        "Array",
-        "Greedy"
-    ]
-}

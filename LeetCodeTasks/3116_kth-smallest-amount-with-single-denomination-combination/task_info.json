@@ -1,0 +1,13 @@
+{
+    "name": "Kth Smallest Amount With Single Denomination Combination",
+    "id": 3116,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Math",
+        "Binary Search",
+        "Bit Manipulation",
+        "Combinatorics",
+        "Number Theory"
+    ]
+}

@@ -89,12 +89,13 @@ def create_task_folders(data):
     print(f"done fetching")
 
 
-N = 150
+N = 160
+START = 2975
 
 res = pd.DataFrame()
 for i in range(N // 5):
-    print(f"GETING QUESTION FROM {i * 5} TO {(i+1) * 5}")
-    ls = GetQuestionsList(limit=5,skip=i*5)
+    print(f"GETING QUESTION FROM {i * 5 + START} TO {(i+1) * 5 + START}")
+    ls = GetQuestionsList(limit=5,skip=i*5+START)
     ls.scrape()
     # print(ls.questions.head())
     res = pd.concat([res,ls.questions.head()], ignore_index=True)

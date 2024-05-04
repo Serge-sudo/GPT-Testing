@@ -1,0 +1,10 @@
+{
+    "name": "Count Pairs of Connectable Servers in a Weighted Tree Network",
+    "id": 3067,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Tree",
+        "Depth-First Search"
+    ]
+}

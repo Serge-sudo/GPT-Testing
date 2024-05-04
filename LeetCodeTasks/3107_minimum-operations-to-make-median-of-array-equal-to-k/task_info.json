@@ -1,0 +1,10 @@
+{
+    "name": "Minimum Operations to Make Median of Array Equal to K",
+    "id": 3107,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Greedy",
+        "Sorting"
+    ]
+}

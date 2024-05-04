@@ -1,0 +1,10 @@
+{
+    "name": "Divide an Array Into Subarrays With Minimum Cost I",
+    "id": 3010,
+    "difficulty": "Easy",
+    "tags": [
+        "Array",
+        "Sorting",
+        "Enumeration"
+    ]
+}

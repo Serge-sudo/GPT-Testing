@@ -1,0 +1,10 @@
+{
+    "name": "Maximum Length Substring With Two Occurrences",
+    "id": 3090,
+    "difficulty": "Easy",
+    "tags": [
+        "Hash Table",
+        "String",
+        "Sliding Window"
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Most Frequent Prime",
+    "id": 3044,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "Math",
+        "Matrix",
+        "Counting",
+        "Enumeration",
+        "Number Theory"
+    ]
+}

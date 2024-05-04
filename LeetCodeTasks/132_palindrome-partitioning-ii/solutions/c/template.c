@@ -1,3 +1,0 @@
-int minCut(char* s) {
-    
-}

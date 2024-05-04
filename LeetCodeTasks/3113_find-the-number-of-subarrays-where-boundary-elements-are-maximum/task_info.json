@@ -1,0 +1,11 @@
+{
+    "name": "Find the Number of Subarrays Where Boundary Elements Are Maximum",
+    "id": 3113,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Binary Search",
+        "Stack",
+        "Monotonic Stack"
+    ]
+}

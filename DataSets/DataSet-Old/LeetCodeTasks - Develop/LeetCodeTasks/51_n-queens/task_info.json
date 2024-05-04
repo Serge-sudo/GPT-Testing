@@ -1,0 +1,9 @@
+{
+    "name": "N-Queens",
+    "id": 51,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Backtracking"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Divide an Array Into Subarrays With Minimum Cost II",
+    "id": 3013,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "Sliding Window",
+        "Heap (Priority Queue)"
+    ]
+}

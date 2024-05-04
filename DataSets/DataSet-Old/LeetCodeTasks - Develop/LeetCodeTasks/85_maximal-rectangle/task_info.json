@@ -1,0 +1,12 @@
+{
+    "name": "Maximal Rectangle",
+    "id": 85,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Dynamic Programming",
+        "Stack",
+        "Matrix",
+        "Monotonic Stack"
+    ]
+}

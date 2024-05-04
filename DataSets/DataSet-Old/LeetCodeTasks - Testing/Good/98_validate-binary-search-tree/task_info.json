@@ -1,0 +1,11 @@
+{
+    "name": "Validate Binary Search Tree",
+    "id": 98,
+    "difficulty": "Medium",
+    "tags": [
+        "Tree",
+        "Depth-First Search",
+        "Binary Search Tree",
+        "Binary Tree"
+    ]
+}

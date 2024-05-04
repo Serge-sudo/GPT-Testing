@@ -1,0 +1,9 @@
+{
+    "name": "First Missing Positive",
+    "id": 41,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Hash Table"
+    ]
+}

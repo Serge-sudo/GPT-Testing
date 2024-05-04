@@ -1,0 +1,10 @@
+{
+    "name": "Apple Redistribution into Boxes",
+    "id": 3074,
+    "difficulty": "Easy",
+    "tags": [
+        "Array",
+        "Greedy",
+        "Sorting"
+    ]
+}

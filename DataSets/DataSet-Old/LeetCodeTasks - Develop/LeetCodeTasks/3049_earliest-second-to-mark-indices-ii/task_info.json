@@ -1,0 +1,11 @@
+{
+    "name": "Earliest Second to Mark Indices II",
+    "id": 3049,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Binary Search",
+        "Greedy",
+        "Heap (Priority Queue)"
+    ]
+}

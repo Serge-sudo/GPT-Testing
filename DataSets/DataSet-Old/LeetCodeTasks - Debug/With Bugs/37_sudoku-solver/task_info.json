@@ -1,0 +1,11 @@
+{
+    "name": "Sudoku Solver",
+    "id": 37,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "Backtracking",
+        "Matrix"
+    ]
+}

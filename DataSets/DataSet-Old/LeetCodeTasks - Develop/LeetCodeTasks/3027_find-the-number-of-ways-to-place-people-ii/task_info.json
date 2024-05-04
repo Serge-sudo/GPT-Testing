@@ -1,0 +1,12 @@
+{
+    "name": "Find the Number of Ways to Place People II",
+    "id": 3027,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Math",
+        "Geometry",
+        "Sorting",
+        "Enumeration"
+    ]
+}

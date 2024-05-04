@@ -1,0 +1,11 @@
+{
+    "name": "Number of Subarrays That Match a Pattern II",
+    "id": 3036,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Rolling Hash",
+        "String Matching",
+        "Hash Function"
+    ]
+}

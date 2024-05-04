@@ -1,0 +1,9 @@
+{
+    "name": "Lexicographically Smallest String After Operations With Constraint",
+    "id": 3106,
+    "difficulty": "Medium",
+    "tags": [
+        "String",
+        "Greedy"
+    ]
+}

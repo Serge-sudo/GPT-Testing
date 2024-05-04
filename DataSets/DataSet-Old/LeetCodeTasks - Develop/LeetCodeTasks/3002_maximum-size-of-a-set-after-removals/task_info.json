@@ -1,0 +1,10 @@
+{
+    "name": "Maximum Size of a Set After Removals",
+    "id": 3002,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "Greedy"
+    ]
+}

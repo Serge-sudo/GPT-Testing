@@ -1,0 +1,12 @@
+{
+    "name": "Trapping Rain Water",
+    "id": 42,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Two Pointers",
+        "Dynamic Programming",
+        "Stack",
+        "Monotonic Stack"
+    ]
+}

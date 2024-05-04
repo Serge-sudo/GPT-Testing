@@ -1,0 +1,12 @@
+{
+    "name": "Mark Elements on Array by Performing Queries",
+    "id": 3080,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "Sorting",
+        "Heap (Priority Queue)",
+        "Simulation"
+    ]
+}

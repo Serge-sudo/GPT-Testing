@@ -1,0 +1,10 @@
+{
+    "name": "Find the Maximum Number of Elements in Subset",
+    "id": 3020,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "Enumeration"
+    ]
+}

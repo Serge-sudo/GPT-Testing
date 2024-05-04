@@ -1,0 +1,10 @@
+{
+    "name": "Minimum Number of Pushes to Type Word I",
+    "id": 3014,
+    "difficulty": "Easy",
+    "tags": [
+        "Math",
+        "String",
+        "Greedy"
+    ]
+}

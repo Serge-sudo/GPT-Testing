@@ -1,0 +1,10 @@
+{
+    "name": "Count Submatrices with Top-Left Element and Sum Less Than k",
+    "id": 3070,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Matrix",
+        "Prefix Sum"
+    ]
+}

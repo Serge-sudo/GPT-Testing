@@ -1,0 +1,10 @@
+{
+    "name": "Find the Index of the First Occurrence in a String",
+    "id": 28,
+    "difficulty": "Easy",
+    "tags": [
+        "Two Pointers",
+        "String",
+        "String Matching"
+    ]
+}

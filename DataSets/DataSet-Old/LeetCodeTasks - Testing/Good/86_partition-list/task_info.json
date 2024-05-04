@@ -1,0 +1,9 @@
+{
+    "name": "Partition List",
+    "id": 86,
+    "difficulty": "Medium",
+    "tags": [
+        "Linked List",
+        "Two Pointers"
+    ]
+}

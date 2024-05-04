@@ -1,0 +1,10 @@
+{
+    "name": "Maximum Number of Operations With the Same Score II",
+    "id": 3040,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Dynamic Programming",
+        "Memoization"
+    ]
+}

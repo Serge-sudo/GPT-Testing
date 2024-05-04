@@ -1,0 +1,11 @@
+{
+    "name": "Find the Length of the Longest Common Prefix",
+    "id": 3043,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "String",
+        "Trie"
+    ]
+}

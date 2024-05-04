@@ -1,0 +1,10 @@
+{
+    "name": "Maximum Good Subarray Sum",
+    "id": 3026,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "Prefix Sum"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Shortest Subarray With OR at Least K II",
+    "id": 3097,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Bit Manipulation",
+        "Sliding Window"
+    ]
+}

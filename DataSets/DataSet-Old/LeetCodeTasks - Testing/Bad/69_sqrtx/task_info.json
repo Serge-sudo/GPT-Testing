@@ -1,0 +1,9 @@
+{
+    "name": "Sqrt(x)",
+    "id": 69,
+    "difficulty": "Easy",
+    "tags": [
+        "Math",
+        "Binary Search"
+    ]
+}

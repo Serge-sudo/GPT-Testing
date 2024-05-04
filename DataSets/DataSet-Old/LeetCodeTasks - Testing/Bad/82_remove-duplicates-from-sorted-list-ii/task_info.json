@@ -1,0 +1,9 @@
+{
+    "name": "Remove Duplicates from Sorted List II",
+    "id": 82,
+    "difficulty": "Medium",
+    "tags": [
+        "Linked List",
+        "Two Pointers"
+    ]
+}

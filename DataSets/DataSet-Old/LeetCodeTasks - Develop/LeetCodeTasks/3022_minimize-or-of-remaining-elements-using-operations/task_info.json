@@ -1,0 +1,10 @@
+{
+    "name": "Minimize OR of Remaining Elements Using Operations",
+    "id": 3022,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Greedy",
+        "Bit Manipulation"
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "name": "Unique Binary Search Trees",
+    "id": 96,
+    "difficulty": "Medium",
+    "tags": [
+        "Math",
+        "Dynamic Programming",
+        "Tree",
+        "Binary Search Tree",
+        "Binary Tree"
+    ]
+}

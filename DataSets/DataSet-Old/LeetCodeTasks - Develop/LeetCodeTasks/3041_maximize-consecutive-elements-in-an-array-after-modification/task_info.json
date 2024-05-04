@@ -1,0 +1,10 @@
+{
+    "name": "Maximize Consecutive Elements in an Array After Modification",
+    "id": 3041,
+    "difficulty": "Hard",
+    "tags": [
+        "Array",
+        "Dynamic Programming",
+        "Sorting"
+    ]
+}

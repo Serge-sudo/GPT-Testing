@@ -1,20 +1,23 @@
-import java.util.*;
+import java.util.Arrays;
 
 class Solution {
     public int minimumArrayLength(int[] nums) {
-        TreeSet<Integer> set = new TreeSet<>();
+        int gcdResult = nums[0];
         for (int num : nums) {
-            if (num > 0) {
-                set.add(num);
+            gcdResult = gcd(gcdResult, num);
+            if (gcdResult == 1) {
+                return 1; // If at any point GCD is 1, the array can be reduced to size 1.
             }
         }
-        while (set.size() > 1) {
-            int max = set.last();
-            set.remove(max);
-            int secondMax = set.last();
-            set.remove(secondMax);
-            set.add(max % secondMax);
+        return gcdResult == 1 ? 1 : nums.length; // If GCD is not 1, minimal reduction is not possible.
+    }
+
+    private int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
         }
-        return set.isEmpty() ? 0 : set.first();
+        return a;
     }
 }

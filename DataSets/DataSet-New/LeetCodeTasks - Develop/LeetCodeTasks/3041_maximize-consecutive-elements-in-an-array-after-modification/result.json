@@ -1,0 +1,18 @@
+{
+    "c": {
+        "pass_cnt": "0 / 0",
+        "result": "Compile Error"
+    },
+    "cpp": {
+        "pass_cnt": "0 / 0",
+        "result": "Compile Error"
+    },
+    "java": {
+        "pass_cnt": "0 / 0",
+        "result": "Compile Error"
+    },
+    "python3": {
+        "pass_cnt": "0 / 668",
+        "result": "Runtime Error"
+    }
+}

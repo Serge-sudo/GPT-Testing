@@ -1,27 +1,26 @@
 import java.util.HashMap;
-import java.util.Map;
 
 class Solution {
     public int maxFrequencyElements(int[] nums) {
-        Map<Integer, Integer> frequencyMap = new HashMap<>();
+        HashMap<Integer, Integer> freqMap = new HashMap<>();
+        int maxFreq = 0;
+        
+        // Count the frequency of each number
         for (int num : nums) {
-            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+            int count = freqMap.getOrDefault(num, 0) + 1;
+            freqMap.put(num, count);
+            maxFreq = Math.max(maxFreq, count);
         }
-
-        int maxFrequency = 0;
-        for (int freq : frequencyMap.values()) {
-            if (freq > maxFrequency) {
-                maxFrequency = freq;
+        
+        int maxFreqCount = 0;
+        
+        // Calculate the total count of numbers with the maximum frequency
+        for (int count : freqMap.values()) {
+            if (count == maxFreq) {
+                maxFreqCount += count;
             }
         }
-
-        int count = 0;
-        for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
-            if (entry.getValue() == maxFrequency) {
-                count += entry.getValue();
-            }
-        }
-
-        return count;
+        
+        return maxFreqCount;
     }
 }

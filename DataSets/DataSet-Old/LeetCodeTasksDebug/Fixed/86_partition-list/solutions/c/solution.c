@@ -1,6 +1,5 @@
 #include <stdlib.h>
 
-
 struct ListNode* partition(struct ListNode* head, int x) {
 
     struct ListNode *lessHead = NULL, *lessTail = NULL;
@@ -13,7 +12,7 @@ struct ListNode* partition(struct ListNode* head, int x) {
 
     while (current) {
 
-        if (current->val <= x) {
+        if (current->val < x) {
 
             if (!lessHead) {
 
@@ -29,7 +28,7 @@ struct ListNode* partition(struct ListNode* head, int x) {
 
         } else {
 
-            if (greaterHead) {
+            if (!greaterHead) {
 
                 greaterHead = greaterTail = current;
 
@@ -55,6 +54,8 @@ struct ListNode* partition(struct ListNode* head, int x) {
 
     }
 
+
+
     if (greaterTail) {
 
         greaterTail->next = NULL;
@@ -63,7 +64,7 @@ struct ListNode* partition(struct ListNode* head, int x) {
 
 
 
-    return lessHead ? greaterHead : lessHead;
+    return lessHead ? lessHead : greaterHead;
 
 }
 

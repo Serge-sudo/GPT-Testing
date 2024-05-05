@@ -8,8 +8,8 @@
         "result": "Accepted"
     },
     "java": {
-        "pass_cnt": "1 / 1",
-        "result": "Accepted"
+        "pass_cnt": "0 / 166",
+        "result": "Runtime Error"
     },
     "python3": {
         "pass_cnt": "1 / 1",

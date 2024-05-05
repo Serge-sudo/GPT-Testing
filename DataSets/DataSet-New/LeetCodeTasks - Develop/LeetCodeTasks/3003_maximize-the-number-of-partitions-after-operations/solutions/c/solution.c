@@ -4,43 +4,52 @@
 
 int maxPartitionsAfterOperations(char* s, int k) {
     int n = strlen(s);
-    int max_partitions = 1;
-    char original_char;
+    int result = 0;
     
-    // Helper function to count partitions with at most k distinct characters
-    int count_partitions(char* str) {
-        int partitions = 0;
-        int l = 0, distinct = 0, freq[26] = {0};
-        
-        for (int r = 0; r < n; r++) {
-            if (freq[str[r] - 'a']++ == 0) distinct++;
+    // Function to count partitions with an option to change one character at pos to char newChar
+    int count_partitions_with_change(int pos, char newChar) {
+        int freq[26] = {0};
+        int count = 0, distinct = 0, partitions = 0;
+        int i = 0, j = 0;
+
+        for (; j < n; ++j) {
+            // Simulate the change at position `pos`
+            char currentChar = (j == pos) ? newChar : s[j];
+
+            if (freq[currentChar - 'a'] == 0) distinct++;
+            freq[currentChar - 'a']++;
+            
+            // While distinct characters exceed k, shrink the window from the left
             while (distinct > k) {
-                if (--freq[str[l] - 'a'] == 0) distinct--;
-                l++;
+                freq[s[i] - 'a']--;
+                if (freq[s[i] - 'a'] == 0) distinct--;
+                i++;
             }
-            partitions++;
+
+            // Increment count when reaching the change or end of the string
+            if (j == pos || j == n - 1) {
+                partitions++;
+                // Reset for next possible partition sequence
+                memset(freq, 0, sizeof(freq));
+                distinct = 0;
+                i = j + 1;
+            }
         }
-        
+
         return partitions;
     }
-    
-    // First, evaluate the partition count without any changes
-    max_partitions = count_partitions(s);
-    
-    // Check changing each character if it potentially improves the partition count
-    for (int i = 0; i < n; i++) {
-        original_char = s[i];
-        for (char c = 'a'; c <= 'z'; c++) {
-            if (c != original_char) {
-                s[i] = c;
-                int partitions = count_partitions(s);
-                if (partitions > max_partitions) {
-                    max_partitions = partitions;
-                }
+
+    // First, calculate partitions without any change
+    result = count_partitions_with_change(-1, 'a'); // -1 means no change
+
+    // Try changing each character to any other lowercase character to maximize partitions
+    for (int i = 0; i < n; ++i) {
+        for (char c = 'a'; c <= 'z'; ++c) {
+            if (s[i] != c) { // Only consider a change
+                result = max(result, count_partitions_with_change(i, c));
             }
         }
-        s[i] = original_char; // Restore original character
     }
-    
-    return max_partitions;
+
+    return result;
 }

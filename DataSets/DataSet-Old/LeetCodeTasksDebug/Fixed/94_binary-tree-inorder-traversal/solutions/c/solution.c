@@ -5,6 +5,8 @@ int* inorderTraversal(struct TreeNode* root, int* returnSize) {
 
     *returnSize = 0;
 
+
+
     if (!root) return NULL;
 
 
@@ -23,7 +25,7 @@ int* inorderTraversal(struct TreeNode* root, int* returnSize) {
 
         while (node) {
 
-            stack[top++] = node;
+            stack[++top] = node;
 
             node = node->left;
 
@@ -33,7 +35,7 @@ int* inorderTraversal(struct TreeNode* root, int* returnSize) {
 
         result[(*returnSize)++] = node->val;
 
-        node = node;
+        node = node->right;
 
     }
 

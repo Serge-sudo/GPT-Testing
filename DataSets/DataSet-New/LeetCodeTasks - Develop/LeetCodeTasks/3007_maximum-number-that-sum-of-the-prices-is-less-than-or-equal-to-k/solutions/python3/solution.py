@@ -1,35 +1,25 @@
 class Solution:
     def findMaximumNumber(self, k: int, x: int) -> int:
-        # Helper function to calculate the price of a number
-        def calculate_price(num: int) -> int:
-            price = 0
-            # Start from position x (one-based index), but shift to zero-based by subtracting 1
-            pos = x - 1
-            # Check each position `x, 2x, 3x, ...` and count set bits
-            while pos < num.bit_length():
-                if num & (1 << pos):
-                    price += 1
-                pos += x
-            return price
-
-        # We will use a binary search on the number `num` to find the maximum cheap number
-        left, right = 1, k * x  # Upper bound heuristic, assuming each bit at `x, 2x, ...` contributes 1 to the price
-        best_cheap_num = 0
         accumulated_price = 0
+        num = 0
         
-        # Binary search to find the max cheap number
-        while left <= right:
-            mid = (left + right) // 2
-            # Calculate the accumulated price of `mid` by summing prices from 1 to `mid`
-            temp_acc_price = 0
-            for i in range(1, mid + 1):
-                temp_acc_price += calculate_price(i)
+        while accumulated_price <= k:
+            num += 1
+            current_price = 0
+            index = x
             
-            if temp_acc_price <= k:
-                best_cheap_num = mid
-                accumulated_price = temp_acc_price
-                left = mid + 1
-            else:
-                right = mid - 1
+            # Calculate the price for the current number `num`
+            while index - 1 < num.bit_length():
+                if num & (1 << (index - 1)):
+                    current_price += 1
+                index += x
+            
+            # Update the accumulated price
+            accumulated_price += current_price
+            
+            # If the next number makes it exceed k, return current number
+            if accumulated_price > k:
+                return num
         
-        return best_cheap_num
+        # Fallback return, technically unreachable
+        return num

@@ -1,0 +1,18 @@
+{
+    "c": {
+        "pass_cnt": "4 / 802",
+        "result": "Wrong Answer"
+    },
+    "cpp": {
+        "pass_cnt": "0 / 802",
+        "result": "Runtime Error"
+    },
+    "java": {
+        "pass_cnt": "0 / 802",
+        "result": "Runtime Error"
+    },
+    "python3": {
+        "pass_cnt": "56 / 802",
+        "result": "Wrong Answer"
+    }
+}

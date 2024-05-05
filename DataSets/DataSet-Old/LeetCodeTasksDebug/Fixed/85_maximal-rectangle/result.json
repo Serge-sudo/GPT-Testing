@@ -12,7 +12,7 @@
         "result": "Accepted"
     },
     "python3": {
-        "pass_cnt": "1 / 1",
-        "result": "Accepted"
+        "pass_cnt": "0 / 74",
+        "result": "Runtime Error"
     }
 }

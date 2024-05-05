@@ -1,11 +1,9 @@
 class Solution {
     public int countKeyChanges(String s) {
         int changes = 0;
-        char prev = '\0'; // Initialize prev to a non-letter character
-        for (char c : s.toCharArray()) {
-            if (Character.isLetter(c) && Character.toLowerCase(c) != prev) {
+        for (int i = 1; i < s.length(); i++) {
+            if (Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(i - 1))) {
                 changes++;
-                prev = Character.toLowerCase(c);
             }
         }
         return changes;

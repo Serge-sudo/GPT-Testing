@@ -1,0 +1,401 @@
+task_id,task_name,difficulty,tags,language,result,pass_cnt
+3000,Maximum Area of Longest Diagonal Rectangle,Easy,Array,c,Accepted,1 / 1
+3000,Maximum Area of Longest Diagonal Rectangle,Easy,Array,cpp,Accepted,1 / 1
+3000,Maximum Area of Longest Diagonal Rectangle,Easy,Array,java,Accepted,1 / 1
+3000,Maximum Area of Longest Diagonal Rectangle,Easy,Array,python3,Accepted,1 / 1
+3001,Minimum Moves to Capture The Queen,Medium,"Array, Enumeration",c,Wrong Answer,395 / 743
+3001,Minimum Moves to Capture The Queen,Medium,"Array, Enumeration",cpp,Wrong Answer,723 / 743
+3001,Minimum Moves to Capture The Queen,Medium,"Array, Enumeration",java,Wrong Answer,723 / 743
+3001,Minimum Moves to Capture The Queen,Medium,"Array, Enumeration",python3,Wrong Answer,423 / 743
+3002,Maximum Size of a Set After Removals,Medium,"Array, Hash Table, Greedy",c,Wrong Answer,386 / 969
+3002,Maximum Size of a Set After Removals,Medium,"Array, Hash Table, Greedy",cpp,Wrong Answer,1 / 969
+3002,Maximum Size of a Set After Removals,Medium,"Array, Hash Table, Greedy",java,Wrong Answer,1 / 969
+3002,Maximum Size of a Set After Removals,Medium,"Array, Hash Table, Greedy",python3,Wrong Answer,85 / 969
+3003,Maximize the Number of Partitions After Operations,Hard,"String, Dynamic Programming, Bit Manipulation, Bitmask",c,Compile Error,0 / 0
+3003,Maximize the Number of Partitions After Operations,Hard,"String, Dynamic Programming, Bit Manipulation, Bitmask",cpp,Wrong Answer,253 / 277
+3003,Maximize the Number of Partitions After Operations,Hard,"String, Dynamic Programming, Bit Manipulation, Bitmask",java,Wrong Answer,244 / 277
+3003,Maximize the Number of Partitions After Operations,Hard,"String, Dynamic Programming, Bit Manipulation, Bitmask",python3,Time Limit Exceeded,270 / 277
+3005,Count Elements With Maximum Frequency,Easy,"Array, Hash Table, Counting",c,Accepted,1 / 1
+3005,Count Elements With Maximum Frequency,Easy,"Array, Hash Table, Counting",cpp,Accepted,1 / 1
+3005,Count Elements With Maximum Frequency,Easy,"Array, Hash Table, Counting",java,Accepted,1 / 1
+3005,Count Elements With Maximum Frequency,Easy,"Array, Hash Table, Counting",python3,Accepted,1 / 1
+3006,Find Beautiful Indices in the Given Array I,Medium,"Two Pointers, String, Binary Search, Rolling Hash, String Matching, Hash Function",c,Accepted,1 / 1
+3006,Find Beautiful Indices in the Given Array I,Medium,"Two Pointers, String, Binary Search, Rolling Hash, String Matching, Hash Function",cpp,Accepted,1 / 1
+3006,Find Beautiful Indices in the Given Array I,Medium,"Two Pointers, String, Binary Search, Rolling Hash, String Matching, Hash Function",java,Accepted,1 / 1
+3006,Find Beautiful Indices in the Given Array I,Medium,"Two Pointers, String, Binary Search, Rolling Hash, String Matching, Hash Function",python3,Accepted,1 / 1
+3007,Maximum Number That Sum of the Prices Is Less Than or Equal to K,Medium,"Binary Search, Dynamic Programming, Bit Manipulation",c,Runtime Error,0 / 932
+3007,Maximum Number That Sum of the Prices Is Less Than or Equal to K,Medium,"Binary Search, Dynamic Programming, Bit Manipulation",cpp,Time Limit Exceeded,502 / 932
+3007,Maximum Number That Sum of the Prices Is Less Than or Equal to K,Medium,"Binary Search, Dynamic Programming, Bit Manipulation",java,Wrong Answer,73 / 932
+3007,Maximum Number That Sum of the Prices Is Less Than or Equal to K,Medium,"Binary Search, Dynamic Programming, Bit Manipulation",python3,Wrong Answer,0 / 932
+3008,Find Beautiful Indices in the Given Array II,Hard,"Two Pointers, String, Binary Search, Rolling Hash, String Matching, Hash Function",c,Time Limit Exceeded,229 / 237
+3008,Find Beautiful Indices in the Given Array II,Hard,"Two Pointers, String, Binary Search, Rolling Hash, String Matching, Hash Function",cpp,Memory Limit Exceeded,216 / 237
+3008,Find Beautiful Indices in the Given Array II,Hard,"Two Pointers, String, Binary Search, Rolling Hash, String Matching, Hash Function",java,Time Limit Exceeded,230 / 237
+3008,Find Beautiful Indices in the Given Array II,Hard,"Two Pointers, String, Binary Search, Rolling Hash, String Matching, Hash Function",python3,Time Limit Exceeded,229 / 237
+3010,Divide an Array Into Subarrays With Minimum Cost I,Easy,"Array, Sorting, Enumeration",c,Accepted,1 / 1
+3010,Divide an Array Into Subarrays With Minimum Cost I,Easy,"Array, Sorting, Enumeration",cpp,Runtime Error,0 / 988
+3010,Divide an Array Into Subarrays With Minimum Cost I,Easy,"Array, Sorting, Enumeration",java,Accepted,1 / 1
+3010,Divide an Array Into Subarrays With Minimum Cost I,Easy,"Array, Sorting, Enumeration",python3,Accepted,1 / 1
+3011,Find if Array Can Be Sorted,Medium,"Array, Bit Manipulation, Sorting",c,Wrong Answer,608 / 999
+3011,Find if Array Can Be Sorted,Medium,"Array, Bit Manipulation, Sorting",cpp,Wrong Answer,459 / 999
+3011,Find if Array Can Be Sorted,Medium,"Array, Bit Manipulation, Sorting",java,Wrong Answer,771 / 999
+3011,Find if Array Can Be Sorted,Medium,"Array, Bit Manipulation, Sorting",python3,Runtime Error,0 / 999
+3012,Minimize Length of Array Using Operations,Medium,"Array, Math, Greedy, Number Theory",c,Wrong Answer,216 / 522
+3012,Minimize Length of Array Using Operations,Medium,"Array, Math, Greedy, Number Theory",cpp,Wrong Answer,216 / 522
+3012,Minimize Length of Array Using Operations,Medium,"Array, Math, Greedy, Number Theory",java,Wrong Answer,209 / 522
+3012,Minimize Length of Array Using Operations,Medium,"Array, Math, Greedy, Number Theory",python3,Wrong Answer,213 / 522
+3013,Divide an Array Into Subarrays With Minimum Cost II,Hard,"Array, Hash Table, Sliding Window, Heap (Priority Queue)",c,Wrong Answer,31 / 691
+3013,Divide an Array Into Subarrays With Minimum Cost II,Hard,"Array, Hash Table, Sliding Window, Heap (Priority Queue)",cpp,Runtime Error,0 / 691
+3013,Divide an Array Into Subarrays With Minimum Cost II,Hard,"Array, Hash Table, Sliding Window, Heap (Priority Queue)",java,Wrong Answer,235 / 691
+3013,Divide an Array Into Subarrays With Minimum Cost II,Hard,"Array, Hash Table, Sliding Window, Heap (Priority Queue)",python3,Wrong Answer,234 / 691
+3014,Minimum Number of Pushes to Type Word I,Easy,"Math, String, Greedy",c,Time Limit Exceeded,1 / 500
+3014,Minimum Number of Pushes to Type Word I,Easy,"Math, String, Greedy",cpp,Wrong Answer,15 / 500
+3014,Minimum Number of Pushes to Type Word I,Easy,"Math, String, Greedy",java,Wrong Answer,15 / 500
+3014,Minimum Number of Pushes to Type Word I,Easy,"Math, String, Greedy",python3,Wrong Answer,30 / 500
+3015,Count the Number of Houses at a Certain Distance I,Medium,"Breadth-First Search, Graph, Prefix Sum",c,Wrong Answer,0 / 880
+3015,Count the Number of Houses at a Certain Distance I,Medium,"Breadth-First Search, Graph, Prefix Sum",cpp,Wrong Answer,0 / 880
+3015,Count the Number of Houses at a Certain Distance I,Medium,"Breadth-First Search, Graph, Prefix Sum",java,Wrong Answer,0 / 880
+3015,Count the Number of Houses at a Certain Distance I,Medium,"Breadth-First Search, Graph, Prefix Sum",python3,Accepted,1 / 1
+3016,Minimum Number of Pushes to Type Word II,Medium,"Hash Table, String, Greedy, Sorting, Counting",c,Wrong Answer,50 / 877
+3016,Minimum Number of Pushes to Type Word II,Medium,"Hash Table, String, Greedy, Sorting, Counting",cpp,Accepted,1 / 1
+3016,Minimum Number of Pushes to Type Word II,Medium,"Hash Table, String, Greedy, Sorting, Counting",java,Wrong Answer,21 / 877
+3016,Minimum Number of Pushes to Type Word II,Medium,"Hash Table, String, Greedy, Sorting, Counting",python3,Wrong Answer,21 / 877
+3017,Count the Number of Houses at a Certain Distance II,Hard,"Breadth-First Search, Graph, Prefix Sum",c,Wrong Answer,64 / 549
+3017,Count the Number of Houses at a Certain Distance II,Hard,"Breadth-First Search, Graph, Prefix Sum",cpp,Wrong Answer,64 / 549
+3017,Count the Number of Houses at a Certain Distance II,Hard,"Breadth-First Search, Graph, Prefix Sum",java,Wrong Answer,0 / 549
+3017,Count the Number of Houses at a Certain Distance II,Hard,"Breadth-First Search, Graph, Prefix Sum",python3,Wrong Answer,0 / 549
+3019,Number of Changing Keys,Easy,String,c,Accepted,1 / 1
+3019,Number of Changing Keys,Easy,String,cpp,Accepted,1 / 1
+3019,Number of Changing Keys,Easy,String,java,Accepted,1 / 1
+3019,Number of Changing Keys,Easy,String,python3,Accepted,1 / 1
+3020,Find the Maximum Number of Elements in Subset,Medium,"Array, Hash Table, Enumeration",c,Wrong Answer,218 / 731
+3020,Find the Maximum Number of Elements in Subset,Medium,"Array, Hash Table, Enumeration",cpp,Wrong Answer,118 / 731
+3020,Find the Maximum Number of Elements in Subset,Medium,"Array, Hash Table, Enumeration",java,Runtime Error,0 / 731
+3020,Find the Maximum Number of Elements in Subset,Medium,"Array, Hash Table, Enumeration",python3,Wrong Answer,18 / 731
+3021,Alice and Bob Playing Flower Game,Medium,Math,c,Wrong Answer,375 / 537
+3021,Alice and Bob Playing Flower Game,Medium,Math,cpp,Wrong Answer,376 / 537
+3021,Alice and Bob Playing Flower Game,Medium,Math,java,Time Limit Exceeded,522 / 537
+3021,Alice and Bob Playing Flower Game,Medium,Math,python3,Runtime Error,0 / 537
+3022,Minimize OR of Remaining Elements Using Operations,Hard,"Array, Greedy, Bit Manipulation",c,Wrong Answer,284 / 822
+3022,Minimize OR of Remaining Elements Using Operations,Hard,"Array, Greedy, Bit Manipulation",cpp,Wrong Answer,443 / 822
+3022,Minimize OR of Remaining Elements Using Operations,Hard,"Array, Greedy, Bit Manipulation",java,Wrong Answer,220 / 822
+3022,Minimize OR of Remaining Elements Using Operations,Hard,"Array, Greedy, Bit Manipulation",python3,Wrong Answer,176 / 822
+3024,Type of Triangle,Easy,"Array, Math, Sorting",c,Accepted,1 / 1
+3024,Type of Triangle,Easy,"Array, Math, Sorting",cpp,Accepted,1 / 1
+3024,Type of Triangle,Easy,"Array, Math, Sorting",java,Accepted,1 / 1
+3024,Type of Triangle,Easy,"Array, Math, Sorting",python3,Accepted,1 / 1
+3025,Find the Number of Ways to Place People I,Medium,"Array, Math, Geometry, Sorting, Enumeration",c,Accepted,1 / 1
+3025,Find the Number of Ways to Place People I,Medium,"Array, Math, Geometry, Sorting, Enumeration",cpp,Wrong Answer,110 / 955
+3025,Find the Number of Ways to Place People I,Medium,"Array, Math, Geometry, Sorting, Enumeration",java,Accepted,1 / 1
+3025,Find the Number of Ways to Place People I,Medium,"Array, Math, Geometry, Sorting, Enumeration",python3,Wrong Answer,67 / 955
+3026,Maximum Good Subarray Sum,Medium,"Array, Hash Table, Prefix Sum",c,Time Limit Exceeded,768 / 782
+3026,Maximum Good Subarray Sum,Medium,"Array, Hash Table, Prefix Sum",cpp,Wrong Answer,71 / 782
+3026,Maximum Good Subarray Sum,Medium,"Array, Hash Table, Prefix Sum",java,Wrong Answer,137 / 782
+3026,Maximum Good Subarray Sum,Medium,"Array, Hash Table, Prefix Sum",python3,Wrong Answer,103 / 782
+3027,Find the Number of Ways to Place People II,Hard,"Array, Math, Geometry, Sorting, Enumeration",c,Wrong Answer,187 / 550
+3027,Find the Number of Ways to Place People II,Hard,"Array, Math, Geometry, Sorting, Enumeration",cpp,Wrong Answer,213 / 550
+3027,Find the Number of Ways to Place People II,Hard,"Array, Math, Geometry, Sorting, Enumeration",java,Accepted,1 / 1
+3027,Find the Number of Ways to Place People II,Hard,"Array, Math, Geometry, Sorting, Enumeration",python3,Wrong Answer,10 / 550
+3028,Ant on the Boundary,Easy,"Array, Simulation, Prefix Sum",c,Accepted,1 / 1
+3028,Ant on the Boundary,Easy,"Array, Simulation, Prefix Sum",cpp,Accepted,1 / 1
+3028,Ant on the Boundary,Easy,"Array, Simulation, Prefix Sum",java,Accepted,1 / 1
+3028,Ant on the Boundary,Easy,"Array, Simulation, Prefix Sum",python3,Accepted,1 / 1
+3029,Minimum Time to Revert Word to Initial State I,Medium,"String, Rolling Hash, String Matching, Hash Function",c,Wrong Answer,121 / 769
+3029,Minimum Time to Revert Word to Initial State I,Medium,"String, Rolling Hash, String Matching, Hash Function",cpp,Wrong Answer,121 / 769
+3029,Minimum Time to Revert Word to Initial State I,Medium,"String, Rolling Hash, String Matching, Hash Function",java,Wrong Answer,197 / 769
+3029,Minimum Time to Revert Word to Initial State I,Medium,"String, Rolling Hash, String Matching, Hash Function",python3,Wrong Answer,126 / 769
+3030,Find the Grid of Region Average,Medium,"Array, Matrix",c,Wrong Answer,0 / 810
+3030,Find the Grid of Region Average,Medium,"Array, Matrix",cpp,Accepted,1 / 1
+3030,Find the Grid of Region Average,Medium,"Array, Matrix",java,Compile Error,0 / 0
+3030,Find the Grid of Region Average,Medium,"Array, Matrix",python3,Accepted,1 / 1
+3031,Minimum Time to Revert Word to Initial State II,Hard,"String, Rolling Hash, String Matching, Hash Function",c,Wrong Answer,418 / 911
+3031,Minimum Time to Revert Word to Initial State II,Hard,"String, Rolling Hash, String Matching, Hash Function",cpp,Wrong Answer,133 / 911
+3031,Minimum Time to Revert Word to Initial State II,Hard,"String, Rolling Hash, String Matching, Hash Function",java,Wrong Answer,133 / 911
+3031,Minimum Time to Revert Word to Initial State II,Hard,"String, Rolling Hash, String Matching, Hash Function",python3,Wrong Answer,418 / 911
+3033,Modify the Matrix,Easy,"Array, Matrix",c,Accepted,1 / 1
+3033,Modify the Matrix,Easy,"Array, Matrix",cpp,Accepted,1 / 1
+3033,Modify the Matrix,Easy,"Array, Matrix",java,Accepted,1 / 1
+3033,Modify the Matrix,Easy,"Array, Matrix",python3,Accepted,1 / 1
+3034,Number of Subarrays That Match a Pattern I,Medium,"Array, Rolling Hash, String Matching, Hash Function",c,Accepted,1 / 1
+3034,Number of Subarrays That Match a Pattern I,Medium,"Array, Rolling Hash, String Matching, Hash Function",cpp,Accepted,1 / 1
+3034,Number of Subarrays That Match a Pattern I,Medium,"Array, Rolling Hash, String Matching, Hash Function",java,Accepted,1 / 1
+3034,Number of Subarrays That Match a Pattern I,Medium,"Array, Rolling Hash, String Matching, Hash Function",python3,Runtime Error,0 / 790
+3035,Maximum Palindromes After Operations,Medium,"Array, Hash Table, String, Greedy, Sorting, Counting",c,Wrong Answer,46 / 507
+3035,Maximum Palindromes After Operations,Medium,"Array, Hash Table, String, Greedy, Sorting, Counting",cpp,Wrong Answer,140 / 507
+3035,Maximum Palindromes After Operations,Medium,"Array, Hash Table, String, Greedy, Sorting, Counting",java,Wrong Answer,388 / 507
+3035,Maximum Palindromes After Operations,Medium,"Array, Hash Table, String, Greedy, Sorting, Counting",python3,Wrong Answer,151 / 507
+3036,Number of Subarrays That Match a Pattern II,Hard,"Array, Rolling Hash, String Matching, Hash Function",c,Time Limit Exceeded,775 / 792
+3036,Number of Subarrays That Match a Pattern II,Hard,"Array, Rolling Hash, String Matching, Hash Function",cpp,Time Limit Exceeded,775 / 792
+3036,Number of Subarrays That Match a Pattern II,Hard,"Array, Rolling Hash, String Matching, Hash Function",java,Time Limit Exceeded,775 / 792
+3036,Number of Subarrays That Match a Pattern II,Hard,"Array, Rolling Hash, String Matching, Hash Function",python3,Runtime Error,0 / 792
+3038,Maximum Number of Operations With the Same Score I,Easy,"Array, Simulation",c,Wrong Answer,291 / 557
+3038,Maximum Number of Operations With the Same Score I,Easy,"Array, Simulation",cpp,Wrong Answer,506 / 557
+3038,Maximum Number of Operations With the Same Score I,Easy,"Array, Simulation",java,Wrong Answer,506 / 557
+3038,Maximum Number of Operations With the Same Score I,Easy,"Array, Simulation",python3,Wrong Answer,465 / 557
+3039,Apply Operations to Make String Empty,Medium,"Array, Hash Table, Sorting, Counting",c,Wrong Answer,0 / 697
+3039,Apply Operations to Make String Empty,Medium,"Array, Hash Table, Sorting, Counting",cpp,Time Limit Exceeded,656 / 697
+3039,Apply Operations to Make String Empty,Medium,"Array, Hash Table, Sorting, Counting",java,Time Limit Exceeded,656 / 697
+3039,Apply Operations to Make String Empty,Medium,"Array, Hash Table, Sorting, Counting",python3,Time Limit Exceeded,656 / 697
+3040,Maximum Number of Operations With the Same Score II,Medium,"Array, Dynamic Programming, Memoization",c,Wrong Answer,120 / 549
+3040,Maximum Number of Operations With the Same Score II,Medium,"Array, Dynamic Programming, Memoization",cpp,Wrong Answer,50 / 549
+3040,Maximum Number of Operations With the Same Score II,Medium,"Array, Dynamic Programming, Memoization",java,Wrong Answer,11 / 549
+3040,Maximum Number of Operations With the Same Score II,Medium,"Array, Dynamic Programming, Memoization",python3,Wrong Answer,103 / 549
+3041,Maximize Consecutive Elements in an Array After Modification,Hard,"Array, Dynamic Programming, Sorting",c,Compile Error,0 / 0
+3041,Maximize Consecutive Elements in an Array After Modification,Hard,"Array, Dynamic Programming, Sorting",cpp,Compile Error,0 / 0
+3041,Maximize Consecutive Elements in an Array After Modification,Hard,"Array, Dynamic Programming, Sorting",java,Compile Error,0 / 0
+3041,Maximize Consecutive Elements in an Array After Modification,Hard,"Array, Dynamic Programming, Sorting",python3,Runtime Error,0 / 668
+3042,Count Prefix and Suffix Pairs I,Easy,"Array, String, Trie, Rolling Hash, String Matching, Hash Function",c,Accepted,1 / 1
+3042,Count Prefix and Suffix Pairs I,Easy,"Array, String, Trie, Rolling Hash, String Matching, Hash Function",cpp,Accepted,1 / 1
+3042,Count Prefix and Suffix Pairs I,Easy,"Array, String, Trie, Rolling Hash, String Matching, Hash Function",java,Accepted,1 / 1
+3042,Count Prefix and Suffix Pairs I,Easy,"Array, String, Trie, Rolling Hash, String Matching, Hash Function",python3,Accepted,1 / 1
+3043,Find the Length of the Longest Common Prefix,Medium,"Array, Hash Table, String, Trie",c,Time Limit Exceeded,699 / 718
+3043,Find the Length of the Longest Common Prefix,Medium,"Array, Hash Table, String, Trie",cpp,Accepted,1 / 1
+3043,Find the Length of the Longest Common Prefix,Medium,"Array, Hash Table, String, Trie",java,Wrong Answer,379 / 718
+3043,Find the Length of the Longest Common Prefix,Medium,"Array, Hash Table, String, Trie",python3,Wrong Answer,265 / 718
+3044,Most Frequent Prime,Medium,"Array, Hash Table, Math, Matrix, Counting, Enumeration, Number Theory",c,Time Limit Exceeded,974 / 974
+3044,Most Frequent Prime,Medium,"Array, Hash Table, Math, Matrix, Counting, Enumeration, Number Theory",cpp,Accepted,1 / 1
+3044,Most Frequent Prime,Medium,"Array, Hash Table, Math, Matrix, Counting, Enumeration, Number Theory",java,Accepted,1 / 1
+3044,Most Frequent Prime,Medium,"Array, Hash Table, Math, Matrix, Counting, Enumeration, Number Theory",python3,Runtime Error,0 / 974
+3045,Count Prefix and Suffix Pairs II,Hard,"Array, String, Trie, Rolling Hash, String Matching, Hash Function",c,Time Limit Exceeded,591 / 596
+3045,Count Prefix and Suffix Pairs II,Hard,"Array, String, Trie, Rolling Hash, String Matching, Hash Function",cpp,Memory Limit Exceeded,593 / 596
+3045,Count Prefix and Suffix Pairs II,Hard,"Array, String, Trie, Rolling Hash, String Matching, Hash Function",java,Time Limit Exceeded,591 / 596
+3045,Count Prefix and Suffix Pairs II,Hard,"Array, String, Trie, Rolling Hash, String Matching, Hash Function",python3,Time Limit Exceeded,591 / 596
+3046,Split the Array,Easy,"Array, Hash Table, Counting",c,Wrong Answer,650 / 715
+3046,Split the Array,Easy,"Array, Hash Table, Counting",cpp,Wrong Answer,479 / 715
+3046,Split the Array,Easy,"Array, Hash Table, Counting",java,Wrong Answer,658 / 715
+3046,Split the Array,Easy,"Array, Hash Table, Counting",python3,Wrong Answer,651 / 715
+3047,Find the Largest Area of Square Inside Two Rectangles,Medium,"Array, Math, Geometry",c,Accepted,1 / 1
+3047,Find the Largest Area of Square Inside Two Rectangles,Medium,"Array, Math, Geometry",cpp,Accepted,1 / 1
+3047,Find the Largest Area of Square Inside Two Rectangles,Medium,"Array, Math, Geometry",java,Accepted,1 / 1
+3047,Find the Largest Area of Square Inside Two Rectangles,Medium,"Array, Math, Geometry",python3,Accepted,1 / 1
+3048,Earliest Second to Mark Indices I,Medium,"Array, Binary Search",c,Wrong Answer,171 / 570
+3048,Earliest Second to Mark Indices I,Medium,"Array, Binary Search",cpp,Wrong Answer,312 / 570
+3048,Earliest Second to Mark Indices I,Medium,"Array, Binary Search",java,Wrong Answer,364 / 570
+3048,Earliest Second to Mark Indices I,Medium,"Array, Binary Search",python3,Wrong Answer,333 / 570
+3049,Earliest Second to Mark Indices II,Hard,"Array, Binary Search, Greedy, Heap (Priority Queue)",c,Wrong Answer,163 / 510
+3049,Earliest Second to Mark Indices II,Hard,"Array, Binary Search, Greedy, Heap (Priority Queue)",cpp,Wrong Answer,154 / 510
+3049,Earliest Second to Mark Indices II,Hard,"Array, Binary Search, Greedy, Heap (Priority Queue)",java,Wrong Answer,168 / 510
+3049,Earliest Second to Mark Indices II,Hard,"Array, Binary Search, Greedy, Heap (Priority Queue)",python3,Wrong Answer,153 / 510
+3065,Minimum Operations to Exceed Threshold Value I,Easy,Array,c,Accepted,1 / 1
+3065,Minimum Operations to Exceed Threshold Value I,Easy,Array,cpp,Accepted,1 / 1
+3065,Minimum Operations to Exceed Threshold Value I,Easy,Array,java,Accepted,1 / 1
+3065,Minimum Operations to Exceed Threshold Value I,Easy,Array,python3,Accepted,1 / 1
+3066,Minimum Operations to Exceed Threshold Value II,Medium,"Array, Heap (Priority Queue), Simulation",c,Wrong Answer,0 / 675
+3066,Minimum Operations to Exceed Threshold Value II,Medium,"Array, Heap (Priority Queue), Simulation",cpp,Runtime Error,2 / 675
+3066,Minimum Operations to Exceed Threshold Value II,Medium,"Array, Heap (Priority Queue), Simulation",java,Runtime Error,2 / 675
+3066,Minimum Operations to Exceed Threshold Value II,Medium,"Array, Heap (Priority Queue), Simulation",python3,Accepted,1 / 1
+3067,Count Pairs of Connectable Servers in a Weighted Tree Network,Medium,"Array, Tree, Depth-First Search",c,Wrong Answer,135 / 716
+3067,Count Pairs of Connectable Servers in a Weighted Tree Network,Medium,"Array, Tree, Depth-First Search",cpp,Wrong Answer,30 / 716
+3067,Count Pairs of Connectable Servers in a Weighted Tree Network,Medium,"Array, Tree, Depth-First Search",java,Wrong Answer,185 / 716
+3067,Count Pairs of Connectable Servers in a Weighted Tree Network,Medium,"Array, Tree, Depth-First Search",python3,Wrong Answer,65 / 716
+3068,Find the Maximum Sum of Node Values,Hard,"Array, Dynamic Programming, Greedy, Bit Manipulation, Tree, Sorting",c,Wrong Answer,364 / 717
+3068,Find the Maximum Sum of Node Values,Hard,"Array, Dynamic Programming, Greedy, Bit Manipulation, Tree, Sorting",cpp,Wrong Answer,366 / 717
+3068,Find the Maximum Sum of Node Values,Hard,"Array, Dynamic Programming, Greedy, Bit Manipulation, Tree, Sorting",java,Wrong Answer,45 / 717
+3068,Find the Maximum Sum of Node Values,Hard,"Array, Dynamic Programming, Greedy, Bit Manipulation, Tree, Sorting",python3,Wrong Answer,176 / 717
+3069,Distribute Elements Into Two Arrays I,Easy,"Array, Simulation",c,Accepted,1 / 1
+3069,Distribute Elements Into Two Arrays I,Easy,"Array, Simulation",cpp,Accepted,1 / 1
+3069,Distribute Elements Into Two Arrays I,Easy,"Array, Simulation",java,Accepted,1 / 1
+3069,Distribute Elements Into Two Arrays I,Easy,"Array, Simulation",python3,Accepted,1 / 1
+3070,Count Submatrices with Top-Left Element and Sum Less Than k,Medium,"Array, Matrix, Prefix Sum",c,Accepted,1 / 1
+3070,Count Submatrices with Top-Left Element and Sum Less Than k,Medium,"Array, Matrix, Prefix Sum",cpp,Accepted,1 / 1
+3070,Count Submatrices with Top-Left Element and Sum Less Than k,Medium,"Array, Matrix, Prefix Sum",java,Wrong Answer,76 / 859
+3070,Count Submatrices with Top-Left Element and Sum Less Than k,Medium,"Array, Matrix, Prefix Sum",python3,Wrong Answer,184 / 859
+3071,Minimum Operations to Write the Letter Y on a Grid,Medium,"Array, Hash Table, Matrix, Counting",c,Accepted,1 / 1
+3071,Minimum Operations to Write the Letter Y on a Grid,Medium,"Array, Hash Table, Matrix, Counting",cpp,Wrong Answer,245 / 909
+3071,Minimum Operations to Write the Letter Y on a Grid,Medium,"Array, Hash Table, Matrix, Counting",java,Wrong Answer,245 / 909
+3071,Minimum Operations to Write the Letter Y on a Grid,Medium,"Array, Hash Table, Matrix, Counting",python3,Accepted,1 / 1
+3072,Distribute Elements Into Two Arrays II,Hard,"Array, Binary Indexed Tree, Segment Tree, Simulation",c,Wrong Answer,223 / 784
+3072,Distribute Elements Into Two Arrays II,Hard,"Array, Binary Indexed Tree, Segment Tree, Simulation",cpp,Wrong Answer,13 / 784
+3072,Distribute Elements Into Two Arrays II,Hard,"Array, Binary Indexed Tree, Segment Tree, Simulation",java,Compile Error,0 / 0
+3072,Distribute Elements Into Two Arrays II,Hard,"Array, Binary Indexed Tree, Segment Tree, Simulation",python3,Wrong Answer,223 / 784
+3074,Apple Redistribution into Boxes,Easy,"Array, Greedy, Sorting",c,Accepted,1 / 1
+3074,Apple Redistribution into Boxes,Easy,"Array, Greedy, Sorting",cpp,Accepted,1 / 1
+3074,Apple Redistribution into Boxes,Easy,"Array, Greedy, Sorting",java,Accepted,1 / 1
+3074,Apple Redistribution into Boxes,Easy,"Array, Greedy, Sorting",python3,Accepted,1 / 1
+3075,Maximize Happiness of Selected Children,Medium,"Array, Greedy, Sorting",c,Compile Error,0 / 0
+3075,Maximize Happiness of Selected Children,Medium,"Array, Greedy, Sorting",cpp,Wrong Answer,1 / 674
+3075,Maximize Happiness of Selected Children,Medium,"Array, Greedy, Sorting",java,Wrong Answer,103 / 674
+3075,Maximize Happiness of Selected Children,Medium,"Array, Greedy, Sorting",python3,Wrong Answer,103 / 674
+3076,Shortest Uncommon Substring in an Array,Medium,"Array, Hash Table, String, Trie",c,Accepted,1 / 1
+3076,Shortest Uncommon Substring in an Array,Medium,"Array, Hash Table, String, Trie",cpp,Wrong Answer,157 / 631
+3076,Shortest Uncommon Substring in an Array,Medium,"Array, Hash Table, String, Trie",java,Accepted,1 / 1
+3076,Shortest Uncommon Substring in an Array,Medium,"Array, Hash Table, String, Trie",python3,Accepted,1 / 1
+3077,Maximum Strength of K Disjoint Subarrays,Hard,"Array, Dynamic Programming, Prefix Sum",c,Wrong Answer,4 / 802
+3077,Maximum Strength of K Disjoint Subarrays,Hard,"Array, Dynamic Programming, Prefix Sum",cpp,Runtime Error,0 / 802
+3077,Maximum Strength of K Disjoint Subarrays,Hard,"Array, Dynamic Programming, Prefix Sum",java,Runtime Error,0 / 802
+3077,Maximum Strength of K Disjoint Subarrays,Hard,"Array, Dynamic Programming, Prefix Sum",python3,Wrong Answer,56 / 802
+3079,Find the Sum of Encrypted Integers,Easy,"Array, Math",c,Accepted,1 / 1
+3079,Find the Sum of Encrypted Integers,Easy,"Array, Math",cpp,Accepted,1 / 1
+3079,Find the Sum of Encrypted Integers,Easy,"Array, Math",java,Accepted,1 / 1
+3079,Find the Sum of Encrypted Integers,Easy,"Array, Math",python3,Accepted,1 / 1
+3080,Mark Elements on Array by Performing Queries,Medium,"Array, Hash Table, Sorting, Heap (Priority Queue), Simulation",c,Wrong Answer,122 / 660
+3080,Mark Elements on Array by Performing Queries,Medium,"Array, Hash Table, Sorting, Heap (Priority Queue), Simulation",cpp,Accepted,1 / 1
+3080,Mark Elements on Array by Performing Queries,Medium,"Array, Hash Table, Sorting, Heap (Priority Queue), Simulation",java,Runtime Error,0 / 660
+3080,Mark Elements on Array by Performing Queries,Medium,"Array, Hash Table, Sorting, Heap (Priority Queue), Simulation",python3,Runtime Error,0 / 660
+3081,Replace Question Marks in String to Minimize Its Value,Medium,"Hash Table, String, Greedy, Sorting, Heap (Priority Queue), Counting",c,Wrong Answer,147 / 548
+3081,Replace Question Marks in String to Minimize Its Value,Medium,"Hash Table, String, Greedy, Sorting, Heap (Priority Queue), Counting",cpp,Wrong Answer,147 / 548
+3081,Replace Question Marks in String to Minimize Its Value,Medium,"Hash Table, String, Greedy, Sorting, Heap (Priority Queue), Counting",java,Wrong Answer,60 / 548
+3081,Replace Question Marks in String to Minimize Its Value,Medium,"Hash Table, String, Greedy, Sorting, Heap (Priority Queue), Counting",python3,Wrong Answer,59 / 548
+3082,Find the Sum of the Power of All Subsequences,Hard,"Array, Dynamic Programming",c,Wrong Answer,91 / 577
+3082,Find the Sum of the Power of All Subsequences,Hard,"Array, Dynamic Programming",cpp,Wrong Answer,91 / 577
+3082,Find the Sum of the Power of All Subsequences,Hard,"Array, Dynamic Programming",java,Wrong Answer,91 / 577
+3082,Find the Sum of the Power of All Subsequences,Hard,"Array, Dynamic Programming",python3,Wrong Answer,91 / 577
+3083,Existence of a Substring in a String and Its Reverse,Easy,"Hash Table, String",c,Wrong Answer,537 / 717
+3083,Existence of a Substring in a String and Its Reverse,Easy,"Hash Table, String",cpp,Wrong Answer,537 / 717
+3083,Existence of a Substring in a String and Its Reverse,Easy,"Hash Table, String",java,Accepted,1 / 1
+3083,Existence of a Substring in a String and Its Reverse,Easy,"Hash Table, String",python3,Accepted,1 / 1
+3084,Count Substrings Starting and Ending with Given Character,Medium,"Math, String, Counting",c,Accepted,1 / 1
+3084,Count Substrings Starting and Ending with Given Character,Medium,"Math, String, Counting",cpp,Wrong Answer,125 / 669
+3084,Count Substrings Starting and Ending with Given Character,Medium,"Math, String, Counting",java,Accepted,1 / 1
+3084,Count Substrings Starting and Ending with Given Character,Medium,"Math, String, Counting",python3,Wrong Answer,150 / 669
+3085,Minimum Deletions to Make String K-Special,Medium,"Hash Table, String, Greedy, Sorting, Counting",c,Wrong Answer,538 / 732
+3085,Minimum Deletions to Make String K-Special,Medium,"Hash Table, String, Greedy, Sorting, Counting",cpp,Wrong Answer,376 / 732
+3085,Minimum Deletions to Make String K-Special,Medium,"Hash Table, String, Greedy, Sorting, Counting",java,Wrong Answer,203 / 732
+3085,Minimum Deletions to Make String K-Special,Medium,"Hash Table, String, Greedy, Sorting, Counting",python3,Wrong Answer,0 / 732
+3086,Minimum Moves to Pick K Ones,Hard,"Array, Greedy, Sliding Window, Prefix Sum",c,Wrong Answer,1 / 825
+3086,Minimum Moves to Pick K Ones,Hard,"Array, Greedy, Sliding Window, Prefix Sum",cpp,Wrong Answer,0 / 825
+3086,Minimum Moves to Pick K Ones,Hard,"Array, Greedy, Sliding Window, Prefix Sum",java,Wrong Answer,0 / 825
+3086,Minimum Moves to Pick K Ones,Hard,"Array, Greedy, Sliding Window, Prefix Sum",python3,Runtime Error,1 / 825
+3090,Maximum Length Substring With Two Occurrences,Easy,"Hash Table, String, Sliding Window",c,Accepted,1 / 1
+3090,Maximum Length Substring With Two Occurrences,Easy,"Hash Table, String, Sliding Window",cpp,Accepted,1 / 1
+3090,Maximum Length Substring With Two Occurrences,Easy,"Hash Table, String, Sliding Window",java,Accepted,1 / 1
+3090,Maximum Length Substring With Two Occurrences,Easy,"Hash Table, String, Sliding Window",python3,Accepted,1 / 1
+3091,Apply Operations to Make Sum of Array Greater Than or Equal to k,Medium,"Math, Greedy, Enumeration",c,Wrong Answer,3 / 658
+3091,Apply Operations to Make Sum of Array Greater Than or Equal to k,Medium,"Math, Greedy, Enumeration",cpp,Wrong Answer,12 / 658
+3091,Apply Operations to Make Sum of Array Greater Than or Equal to k,Medium,"Math, Greedy, Enumeration",java,Wrong Answer,3 / 658
+3091,Apply Operations to Make Sum of Array Greater Than or Equal to k,Medium,"Math, Greedy, Enumeration",python3,Wrong Answer,3 / 658
+3092,Most Frequent IDs,Medium,"Array, Hash Table, Heap (Priority Queue), Ordered Set",c,Wrong Answer,513 / 622
+3092,Most Frequent IDs,Medium,"Array, Hash Table, Heap (Priority Queue), Ordered Set",cpp,Wrong Answer,534 / 622
+3092,Most Frequent IDs,Medium,"Array, Hash Table, Heap (Priority Queue), Ordered Set",java,Time Limit Exceeded,563 / 622
+3092,Most Frequent IDs,Medium,"Array, Hash Table, Heap (Priority Queue), Ordered Set",python3,Wrong Answer,534 / 622
+3093,Longest Common Suffix Queries,Hard,"Array, String, Trie",c,Time Limit Exceeded,809 / 816
+3093,Longest Common Suffix Queries,Hard,"Array, String, Trie",cpp,Time Limit Exceeded,814 / 816
+3093,Longest Common Suffix Queries,Hard,"Array, String, Trie",java,Time Limit Exceeded,812 / 816
+3093,Longest Common Suffix Queries,Hard,"Array, String, Trie",python3,Time Limit Exceeded,806 / 816
+3095,Shortest Subarray With OR at Least K I,Easy,"Array, Bit Manipulation, Sliding Window",c,Accepted,1 / 1
+3095,Shortest Subarray With OR at Least K I,Easy,"Array, Bit Manipulation, Sliding Window",cpp,Accepted,1 / 1
+3095,Shortest Subarray With OR at Least K I,Easy,"Array, Bit Manipulation, Sliding Window",java,Accepted,1 / 1
+3095,Shortest Subarray With OR at Least K I,Easy,"Array, Bit Manipulation, Sliding Window",python3,Accepted,1 / 1
+3096,Minimum Levels to Gain More Points,Medium,"Array, Prefix Sum",c,Accepted,1 / 1
+3096,Minimum Levels to Gain More Points,Medium,"Array, Prefix Sum",cpp,Accepted,1 / 1
+3096,Minimum Levels to Gain More Points,Medium,"Array, Prefix Sum",java,Accepted,1 / 1
+3096,Minimum Levels to Gain More Points,Medium,"Array, Prefix Sum",python3,Accepted,1 / 1
+3097,Shortest Subarray With OR at Least K II,Medium,"Array, Bit Manipulation, Sliding Window",c,Wrong Answer,492 / 718
+3097,Shortest Subarray With OR at Least K II,Medium,"Array, Bit Manipulation, Sliding Window",cpp,Runtime Error,2 / 718
+3097,Shortest Subarray With OR at Least K II,Medium,"Array, Bit Manipulation, Sliding Window",java,Runtime Error,2 / 718
+3097,Shortest Subarray With OR at Least K II,Medium,"Array, Bit Manipulation, Sliding Window",python3,Time Limit Exceeded,715 / 718
+3098,Find the Sum of Subsequence Powers,Hard,"Array, Dynamic Programming, Sorting",c,Wrong Answer,48 / 549
+3098,Find the Sum of Subsequence Powers,Hard,"Array, Dynamic Programming, Sorting",cpp,Wrong Answer,178 / 549
+3098,Find the Sum of Subsequence Powers,Hard,"Array, Dynamic Programming, Sorting",java,Wrong Answer,178 / 549
+3098,Find the Sum of Subsequence Powers,Hard,"Array, Dynamic Programming, Sorting",python3,Time Limit Exceeded,382 / 549
+3099,Harshad Number,Easy,Math,c,Accepted,1 / 1
+3099,Harshad Number,Easy,Math,cpp,Accepted,1 / 1
+3099,Harshad Number,Easy,Math,java,Accepted,1 / 1
+3099,Harshad Number,Easy,Math,python3,Accepted,1 / 1
+3100,Water Bottles II,Medium,"Math, Simulation",c,Wrong Answer,727 / 958
+3100,Water Bottles II,Medium,"Math, Simulation",cpp,Wrong Answer,727 / 958
+3100,Water Bottles II,Medium,"Math, Simulation",java,Compile Error,0 / 0
+3100,Water Bottles II,Medium,"Math, Simulation",python3,Wrong Answer,727 / 958
+3101,Count Alternating Subarrays,Medium,"Array, Math",c,Accepted,1 / 1
+3101,Count Alternating Subarrays,Medium,"Array, Math",cpp,Accepted,1 / 1
+3101,Count Alternating Subarrays,Medium,"Array, Math",java,Accepted,1 / 1
+3101,Count Alternating Subarrays,Medium,"Array, Math",python3,Accepted,1 / 1
+3102,Minimize Manhattan Distances,Hard,"Array, Math, Geometry, Sorting, Ordered Set",c,Runtime Error,0 / 537
+3102,Minimize Manhattan Distances,Hard,"Array, Math, Geometry, Sorting, Ordered Set",cpp,Time Limit Exceeded,527 / 537
+3102,Minimize Manhattan Distances,Hard,"Array, Math, Geometry, Sorting, Ordered Set",java,Compile Error,0 / 0
+3102,Minimize Manhattan Distances,Hard,"Array, Math, Geometry, Sorting, Ordered Set",python3,Runtime Error,0 / 537
+3105,Longest Strictly Increasing or Strictly Decreasing Subarray,Easy,Array,c,Accepted,1 / 1
+3105,Longest Strictly Increasing or Strictly Decreasing Subarray,Easy,Array,cpp,Accepted,1 / 1
+3105,Longest Strictly Increasing or Strictly Decreasing Subarray,Easy,Array,java,Accepted,1 / 1
+3105,Longest Strictly Increasing or Strictly Decreasing Subarray,Easy,Array,python3,Accepted,1 / 1
+3106,Lexicographically Smallest String After Operations With Constraint,Medium,"String, Greedy",c,Wrong Answer,288 / 600
+3106,Lexicographically Smallest String After Operations With Constraint,Medium,"String, Greedy",cpp,Accepted,1 / 1
+3106,Lexicographically Smallest String After Operations With Constraint,Medium,"String, Greedy",java,Wrong Answer,288 / 600
+3106,Lexicographically Smallest String After Operations With Constraint,Medium,"String, Greedy",python3,Wrong Answer,288 / 600
+3107,Minimum Operations to Make Median of Array Equal to K,Medium,"Array, Greedy, Sorting",c,Wrong Answer,155 / 723
+3107,Minimum Operations to Make Median of Array Equal to K,Medium,"Array, Greedy, Sorting",cpp,Wrong Answer,83 / 723
+3107,Minimum Operations to Make Median of Array Equal to K,Medium,"Array, Greedy, Sorting",java,Wrong Answer,123 / 723
+3107,Minimum Operations to Make Median of Array Equal to K,Medium,"Array, Greedy, Sorting",python3,Wrong Answer,318 / 723
+3108,Minimum Cost Walk in Weighted Graph,Hard,"Array, Bit Manipulation, Union Find, Graph",c,Runtime Error,546 / 548
+3108,Minimum Cost Walk in Weighted Graph,Hard,"Array, Bit Manipulation, Union Find, Graph",cpp,Wrong Answer,393 / 548
+3108,Minimum Cost Walk in Weighted Graph,Hard,"Array, Bit Manipulation, Union Find, Graph",java,Wrong Answer,173 / 548
+3108,Minimum Cost Walk in Weighted Graph,Hard,"Array, Bit Manipulation, Union Find, Graph",python3,Wrong Answer,188 / 548
+3110,Score of a String,Easy,String,c,Accepted,1 / 1
+3110,Score of a String,Easy,String,cpp,Accepted,1 / 1
+3110,Score of a String,Easy,String,java,Accepted,1 / 1
+3110,Score of a String,Easy,String,python3,Accepted,1 / 1
+3111,Minimum Rectangles to Cover Points,Medium,"Array, Greedy, Sorting",c,Accepted,1 / 1
+3111,Minimum Rectangles to Cover Points,Medium,"Array, Greedy, Sorting",cpp,Accepted,1 / 1
+3111,Minimum Rectangles to Cover Points,Medium,"Array, Greedy, Sorting",java,Accepted,1 / 1
+3111,Minimum Rectangles to Cover Points,Medium,"Array, Greedy, Sorting",python3,Accepted,1 / 1
+3112,Minimum Time to Visit Disappearing Nodes,Medium,"Array, Graph, Heap (Priority Queue), Shortest Path",c,Wrong Answer,474 / 533
+3112,Minimum Time to Visit Disappearing Nodes,Medium,"Array, Graph, Heap (Priority Queue), Shortest Path",cpp,Wrong Answer,427 / 533
+3112,Minimum Time to Visit Disappearing Nodes,Medium,"Array, Graph, Heap (Priority Queue), Shortest Path",java,Wrong Answer,464 / 533
+3112,Minimum Time to Visit Disappearing Nodes,Medium,"Array, Graph, Heap (Priority Queue), Shortest Path",python3,Wrong Answer,427 / 533
+3113,Find the Number of Subarrays Where Boundary Elements Are Maximum,Hard,"Array, Binary Search, Stack, Monotonic Stack",c,Wrong Answer,575 / 889
+3113,Find the Number of Subarrays Where Boundary Elements Are Maximum,Hard,"Array, Binary Search, Stack, Monotonic Stack",cpp,Time Limit Exceeded,877 / 889
+3113,Find the Number of Subarrays Where Boundary Elements Are Maximum,Hard,"Array, Binary Search, Stack, Monotonic Stack",java,Time Limit Exceeded,882 / 889
+3113,Find the Number of Subarrays Where Boundary Elements Are Maximum,Hard,"Array, Binary Search, Stack, Monotonic Stack",python3,Wrong Answer,8 / 889
+3114,Latest Time You Can Obtain After Replacing Characters,Easy,"String, Enumeration",c,Compile Error,0 / 0
+3114,Latest Time You Can Obtain After Replacing Characters,Easy,"String, Enumeration",cpp,Wrong Answer,882 / 908
+3114,Latest Time You Can Obtain After Replacing Characters,Easy,"String, Enumeration",java,Accepted,1 / 1
+3114,Latest Time You Can Obtain After Replacing Characters,Easy,"String, Enumeration",python3,Wrong Answer,565 / 908
+3115,Maximum Prime Difference,Medium,"Array, Math, Number Theory",c,Accepted,1 / 1
+3115,Maximum Prime Difference,Medium,"Array, Math, Number Theory",cpp,Accepted,1 / 1
+3115,Maximum Prime Difference,Medium,"Array, Math, Number Theory",java,Accepted,1 / 1
+3115,Maximum Prime Difference,Medium,"Array, Math, Number Theory",python3,Accepted,1 / 1
+3116,Kth Smallest Amount With Single Denomination Combination,Hard,"Array, Math, Binary Search, Bit Manipulation, Combinatorics, Number Theory",c,Wrong Answer,284 / 561
+3116,Kth Smallest Amount With Single Denomination Combination,Hard,"Array, Math, Binary Search, Bit Manipulation, Combinatorics, Number Theory",cpp,Wrong Answer,35 / 561
+3116,Kth Smallest Amount With Single Denomination Combination,Hard,"Array, Math, Binary Search, Bit Manipulation, Combinatorics, Number Theory",java,Wrong Answer,376 / 561
+3116,Kth Smallest Amount With Single Denomination Combination,Hard,"Array, Math, Binary Search, Bit Manipulation, Combinatorics, Number Theory",python3,Wrong Answer,234 / 561
+3117,Minimum Sum of Values by Dividing Array,Hard,"Array, Binary Search, Dynamic Programming, Bit Manipulation, Segment Tree, Queue",c,Time Limit Exceeded,501 / 511
+3117,Minimum Sum of Values by Dividing Array,Hard,"Array, Binary Search, Dynamic Programming, Bit Manipulation, Segment Tree, Queue",cpp,Wrong Answer,54 / 511
+3117,Minimum Sum of Values by Dividing Array,Hard,"Array, Binary Search, Dynamic Programming, Bit Manipulation, Segment Tree, Queue",java,Time Limit Exceeded,504 / 511
+3117,Minimum Sum of Values by Dividing Array,Hard,"Array, Binary Search, Dynamic Programming, Bit Manipulation, Segment Tree, Queue",python3,Time Limit Exceeded,499 / 511
+3120,Count the Number of Special Characters I,Easy,"Hash Table, String",c,Accepted,1 / 1
+3120,Count the Number of Special Characters I,Easy,"Hash Table, String",cpp,Accepted,1 / 1
+3120,Count the Number of Special Characters I,Easy,"Hash Table, String",java,Accepted,1 / 1
+3120,Count the Number of Special Characters I,Easy,"Hash Table, String",python3,Wrong Answer,411 / 866
+3121,Count the Number of Special Characters II,Medium,"Hash Table, String",c,Accepted,1 / 1
+3121,Count the Number of Special Characters II,Medium,"Hash Table, String",cpp,Wrong Answer,736 / 896
+3121,Count the Number of Special Characters II,Medium,"Hash Table, String",java,Wrong Answer,736 / 896
+3121,Count the Number of Special Characters II,Medium,"Hash Table, String",python3,Wrong Answer,176 / 896
+3122,Minimum Number of Operations to Satisfy Conditions,Medium,"Array, Dynamic Programming, Matrix",c,Wrong Answer,55 / 658
+3122,Minimum Number of Operations to Satisfy Conditions,Medium,"Array, Dynamic Programming, Matrix",cpp,Wrong Answer,55 / 658
+3122,Minimum Number of Operations to Satisfy Conditions,Medium,"Array, Dynamic Programming, Matrix",java,Wrong Answer,55 / 658
+3122,Minimum Number of Operations to Satisfy Conditions,Medium,"Array, Dynamic Programming, Matrix",python3,Wrong Answer,55 / 658
+3123,Find Edges in Shortest Paths,Hard,"Depth-First Search, Breadth-First Search, Graph, Heap (Priority Queue), Shortest Path",c,Wrong Answer,40 / 536
+3123,Find Edges in Shortest Paths,Hard,"Depth-First Search, Breadth-First Search, Graph, Heap (Priority Queue), Shortest Path",cpp,Runtime Error,18 / 536
+3123,Find Edges in Shortest Paths,Hard,"Depth-First Search, Breadth-First Search, Graph, Heap (Priority Queue), Shortest Path",java,Wrong Answer,41 / 536
+3123,Find Edges in Shortest Paths,Hard,"Depth-First Search, Breadth-First Search, Graph, Heap (Priority Queue), Shortest Path",python3,Wrong Answer,507 / 536
+3127,Make a Square with the Same Color,Easy,"Array, Matrix, Enumeration",c,Accepted,1 / 1
+3127,Make a Square with the Same Color,Easy,"Array, Matrix, Enumeration",cpp,Accepted,1 / 1
+3127,Make a Square with the Same Color,Easy,"Array, Matrix, Enumeration",java,Accepted,1 / 1
+3127,Make a Square with the Same Color,Easy,"Array, Matrix, Enumeration",python3,Accepted,1 / 1
+3128,Right Triangles,Medium,"Array, Hash Table, Math, Combinatorics, Counting",c,Time Limit Exceeded,585 / 637
+3128,Right Triangles,Medium,"Array, Hash Table, Math, Combinatorics, Counting",cpp,Accepted,1 / 1
+3128,Right Triangles,Medium,"Array, Hash Table, Math, Combinatorics, Counting",java,Accepted,1 / 1
+3128,Right Triangles,Medium,"Array, Hash Table, Math, Combinatorics, Counting",python3,Accepted,1 / 1
+3129,Find All Possible Stable Binary Arrays I,Medium,"Dynamic Programming, Prefix Sum",c,Compile Error,0 / 0
+3129,Find All Possible Stable Binary Arrays I,Medium,"Dynamic Programming, Prefix Sum",cpp,Wrong Answer,1 / 670
+3129,Find All Possible Stable Binary Arrays I,Medium,"Dynamic Programming, Prefix Sum",java,Wrong Answer,60 / 670
+3129,Find All Possible Stable Binary Arrays I,Medium,"Dynamic Programming, Prefix Sum",python3,Wrong Answer,91 / 670
+3130,Find All Possible Stable Binary Arrays II,Hard,"Dynamic Programming, Prefix Sum",c,Compile Error,0 / 0
+3130,Find All Possible Stable Binary Arrays II,Hard,"Dynamic Programming, Prefix Sum",cpp,Time Limit Exceeded,572 / 582
+3130,Find All Possible Stable Binary Arrays II,Hard,"Dynamic Programming, Prefix Sum",java,Wrong Answer,33 / 582
+3130,Find All Possible Stable Binary Arrays II,Hard,"Dynamic Programming, Prefix Sum",python3,Memory Limit Exceeded,565 / 582
+3131,Find the Integer Added to Array I,Easy,Array,c,Wrong Answer,158 / 605
+3131,Find the Integer Added to Array I,Easy,Array,cpp,Wrong Answer,158 / 605
+3131,Find the Integer Added to Array I,Easy,Array,java,Wrong Answer,158 / 605
+3131,Find the Integer Added to Array I,Easy,Array,python3,Wrong Answer,158 / 605
+3132,Find the Integer Added to Array II,Medium,"Array, Two Pointers, Sorting, Enumeration",c,Wrong Answer,110 / 560
+3132,Find the Integer Added to Array II,Medium,"Array, Two Pointers, Sorting, Enumeration",cpp,Time Limit Exceeded,502 / 560
+3132,Find the Integer Added to Array II,Medium,"Array, Two Pointers, Sorting, Enumeration",java,Wrong Answer,74 / 560
+3132,Find the Integer Added to Array II,Medium,"Array, Two Pointers, Sorting, Enumeration",python3,Time Limit Exceeded,503 / 560
+3133,Minimum Array End,Medium,Bit Manipulation,c,Compile Error,0 / 0
+3133,Minimum Array End,Medium,Bit Manipulation,cpp,Time Limit Exceeded,656 / 765
+3133,Minimum Array End,Medium,Bit Manipulation,java,Wrong Answer,46 / 765
+3133,Minimum Array End,Medium,Bit Manipulation,python3,Wrong Answer,29 / 765
+3134,Find the Median of the Uniqueness Array,Hard,"Array, Hash Table, Binary Search, Sliding Window",c,Time Limit Exceeded,770 / 792
+3134,Find the Median of the Uniqueness Array,Hard,"Array, Hash Table, Binary Search, Sliding Window",cpp,Time Limit Exceeded,770 / 792
+3134,Find the Median of the Uniqueness Array,Hard,"Array, Hash Table, Binary Search, Sliding Window",java,Wrong Answer,2 / 792
+3134,Find the Median of the Uniqueness Array,Hard,"Array, Hash Table, Binary Search, Sliding Window",python3,Memory Limit Exceeded,770 / 792

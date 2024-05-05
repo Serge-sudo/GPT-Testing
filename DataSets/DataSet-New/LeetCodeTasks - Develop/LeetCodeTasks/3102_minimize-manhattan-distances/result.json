@@ -1,0 +1,18 @@
+{
+    "c": {
+        "pass_cnt": "0 / 537",
+        "result": "Runtime Error"
+    },
+    "cpp": {
+        "pass_cnt": "527 / 537",
+        "result": "Time Limit Exceeded"
+    },
+    "java": {
+        "pass_cnt": "0 / 0",
+        "result": "Compile Error"
+    },
+    "python3": {
+        "pass_cnt": "0 / 537",
+        "result": "Runtime Error"
+    }
+}

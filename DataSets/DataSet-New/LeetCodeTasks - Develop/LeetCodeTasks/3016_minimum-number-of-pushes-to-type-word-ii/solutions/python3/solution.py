@@ -1,18 +1,25 @@
-from collections import defaultdict
-
 class Solution:
     def minimumPushes(self, word: str) -> int:
-        keypad = {
-            'a': 2, 'b': 3, 'c': 4, 'd': 5, 'e': 6, 'f': 7, 'g': 8, 'h': 9,
-            'i': 9, 'j': 0, 'k': 0, 'l': 0, 'm': 0, 'n': 0, 'o': 0, 'p': 0,
-            'q': 0, 'r': 0, 's': 0, 't': 0, 'u': 0, 'v': 0, 'w': 0, 'x': 2,
-            'y': 3, 'z': 4
-        }
-        pushes = 0
-        prev_key = -1
-        for char in word:
-            curr_key = keypad[char]
-            if curr_key != prev_key:
-                pushes += 1
-                prev_key = curr_key
-        return pushes
+        from collections import Counter
+        
+        # Count frequency of each character in the word
+        frequency = Counter(word)
+        
+        # Sort characters based on frequency (most frequent first)
+        sorted_chars = sorted(frequency.items(), key=lambda x: x[1], reverse=True)
+        
+        # Cost array for positions on keypad from 1 to n, where n <= 8 (key '9' can handle more than 3 letters)
+        cost = [i for i in range(1, 10)]
+        
+        # To minimize the total cost:
+        # Assign the most frequent letters to the cheapest costs (i.e., 1 push per letter)
+        total_pushes = 0
+        index = 0
+        for char, freq in sorted_chars:
+            if index < 8:  # For first 8 characters, we assign them to keys 2 to 9 (one per key)
+                total_pushes += cost[index] * freq
+                index += 1
+            else:  # Remaining characters all go to the last key with cost incrementing by each set of 3
+                total_pushes += cost[index] * freq
+        
+        return total_pushes

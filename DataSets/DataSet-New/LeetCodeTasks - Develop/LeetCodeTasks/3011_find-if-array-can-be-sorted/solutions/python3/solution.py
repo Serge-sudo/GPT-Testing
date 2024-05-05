@@ -1,21 +1,39 @@
-class Solution:
-    def canSortArray(self, nums: list[int]) -> bool:
-        from collections import defaultdict
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+class Solution {
+    public boolean canSortArray(int[] nums) {
+        Map<Integer, List<Integer>> bitMap = new HashMap<>();
+        for (int num : nums) {
+            int bits = Integer.bitCount(num);
+            if (!bitMap.containsKey(bits)) {
+                bitMap.put(bits, new ArrayList<>());
+            }
+            bitMap.get(bits).add(num);
+        }
         
-        # Map to store numbers based on their bit count
-        bit_map = defaultdict(list)
+        List<Integer> sortedNums = new ArrayList<>();
+        for (List<Integer> group : bitMap.values()) {
+            Collections.sort(group);
+            sortedNums.addAll(group);
+        }
         
-        # Populate the map with numbers grouped by their bit count
-        for num in nums:
-            bit_count = bin(num).count('1')
-            bit_map[bit_count].append(num)
+        Collections.sort(sortedNums);
+        int index = 0;
         
-        # Now sort each list in the map and then flatten them
-        # according to sorted bit counts
-        sorted_list = []
-        for bit_count in sorted(bit_map):
-            bit_map[bit_count].sort()
-            sorted_list.extend(bit_map[bit_count])
-        
-        # Compare the newly sorted list with the original list
-        return sorted_list == sorted(nums)
+        for (int bits : bitMap.keySet()) {
+            List<Integer> group = bitMap.get(bits);
+            Collections.sort(group);
+            for (int num : group) {
+                if (num != sortedNums.get(index)) {
+                    return false;
+                }
+                index++;
+            }
+        }
+        return true;
+    }
+}

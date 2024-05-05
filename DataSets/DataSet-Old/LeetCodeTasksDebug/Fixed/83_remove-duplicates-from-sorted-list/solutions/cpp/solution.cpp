@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 class Solution {
 
 public:
@@ -9,7 +8,11 @@ public:
 
         if (!head) return head;
 
+
+
         ListNode* current = head;
+
+
 
         while (current->next != nullptr) {
 
@@ -17,7 +20,7 @@ public:
 
                 ListNode* temp = current->next;
 
-                temp->next = current->next;
+                current->next = current->next->next;
 
                 delete temp;
 
@@ -28,6 +31,8 @@ public:
             }
 
         }
+
+
 
         return head;
 

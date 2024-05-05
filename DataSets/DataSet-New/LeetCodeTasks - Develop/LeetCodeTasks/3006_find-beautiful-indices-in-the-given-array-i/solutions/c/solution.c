@@ -1,46 +1,52 @@
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 int* beautifulIndices(char* s, char* a, char* b, int k, int* returnSize) {
     int sLen = strlen(s);
     int aLen = strlen(a);
     int bLen = strlen(b);
-    int* result = (int*) malloc(sizeof(int) * sLen);
-    int resultCount = 0;
+    int *result = (int*)malloc(sizeof(int) * sLen); // Allocate maximum possible size
+    int count = 0;
+
+    // Precompute all indices where substring a and b occur
+    int *aIndices = (int*)malloc(sizeof(int) * sLen);
+    int *bIndices = (int*)malloc(sizeof(int) * sLen);
+    int aCount = 0, bCount = 0;
     
-    // To store indices where substrings a and b start
-    int* indicesOfA = (int*) malloc(sizeof(int) * sLen);
-    int* indicesOfB = (int*) malloc(sizeof(int) * sLen);
-    int countA = 0, countB = 0;
-    
-    // Finding all indices where a and b occur in s
     for (int i = 0; i <= sLen - aLen; i++) {
         if (strncmp(s + i, a, aLen) == 0) {
-            indicesOfA[countA++] = i;
+            aIndices[aCount++] = i;
         }
     }
+    
     for (int i = 0; i <= sLen - bLen; i++) {
         if (strncmp(s + i, b, bLen) == 0) {
-            indicesOfB[countB++] = i;
+            bIndices[bCount++] = i;
         }
     }
-    
-    // Check each index of a if it can be considered beautiful
-    for (int i = 0; i < countA; i++) {
-        int indexA = indicesOfA[i];
-        bool beautiful = false;
-        for (int j = 0; j < countB && !beautiful; j++) {
-            int indexB = indicesOfB[j];
-            if (abs(indexB - indexA) <= k) {
-                beautiful = true;
-                result[resultCount++] = indexA;
+
+    // Check each aIndex if there's a bIndex within range k
+    for (int i = 0; i < aCount; i++) {
+        int ai = aIndices[i];
+        bool isBeautiful = false;
+        for (int j = 0; j < bCount; j++) {
+            int bj = bIndices[j];
+            if (abs(bj - ai) <= k) {
+                isBeautiful = true;
+                break;
             }
         }
+        if (isBeautiful) {
+            result[count++] = ai;
+        }
     }
-    
-    free(indicesOfA);
-    free(indicesOfB);
-    
-    *returnSize = resultCount;
+
+    // Cleanup
+    free(aIndices);
+    free(bIndices);
+
+    // Set the size of the output array
+    *returnSize = count;
     return result;
 }

@@ -15,7 +15,7 @@ folders = [f for f in os.listdir(dir_path) if os.path.isdir(os.path.join(dir_pat
 # Sort folders based on the numeric part of the folder name
 folders.sort(key=lambda x: int(x.split('_')[0]))
 print("Folders sorted.")
-folders = folders
+folders = folders[:]
 # List to keep track of all task data
 all_tasks = []
 
@@ -79,7 +79,7 @@ def save_fig(fig, filename):
     fig.write_image(png_file)
 
 # Pie Chart of Task Results
-fig = px.pie(df, names='result', title='Overall Distribution of Task Results')
+fig = px.pie(df, names='result')
 save_fig(fig, 'task_results_distribution')
 
 # other graphs
@@ -90,21 +90,20 @@ tags_expanded = df.drop('tags', axis=1).join(
 )
 tag_acceptance = tags_expanded.pivot_table(index='tag', columns='result', aggfunc='size', fill_value=0)
 tag_acceptance['acceptance_ratio'] = tag_acceptance.get('Accepted', 0) / tag_acceptance.sum(axis=1)
-fig1 = px.bar(tag_acceptance, y='acceptance_ratio', title='Acceptance Ratio by Tag')
+fig1 = px.bar(tag_acceptance, y='acceptance_ratio', labels={'tag':'Маркировка',"acceptance_ratio":'Пропорция принятия'}, color='acceptance_ratio',)
 save_fig(fig1, 'acceptance_ratio_by_tag')
 
 # Language vs. Acceptance Ratio
 lang_acceptance = df.pivot_table(index='language', columns='result', aggfunc='size', fill_value=0)
 lang_acceptance['acceptance_ratio'] = lang_acceptance.get('Accepted', 0) / lang_acceptance.sum(axis=1)
-fig2 = px.bar(lang_acceptance, y='acceptance_ratio', title='Acceptance Ratio by Language')
+fig2 = px.bar(lang_acceptance, y='acceptance_ratio',labels={'language': 'Язык', 'acceptance_ratio':'Пропорция принятия'},color='acceptance_ratio')
 save_fig(fig2, 'acceptance_ratio_by_language')
 
 # Difficulty vs. Acceptance Ratio
 difficulty_acceptance = df.pivot_table(index='difficulty', columns='result', aggfunc='size', fill_value=0)
 difficulty_acceptance['acceptance_ratio'] = difficulty_acceptance.get('Accepted', 0) / difficulty_acceptance.sum(axis=1)
-fig3 = px.bar(difficulty_acceptance, y='acceptance_ratio', title='Acceptance Ratio by Difficulty')
-save_fig(fig3, 'acceptance_ratio_by_difficulty'
-)
+fig3 = px.bar(difficulty_acceptance, y='acceptance_ratio',labels={'difficulty': 'Сложность', 'acceptance_ratio':'Пропорция принятия'},color='acceptance_ratio')
+save_fig(fig3, 'acceptance_ratio_by_difficulty')
 
 # Count the number of languages each task was accepted in
 # Generate a DataFrame indicating if a task was accepted in a language
@@ -118,17 +117,17 @@ task_language_count = task_language_accepted.sum(axis=1)
 
 # Get the value counts for each number of languages (0 through the number of languages considered)
 distribution_across_languages = task_language_count.value_counts().reindex(range(task_language_accepted.shape[1] + 1), fill_value=0)
-
+custom_names = [f"На {i} языках" for i in distribution_across_languages.index]
 # Generate the pie chart
-fig4 = px.pie(distribution_across_languages, values=distribution_across_languages, names=distribution_across_languages.index,
-              title='Number of Languages per Task where Accepted')
+fig4 = px.pie(distribution_across_languages, values=distribution_across_languages, names=custom_names)
+
 save_fig(fig4, 'task_distribution_by_language_acceptance')
 
 
 # Filter out 'Accepted' and count errors by language
 errors = df[df['result'] != 'Accepted']
 error_types = errors.groupby(['language', 'result']).size().unstack().fillna(0)
-fig5 = px.bar(error_types, title='Error Types by Language')
+fig5 = px.bar(error_types, labels={'language': 'Язык', 'value':'Кольчество', 'result':'Результат'})
 save_fig(fig5, 'error_types_by_language')
 
 
@@ -137,7 +136,7 @@ error_types = ['Wrong Answer', 'Runtime Error', 'Time Limit Exceeded', 'Memory L
 
 # Calculate pass rate for error types
 error_pass_rate = df[df['result'].isin(error_types)]
-error_pass_rate['passed_half'] = error_pass_rate['pass_cnt'].map(lambda x : int(x.split("/")[0].strip())) >= error_pass_rate['pass_cnt'].map(lambda x : int(x.split("/")[0].strip())) / 2
-pass_rate = error_pass_rate.groupby('result')['passed_half'].mean()
-fig6 = px.bar(pass_rate, title='Test Pass Rate for Errors')
+error_pass_rate['Прошла 75% тестов'] = error_pass_rate['pass_cnt'].map(lambda x : int(x.split("/")[0].strip())) >= error_pass_rate['pass_cnt'].map(lambda x : int(x.split("/")[1].strip())) * 0.75 
+pass_rate = error_pass_rate.groupby('result')['Прошла 75% тестов'].mean()
+fig6 = px.bar(pass_rate, labels={'value': 'Пропорция пройденных тестов', 'variable':'Переменная', 'result':'Результат'})
 save_fig(fig6, 'test_pass_rate_for_errors')

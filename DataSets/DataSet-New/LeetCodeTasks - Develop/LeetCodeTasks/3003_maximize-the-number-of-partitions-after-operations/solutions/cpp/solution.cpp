@@ -1,45 +1,53 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
-
 using namespace std;
 
 class Solution {
 public:
     int maxPartitionsAfterOperations(string s, int k) {
         int n = s.length();
-        int maxPartitions = 0;
-        
-        // Helper function to count partitions with no modification allowed
-        auto countPartitions = [&](const string& t) {
-            int count = 0;
-            int l = 0;
-            while (l < t.length()) {
-                unordered_map<char, int> freq;
-                int r = l;
-                while (r < t.length() && (freq.size() < k || (freq.size() == k && freq.count(t[r]) > 0))) {
-                    freq[t[r]]++;
-                    r++;
+        if (k == 1) {
+            // Special case: When k is 1, we can partition by every character.
+            return n;
+        }
+
+        // Function to count partitions given a modified string.
+        auto countPartitions = [&](const string& str) {
+            int partitions = 0;
+            int i = 0;
+            while (i < str.length()) {
+                unordered_map<char, int> charCount;
+                int j = i;
+                // Expand the current partition while it has at most k distinct characters.
+                while (j < str.length() && (charCount.size() < k || charCount.count(str[j]) > 0)) {
+                    charCount[str[j]]++;
+                    j++;
                 }
-                l = r; // Move left pointer to right pointer, for next partition
-                count++;
+                // If we exceed k distinct characters, we stop just before adding the new character.
+                if (charCount.size() > k) {
+                    j--;
+                }
+                partitions++;
+                i = j;
             }
-            return count;
+            return partitions;
         };
 
-        maxPartitions = countPartitions(s); // Initially without any changes
-        
-        // Try changing each character in s to any other character
+        int maxPartitions = countPartitions(s);
+
+        // Try changing each character and calculate the maximum partitions.
         for (int i = 0; i < n; ++i) {
             char original = s[i];
             for (char c = 'a'; c <= 'z'; ++c) {
-                if (c == original) continue;
-                s[i] = c;
-                maxPartitions = max(maxPartitions, countPartitions(s));
+                if (c != original) {
+                    s[i] = c;
+                    maxPartitions = max(maxPartitions, countPartitions(s));
+                    s[i] = original; // Restore original character.
+                }
             }
-            s[i] = original; // Restore original character
         }
-        
+
         return maxPartitions;
     }
 };

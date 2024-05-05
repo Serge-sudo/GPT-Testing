@@ -1,0 +1,10 @@
+{
+    "name": "Count Elements With Maximum Frequency",
+    "id": 3005,
+    "difficulty": "Easy",
+    "tags": [
+        "Array",
+        "Hash Table",
+        "Counting"
+    ]
+}

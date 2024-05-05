@@ -1,15 +1,15 @@
 {
     "c": {
-        "pass_cnt": "26 / 277",
-        "result": "Wrong Answer"
+        "pass_cnt": "0 / 0",
+        "result": "Compile Error"
     },
     "cpp": {
-        "pass_cnt": "270 / 277",
-        "result": "Time Limit Exceeded"
+        "pass_cnt": "253 / 277",
+        "result": "Wrong Answer"
     },
     "java": {
-        "pass_cnt": "270 / 277",
-        "result": "Time Limit Exceeded"
+        "pass_cnt": "244 / 277",
+        "result": "Wrong Answer"
     },
     "python3": {
         "pass_cnt": "270 / 277",

@@ -2,59 +2,82 @@ import os
 import json
 import pandas as pd
 import plotly.express as px
-import pandas as pd
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
 
-# Path to the LeetCodeTasks directory
-dir_path = 'LeetCodeTasks'
+# Function to parse task_info.json and results.json files
+def parse_task(folder):
+    task_info_path = os.path.join(folder, 'task_info.json')
+    results_path = os.path.join(folder, 'result.json')
+    with open(task_info_path, 'r') as f:
+        task_info = json.load(f)
+    with open(results_path, 'r') as f:
+        results = json.load(f)
+    return task_info, results
 
-# Check if the final DataFrame file already exists
-final_dataframe_path = 'final_dataframe.csv'
+# Function to iterate over all folders inside Fixed and collect statistics
+def collect_statistics(root_folder):
+    data = []
+    for taskName in os.listdir(root_folder):
+        dirpath = os.path.join(root_folder, taskName)
+        task_info, results = parse_task(dirpath)
+        for lang, result in results.items():
+            task_stats = {
+            'Name': task_info['name'],
+            'Difficulty': task_info['difficulty']
+            }
+            task_stats[f'lang'] = lang
+            task_stats[f'pass_Count'] = result['pass_cnt']
+            task_stats[f'result'] = result['result']
+            if result['result'] == 'Accepted':
+                task_stats[f'Fixed'] = 1
+            else:
+                task_stats[f'Fixed'] = 0
+            data.append(task_stats)
+    return data
 
-# Get all folders in the directory
-folders = [f for f in os.listdir(dir_path) if os.path.isdir(os.path.join(dir_path, f))]
-# Sort folders based on the numeric part of the folder name
-folders.sort(key=lambda x: int(x.split('_')[0]))
-print("Folders sorted.")
-folders = folders[:100]
-# List to keep track of all task data
-all_tasks = []
 
-for folder in folders:
-    folder_path = os.path.join(dir_path, folder)
-    print(f"Processing folder: {folder}")
+root_folder = 'Fixed'
+data = collect_statistics(root_folder)
 
-    # Paths to the JSON files
-    task_info_path = os.path.join(folder_path, 'task_info.json')
-    result_path = os.path.join(folder_path, 'result.json')
+# Create a pandas DataFrame
+df = pd.DataFrame(data)
 
-    # Read task_info.json
-    with open(task_info_path, 'r') as file:
-        task_info = json.load(file)
+# Pie chart of fixed tasks vs all tasks
+fixed_tasks_count = df[df['Fixed'] == 1]['Fixed'].count()
+total_tasks_count = len(os.listdir(root_folder)) * 4 # lang count 
+fixed_percentage = fixed_tasks_count / total_tasks_count * 100
+not_fixed_percentage = 100 - fixed_percentage
 
-    # Read result.json
-    with open(result_path, 'r') as file:
-        results = json.load(file)
+fig1 = px.pie(names=['Исправлена', 'Не исправлена'], values=[fixed_percentage, not_fixed_percentage])
 
-    # Extract results for different programming languages
-    for lang, lang_data in results.items():
-        task_dict = {
-            'task_id': task_info['id'],
-            'task_name': task_info['name'],
-            'difficulty': task_info['difficulty'],
-            'tags': ', '.join(task_info['tags']),
-            'language': lang,
-            'result': lang_data['result'],
-            'pass_cnt': lang_data['pass_cnt']
-        }
-        all_tasks.append(task_dict)
-# Create a DataFrame from all collected task data
-if all_tasks:
-    df = pd.DataFrame(all_tasks)
-    df.to_csv(final_dataframe_path, index=False)
-    print(f"Final DataFrame saved to {final_dataframe_path}")
-else:
-    print("No task data collected.")
+unique_languages = df['lang'].unique()
+fig2 = make_subplots(rows=2, cols=2,specs=[[{"type": "pie"}, {"type": "pie"}], [{"type": "pie"},{"type": "pie"}]],)
 
+# Iterate through languages and create pie charts on subplots
+for i, lang in enumerate(unique_languages):
+    lang_data = df[df['lang'] == lang]
+    fixed_count = lang_data[lang_data['Fixed'] == 1]['Fixed'].count()
+    total_count = len(lang_data)
+    fixed_perc = fixed_count / total_count * 100
+    not_fixed_perc = 100 - fixed_perc
+
+    fig2.add_trace(go.Pie(labels=['Исправлена', 'Не исправлена'], values=[fixed_perc, not_fixed_perc], title=lang,titleposition='bottom center'), row=(i // 2) + 1, col=(i % 2) + 1)
+
+
+
+unique_dif = df['Difficulty'].unique()
+fig3 = make_subplots(rows=1, cols=3,specs=[[{"type": "pie"}, {"type": "pie"}, {"type": "pie"}]])
+
+# Iterate through languages and create pie charts on subplots
+for i, dif in enumerate(unique_dif):
+    dif_data = df[df['Difficulty'] == dif]
+    fixed_count = dif_data[dif_data['Fixed'] == 1]['Fixed'].count()
+    total_count = len(dif_data)
+    fixed_perc = fixed_count / total_count * 100
+    not_fixed_perc = 100 - fixed_perc
+
+    fig3.add_trace(go.Pie(labels=['Исправлена', 'Не исправлена'], values=[fixed_perc, not_fixed_perc], title=dif,titleposition='bottom center'), row=1, col=i + 1)
 
 # Base directory for charts
 charts_dir = 'plotly_charts'
@@ -65,8 +88,6 @@ html_dir = os.path.join(charts_dir, 'html')
 png_dir = os.path.join(charts_dir, 'png')
 os.makedirs(html_dir, exist_ok=True)
 os.makedirs(png_dir, exist_ok=True)
-# Assuming df is your DataFrame
-df = pd.read_csv(final_dataframe_path)
 
 # Define a function to save figures in both HTML and PNG formats
 def save_fig(fig, filename):
@@ -78,66 +99,7 @@ def save_fig(fig, filename):
     # Save as PNG
     fig.write_image(png_file)
 
-# Pie Chart of Task Results
-fig = px.pie(df, names='result', title='Overall Distribution of Task Results')
-save_fig(fig, 'task_results_distribution')
 
-# other graphs
-# Convert tags into a list
-# Tags vs. Acceptance Ratio
-tags_expanded = df.drop('tags', axis=1).join(
-    df['tags'].str.split(', ', expand=True).stack().reset_index(level=1, drop=True).rename('tag')
-)
-tag_acceptance = tags_expanded.pivot_table(index='tag', columns='result', aggfunc='size', fill_value=0)
-tag_acceptance['acceptance_ratio'] = tag_acceptance.get('Accepted', 0) / tag_acceptance.sum(axis=1)
-fig1 = px.bar(tag_acceptance, y='acceptance_ratio', title='Acceptance Ratio by Tag')
-save_fig(fig1, 'acceptance_ratio_by_tag')
-
-# Language vs. Acceptance Ratio
-lang_acceptance = df.pivot_table(index='language', columns='result', aggfunc='size', fill_value=0)
-lang_acceptance['acceptance_ratio'] = lang_acceptance.get('Accepted', 0) / lang_acceptance.sum(axis=1)
-fig2 = px.bar(lang_acceptance, y='acceptance_ratio', title='Acceptance Ratio by Language')
-save_fig(fig2, 'acceptance_ratio_by_language')
-
-# Difficulty vs. Acceptance Ratio
-difficulty_acceptance = df.pivot_table(index='difficulty', columns='result', aggfunc='size', fill_value=0)
-difficulty_acceptance['acceptance_ratio'] = difficulty_acceptance.get('Accepted', 0) / difficulty_acceptance.sum(axis=1)
-fig3 = px.bar(difficulty_acceptance, y='acceptance_ratio', title='Acceptance Ratio by Difficulty')
-save_fig(fig3, 'acceptance_ratio_by_difficulty'
-)
-
-# Count the number of languages each task was accepted in
-# Generate a DataFrame indicating if a task was accepted in a language
-df['accepted'] = (df['result'] == 'Accepted')
-
-# Group by task and language, and determine if any were accepted in each language
-task_language_accepted = df.groupby(['task_id', 'language'])['accepted'].any().unstack(fill_value=False)
-
-# Count how many languages each task was accepted in
-task_language_count = task_language_accepted.sum(axis=1)
-
-# Get the value counts for each number of languages (0 through the number of languages considered)
-distribution_across_languages = task_language_count.value_counts().reindex(range(task_language_accepted.shape[1] + 1), fill_value=0)
-
-# Generate the pie chart
-fig4 = px.pie(distribution_across_languages, values=distribution_across_languages, names=distribution_across_languages.index,
-              title='Number of Languages per Task where Accepted')
-save_fig(fig4, 'task_distribution_by_language_acceptance')
-
-
-# Filter out 'Accepted' and count errors by language
-errors = df[df['result'] != 'Accepted']
-error_types = errors.groupby(['language', 'result']).size().unstack().fillna(0)
-fig5 = px.bar(error_types, title='Error Types by Language')
-save_fig(fig5, 'error_types_by_language')
-
-
-# Define error types
-error_types = ['Wrong Answer', 'Runtime Error', 'Time Limit Exceeded', 'Memory Limit']
-
-# Calculate pass rate for error types
-error_pass_rate = df[df['result'].isin(error_types)]
-error_pass_rate['passed_half'] = error_pass_rate['pass_cnt'].map(lambda x : int(x.split("/")[0].strip())) >= error_pass_rate['pass_cnt'].map(lambda x : int(x.split("/")[0].strip())) / 2
-pass_rate = error_pass_rate.groupby('result')['passed_half'].mean()
-fig6 = px.bar(pass_rate, title='Test Pass Rate for Errors')
-save_fig(fig6, 'test_pass_rate_for_errors')
+save_fig(fig1, 'fixed_vs_all')
+save_fig(fig2, 'fixed_vs_all_lang')
+save_fig(fig3, 'fixed_vs_all_dif')

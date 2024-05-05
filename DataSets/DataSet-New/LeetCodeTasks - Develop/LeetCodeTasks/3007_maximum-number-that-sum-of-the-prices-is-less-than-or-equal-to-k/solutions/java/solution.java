@@ -6,17 +6,10 @@ public class Solution {
         while (true) {
             num++;
             long price = 0;
-            long currentNum = num;
-            int position = 1;
-
-            while (currentNum > 0) {
-                if (position % x == 0) {
-                    if ((currentNum & 1) == 1) {
-                        price++;
-                    }
+            for (int i = 1; (i - 1) * x < 64; i++) { // Considering up to 64 bits
+                if ((num & (1L << ((i - 1) * x))) != 0) {
+                    price++;
                 }
-                currentNum >>= 1;
-                position++;
             }
 
             accumulatedPrice += price;

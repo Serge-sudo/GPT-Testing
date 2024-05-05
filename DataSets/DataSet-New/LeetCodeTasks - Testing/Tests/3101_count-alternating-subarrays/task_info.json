@@ -1,0 +1,9 @@
+{
+    "name": "Count Alternating Subarrays",
+    "id": 3101,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Math"
+    ]
+}

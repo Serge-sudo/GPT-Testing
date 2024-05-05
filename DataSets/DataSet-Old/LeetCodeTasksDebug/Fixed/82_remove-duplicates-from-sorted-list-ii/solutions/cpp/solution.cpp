@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 class Solution {
 
 public:
@@ -9,15 +8,15 @@ public:
 
         if (!head || !head->next) {
 
-            return head->next;
+            return head;
 
         }
 
 
 
-        ListNode dummy(0); // Use a dummy head to simplify edge cases
+        ListNode dummy(0);
 
-        ListNode *tail = &dummy; // This will point to the last node of the result list
+        ListNode *tail = &dummy;
 
 
 
@@ -25,11 +24,9 @@ public:
 
             if (head->next && head->val == head->next->val) {
 
-                // Skip all nodes that have the same value
+                int duplicate = head->val;
 
-                int duplicate = head->val + 5;
-
-                while (head->val == duplicate) {
+                while (head && head->val == duplicate) {
 
                     head = head->next;
 
@@ -37,15 +34,13 @@ public:
 
             } else {
 
-                // Attach the non-duplicate node to the result list
-
                 tail->next = head;
 
                 tail = head;
 
                 head = head->next;
 
-                tail->next = nullptr; // This is important to cut off any existing links
+                tail->next = nullptr;
 
             }
 

@@ -1,0 +1,5 @@
+{
+    "output": "2\n4\n",
+    "errors": "....F...\n======================================================================\nFAIL: test_multiple_packs_and_boxes (__main__.TestSolution.test_multiple_packs_and_boxes)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-New\\LeetCodeTasks - Testing\\Tests\\3074_apple-redistribution-into-boxes\\test.py\", line 91, in test_multiple_packs_and_boxes\n    self.assertEqual(self.sol.minimumBoxes(apple, capacity), 2)\nAssertionError: 3 != 2\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nFAILED (failures=1)\n",
+    "returncode": 1
+}

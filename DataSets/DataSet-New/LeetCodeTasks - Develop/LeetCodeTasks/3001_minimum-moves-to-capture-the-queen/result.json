@@ -1,6 +1,6 @@
 {
     "c": {
-        "pass_cnt": "723 / 743",
+        "pass_cnt": "395 / 743",
         "result": "Wrong Answer"
     },
     "cpp": {
@@ -12,7 +12,7 @@
         "result": "Wrong Answer"
     },
     "python3": {
-        "pass_cnt": "723 / 743",
+        "pass_cnt": "423 / 743",
         "result": "Wrong Answer"
     }
 }

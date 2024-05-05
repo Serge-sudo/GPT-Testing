@@ -1,6 +1,5 @@
 #include <vector>
 
-
 class Solution {
 
 public:
@@ -33,15 +32,19 @@ private:
 
         for (int i = start; i <= end; ++i) {
 
-            auto leftSubtrees = generateTrees(start, i);
+            auto leftSubtrees = generateTrees(start, i - 1);
 
             auto rightSubtrees = generateTrees(i + 1, end);
+
+
 
             for (auto left : leftSubtrees) {
 
                 for (auto right : rightSubtrees) {
 
                     TreeNode *root = new TreeNode(i);
+
+                    root->left = left;
 
                     root->right = right;
 

@@ -77,7 +77,7 @@ def submit_solution(driver, problem_name, file_path, language):
 
 def process_directory(root_dir, driver):
     task_dirs = sorted(os.listdir(root_dir), key=lambda x: int(x.split('_')[0]))
-    task_dirs = task_dirs[:1]
+    task_dirs = task_dirs[15:]
     for dir_name in task_dirs:
         results = {}
         problem_name = dir_name.split('_', 1)[1]

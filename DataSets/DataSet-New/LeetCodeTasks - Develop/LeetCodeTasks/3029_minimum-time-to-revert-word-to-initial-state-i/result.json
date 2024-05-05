@@ -1,0 +1,18 @@
+{
+    "c": {
+        "pass_cnt": "121 / 769",
+        "result": "Wrong Answer"
+    },
+    "cpp": {
+        "pass_cnt": "121 / 769",
+        "result": "Wrong Answer"
+    },
+    "java": {
+        "pass_cnt": "197 / 769",
+        "result": "Wrong Answer"
+    },
+    "python3": {
+        "pass_cnt": "126 / 769",
+        "result": "Wrong Answer"
+    }
+}

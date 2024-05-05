@@ -1,19 +1,27 @@
 from typing import List
+from functools import lru_cache
 
 class Solution:
     def minimumCost(self, nums: List[int]) -> int:
         n = len(nums)
-        # Initialize dp table with infinity, dp[i][j] means the minimum cost to divide the first i elements into j parts
-        dp = [[float('inf')] * 4 for _ in range(n+1)]
-        # Base case: No cost to split zero elements into zero parts
-        dp[0][0] = 0
+
+        @lru_cache(None)
+        def dp(i, k):
+            # i is the starting index for forming subarrays
+            # k is the number of subarrays left to form
+            if k == 1:  # only one subarray left, take the rest as one subarray
+                return nums[i]
+            if i >= n:
+                return float('inf')
+            
+            min_cost = float('inf')
+            # Try all possible next splits
+            for j in range(i + 1, n):
+                # nums[i] is the cost of the subarray starting at i and ending before j
+                # Calculate remaining cost from index j with k-1 subarrays left
+                min_cost = min(min_cost, nums[i] + dp(j, k - 1))
+            
+            return min_cost
         
-        # Fill the dp table
-        for i in range(1, n + 1):
-            for j in range(1, 4):
-                for k in range(i):
-                    # Update dp[i][j] considering splitting at k
-                    dp[i][j] = min(dp[i][j], dp[k][j-1] + nums[k])
-        
-        # The answer is the minimum cost to divide all n elements into 3 parts
-        return dp[n][3]
+        # Start from index 0 to form 3 subarrays
+        return dp(0, 3)

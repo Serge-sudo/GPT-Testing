@@ -1,46 +1,50 @@
-from typing import List
 from collections import Counter
+from heapq import heappush, heappop
 
 class Solution:
-    def maximumSetSize(self, nums1: List[int], nums2: List[int]) -> int:
+    def maximumSetSize(self, nums1: list[int], nums2: list[int]) -> int:
         n = len(nums1)
-        half_n = n // 2
+        k = n // 2
         
-        # Count frequency of each number in both arrays
+        # Count frequencies of elements in both arrays
         count1 = Counter(nums1)
         count2 = Counter(nums2)
         
-        # List of tuples (number, minimum occurrences in both arrays)
-        elements = []
-        for num in set(nums1 + nums2):
-            elements.append((num, min(count1.get(num, 0), count2.get(num, 0))))
+        # Use min-heaps to determine which elements to remove
+        # to maximize the number of unique elements in the final set
+        heap1 = []
+        heap2 = []
         
-        # Sort based on the number of times we can definitely include them in the set,
-        # more times first as they have lower cost in terms of reducing the size of the set
-        elements.sort(key=lambda x: -x[1])
+        # We need to store -count because we want to create a max-heap using a min-heap
+        for num, cnt in count1.items():
+            heappush(heap1, (-cnt, num))
         
-        # We need to balance between keeping duplicates from being over-removed
-        # and maximizing the set size by including as many unique elements as possible
-        remaining_removals1 = half_n
-        remaining_removals2 = half_n
-        set_size = 0
+        for num, cnt in count2.items():
+            heappush(heap2, (-cnt, num))
         
-        for num, min_occur in elements:
-            if remaining_removals1 == 0 or remaining_removals2 == 0:
-                break
-            # The number of this element we can keep is at least the minimum of what's present
-            # in both arrays minus how many we can afford to remove.
-            max_keep1 = max(0, count1.get(num, 0) - remaining_removals1)
-            max_keep2 = max(0, count2.get(num, 0) - remaining_removals2)
-            
-            # We include this number in the set if we can keep at least one in any of the arrays
-            if max_keep1 > 0 or max_keep2 > 0:
-                set_size += 1
-                # Calculate how many we need to remove to achieve this state
-                to_remove1 = count1.get(num, 0) - max_keep1
-                to_remove2 = count2.get(num, 0) - max_keep2
-                # Reduce the number of remaining removals
-                remaining_removals1 -= to_remove1
-                remaining_removals2 -= to_remove2
+        # Remove the k most frequent elements from each heap
+        removed1 = set()
+        removed2 = set()
         
-        return set_size
+        # Remove elements from nums1's heap
+        for _ in range(k):
+            if heap1:
+                cnt, num = heappop(heap1)
+                removed1.add(num)
+                if -cnt > 1:
+                    heappush(heap1, (cnt + 1, num))  # Decrease count and push back
+        
+        # Remove elements from nums2's heap
+        for _ in range(k):
+            if heap2:
+                cnt, num = heappop(heap2)
+                removed2.add(num)
+                if -cnt > 1:
+                    heappush(heap2, (cnt + 1, num))  # Decrease count and push back
+        
+        # Calculate the maximum size of set s
+        remaining1 = [num for num in nums1 if num not in removed1]
+        remaining2 = [num for num in nums2 if num not in removed2]
+        result_set = set(remaining1 + remaining2)
+        
+        return len(result_set)

@@ -3,13 +3,14 @@
 #include <limits.h>
 
 
+
 bool isBSTHelper(struct TreeNode* node, long min, long max) {
 
     if (node == NULL)
 
         return true;
 
-    if (node->val <= min | node->val >= max)
+    if (node->val <= min || node->val >= max)
 
         return false;
 
@@ -21,7 +22,7 @@ bool isBSTHelper(struct TreeNode* node, long min, long max) {
 
 bool isValidBST(struct TreeNode* root) {
 
-    return isBSTHelper(root, LONG_MAX , LONG_MIN);
+    return isBSTHelper(root, LONG_MIN, LONG_MAX);
 
 }
 

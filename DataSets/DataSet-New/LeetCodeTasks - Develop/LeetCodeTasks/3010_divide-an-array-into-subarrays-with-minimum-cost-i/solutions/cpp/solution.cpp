@@ -2,27 +2,23 @@
 #include <algorithm>
 #include <climits>
 
+using namespace std;
+
 class Solution {
 public:
-    int minimumCost(std::vector<int>& nums) {
+    int minimumCost(vector<int>& nums) {
         int n = nums.size();
-        std::vector<std::vector<int>> dp(n, std::vector<int>(4, INT_MAX));
-        
-        // Initialize the dp array for 1 subarray from each point i to n
-        for (int i = 0; i < n; ++i) {
-            dp[i][1] = nums[i];
-        }
+        vector<vector<int>> dp(n + 1, vector<int>(4, INT_MAX));
+        dp[0][0] = 0;
 
-        // Fill dp for j = 2 to 3 subarrays
-        for (int j = 2; j <= 3; ++j) {
-            for (int i = 0; i <= n - j; ++i) {
-                for (int k = i + 1; k <= n - j + 1; ++k) {
-                    dp[i][j] = std::min(dp[i][j], nums[i] + dp[k][j - 1]);
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 1; j <= min(i, 3); ++j) {
+                for (int k = j - 1; k < i; ++k) {
+                    dp[i][j] = min(dp[i][j], dp[k][j - 1] + nums[k]);
                 }
             }
         }
 
-        // Answer is the minimum cost to split the whole array into 3 subarrays
-        return dp[0][3];
+        return dp[n][3];
     }
 };

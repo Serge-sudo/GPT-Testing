@@ -3,39 +3,31 @@ import java.util.List;
 
 class Solution {
     public List<Integer> beautifulIndices(String s, String a, String b, int k) {
-        int n = s.length();
-        int lenA = a.length();
-        int lenB = b.length();
-        
-        // Finding all the starting indices where string a appears in s
         List<Integer> aIndices = new ArrayList<>();
-        for (int i = 0; i <= n - lenA; i++) {
-            if (s.substring(i, i + lenA).equals(a)) {
+        List<Integer> bIndices = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
+        
+        // Finding all starting indices of string 'a' in 's'
+        for (int i = 0; i <= s.length() - a.length(); i++) {
+            if (s.startsWith(a, i)) {
                 aIndices.add(i);
             }
         }
         
-        // Finding all the starting indices where string b appears in s
-        List<Integer> bIndices = new ArrayList<>();
-        for (int i = 0; i <= n - lenB; i++) {
-            if (s.substring(i, i + lenB).equals(b)) {
+        // Finding all starting indices of string 'b' in 's'
+        for (int i = 0; i <= s.length() - b.length(); i++) {
+            if (s.startsWith(b, i)) {
                 bIndices.add(i);
             }
         }
         
-        // Collecting beautiful indices
-        List<Integer> result = new ArrayList<>();
-        for (int indexA : aIndices) {
-            // Check if there exists any index j for b such that |j - indexA| <= k
-            boolean found = false;
-            for (int indexB : bIndices) {
-                if (Math.abs(indexB - indexA) <= k) {
-                    found = true;
+        // Check each index of 'a' to find if it is beautiful
+        for (int i : aIndices) {
+            for (int j : bIndices) {
+                if (Math.abs(i - j) <= k) {
+                    result.add(i);
                     break;
                 }
-            }
-            if (found) {
-                result.add(indexA);
             }
         }
         

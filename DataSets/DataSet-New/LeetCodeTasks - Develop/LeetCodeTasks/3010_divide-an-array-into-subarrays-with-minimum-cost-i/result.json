@@ -1,0 +1,18 @@
+{
+    "c": {
+        "pass_cnt": "1 / 1",
+        "result": "Accepted"
+    },
+    "cpp": {
+        "pass_cnt": "0 / 988",
+        "result": "Runtime Error"
+    },
+    "java": {
+        "pass_cnt": "1 / 1",
+        "result": "Accepted"
+    },
+    "python3": {
+        "pass_cnt": "1 / 1",
+        "result": "Accepted"
+    }
+}

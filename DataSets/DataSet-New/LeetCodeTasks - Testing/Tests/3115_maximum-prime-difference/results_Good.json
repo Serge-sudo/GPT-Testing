@@ -1,0 +1,5 @@
+{
+    "output": "",
+    "errors": "Traceback (most recent call last):\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-New\\LeetCodeTasks - Testing\\Tests\\3115_maximum-prime-difference\\test.py\", line 3, in <module>\n    from solution import Solution\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-New\\LeetCodeTasks - Testing\\Tests\\3115_maximum-prime-difference\\solution.py\", line 1, in <module>\n    class Solution:\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-New\\LeetCodeTasks - Testing\\Tests\\3115_maximum-prime-difference\\solution.py\", line 3, in Solution\n    def maximumPrimeDifference(self, nums: List[int]) -> int:\n                                           ^^^^\nNameError: name 'List' is not defined. Did you mean: 'list'?\n",
+    "returncode": 1
+}

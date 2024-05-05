@@ -1,22 +1,15 @@
-#include <stdbool.h>
+#include <ctype.h>  // For tolower()
 
 int countKeyChanges(char* s) {
     int changes = 0;
-    bool isUpperCase = false;
-
-    for (int i = 0; s[i] != '\0'; i++) {
-        if (s[i] >= 'A' && s[i] <= 'Z') {
-            if (!isUpperCase) {
-                isUpperCase = true;
-                changes++;
-            }
-        } else {
-            if (isUpperCase) {
-                isUpperCase = false;
-                changes++;
-            }
+    char currentKey = tolower(s[0]);  // Initialize with the first key, converting to lowercase
+    
+    for (int i = 1; s[i] != '\0'; i++) {
+        if (tolower(s[i]) != currentKey) {
+            changes++;
+            currentKey = tolower(s[i]);
         }
     }
-
+    
     return changes;
 }

@@ -1,34 +1,39 @@
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 class Solution {
     public boolean canSortArray(int[] nums) {
-        // Create an array of the same size to store numbers with their bit counts
-        Integer[] numBits = new Integer[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-            numBits[i] = nums[i];
+        Map<Integer, List<Integer>> bitMap = new HashMap<>();
+        for (int num : nums) {
+            int bits = Integer.bitCount(num);
+            if (!bitMap.containsKey(bits)) {
+                bitMap.put(bits, new ArrayList<>());
+            }
+            bitMap.get(bits).add(num);
         }
         
-        // Custom comparator to sort numbers based on bit counts, and then by value
-        Arrays.sort(numBits, new Comparator<Integer>() {
-            public int compare(Integer o1, Integer o2) {
-                int count1 = Integer.bitCount(o1);
-                int count2 = Integer.bitCount(o2);
-                if (count1 == count2) {
-                    return Integer.compare(o1, o2);
+        List<Integer> sortedNums = new ArrayList<>();
+        for (List<Integer> group : bitMap.values()) {
+            Collections.sort(group);
+            sortedNums.addAll(group);
+        }
+        
+        Collections.sort(sortedNums);
+        int index = 0;
+        
+        for (int bits : bitMap.keySet()) {
+            List<Integer> group = bitMap.get(bits);
+            Collections.sort(group);
+            for (int num : group) {
+                if (num != sortedNums.get(index)) {
+                    return false;
                 }
-                return Integer.compare(count1, count2);
-            }
-        });
-        
-        // Check if we can form a sorted sequence of original numbers
-        // just by comparing bit counts
-        for (int i = 0; i < nums.length - 1; i++) {
-            if (Integer.bitCount(numBits[i]) > Integer.bitCount(numBits[i + 1])) {
-                return false;
+                index++;
             }
         }
-        
         return true;
     }
 }

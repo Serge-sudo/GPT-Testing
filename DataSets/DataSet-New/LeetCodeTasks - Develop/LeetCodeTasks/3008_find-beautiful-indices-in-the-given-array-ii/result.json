@@ -1,0 +1,18 @@
+{
+    "c": {
+        "pass_cnt": "229 / 237",
+        "result": "Time Limit Exceeded"
+    },
+    "cpp": {
+        "pass_cnt": "216 / 237",
+        "result": "Memory Limit Exceeded"
+    },
+    "java": {
+        "pass_cnt": "230 / 237",
+        "result": "Time Limit Exceeded"
+    },
+    "python3": {
+        "pass_cnt": "229 / 237",
+        "result": "Time Limit Exceeded"
+    }
+}

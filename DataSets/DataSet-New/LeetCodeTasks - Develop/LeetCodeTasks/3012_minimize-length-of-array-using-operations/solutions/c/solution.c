@@ -10,13 +10,13 @@ int gcd(int a, int b) {
 }
 
 int minimumArrayLength(int* nums, int numsSize) {
-    if (numsSize == 1) return 1;
+    if (numsSize == 1) return 1; // If there is only one element, we can't reduce further
     
-    // Start with the gcd of the first two elements
-    int result = gcd(nums[0], nums[1]);
-    for (int i = 2; i < numsSize; i++) {
-        result = gcd(result, nums[i]);
-        if (result == 1) return 1; // The minimum possible length we can achieve is 1
+    int resultGCD = nums[0];
+    for (int i = 1; i < numsSize; i++) {
+        resultGCD = gcd(resultGCD, nums[i]);
+        if (resultGCD == 1) return 1; // Early exit if the GCD becomes 1
     }
-    return result == 1 ? 1 : 2; // If the overall gcd is 1, array can be reduced to size 1, otherwise at least 2
+    
+    return resultGCD == 1 ? 1 : 2; // If GCD of all elements is 1, min length is 1, otherwise it is 2
 }

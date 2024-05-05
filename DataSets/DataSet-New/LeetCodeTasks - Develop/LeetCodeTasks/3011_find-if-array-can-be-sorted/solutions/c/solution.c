@@ -10,48 +10,43 @@ int countSetBits(int n) {
     return count;
 }
 
-int compare(const void* a, const void* b) {
-    int countA = countSetBits(*(int*)a);
-    int countB = countSetBits(*(int*)b);
-    if (countA == countB) {
-        return *(int*)a - *(int*)b;
-    } else {
-        return countA - countB;
-    }
+int compare(const void *a, const void *b) {
+    return (*(int *)a - *(int *)b);
 }
 
 bool canSortArray(int* nums, int numsSize) {
-    int* sorted = (int*)malloc(numsSize * sizeof(int));
-    if (!sorted) return false;
+    // Create an array to store the number of set bits for each element in nums
+    int setBits[numsSize];
     for (int i = 0; i < numsSize; i++) {
-        sorted[i] = nums[i];
+        setBits[i] = countSetBits(nums[i]);
     }
-    qsort(sorted, numsSize, sizeof(int), compare);
-    int* binCountSorted = (int*)malloc(numsSize * sizeof(int));
-    if (!binCountSorted) {
-        free(sorted);
-        return false;
-    }
+
+    // Create a copy of setBits and sort it to check the desired order
+    int sortedSetBits[numsSize];
     for (int i = 0; i < numsSize; i++) {
-        binCountSorted[i] = countSetBits(sorted[i]);
+        sortedSetBits[i] = setBits[i];
     }
-    for (int i = 1; i < numsSize; i++) {
-        if (binCountSorted[i] == binCountSorted[i - 1]) continue;
-        int j = 0;
-        while (j < numsSize && countSetBits(nums[j]) != binCountSorted[i - 1]) {
+    qsort(sortedSetBits, numsSize, sizeof(int), compare);
+
+    // Check if it's possible to sort setBits to match sortedSetBits using adjacent swaps
+    for (int i = 0; i < numsSize; i++) {
+        // Find the next matching setBits count in the unsorted portion
+        int j = i;
+        while (j < numsSize && setBits[j] != sortedSetBits[i])
             j++;
-        }
-        int k = j;
-        while (k < numsSize && countSetBits(nums[k]) == binCountSorted[i - 1]) {
-            k++;
-        }
-        if (k == numsSize || countSetBits(nums[k]) != binCountSorted[i]) {
-            free(sorted);
-            free(binCountSorted);
-            return false;
+
+        // If we didn't find a match, sorting is not possible
+        if (j == numsSize) return false;
+
+        // Bubble the found element back to position i
+        while (j > i) {
+            // Swap elements in setBits
+            int temp = setBits[j];
+            setBits[j] = setBits[j - 1];
+            setBits[j - 1] = temp;
+            j--;
         }
     }
-    free(sorted);
-    free(binCountSorted);
+
     return true;
 }

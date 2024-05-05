@@ -1,0 +1,10 @@
+{
+    "name": "Minimum Rectangles to Cover Points",
+    "id": 3111,
+    "difficulty": "Medium",
+    "tags": [
+        "Array",
+        "Greedy",
+        "Sorting"
+    ]
+}

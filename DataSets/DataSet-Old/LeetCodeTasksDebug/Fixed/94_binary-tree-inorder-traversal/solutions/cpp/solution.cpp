@@ -1,16 +1,23 @@
+#include <vector>
+
+#include <stack>
+
+
 class Solution {
 
 public:
 
-    vector<int> inorderTraversal(TreeNode* root) {
+    std::vector<int> inorderTraversal(TreeNode* root) {
 
-        vector<int> result;
+        std::vector<int> result;
 
-        stack<TreeNode*> s;
+        std::stack<TreeNode*> s;
 
         TreeNode* curr = root;
 
-        while (curr != nullptr | !s.empty()) {
+
+
+        while (curr != nullptr || !s.empty()) {
 
             while (curr != nullptr) {
 
@@ -22,11 +29,15 @@ public:
 
             curr = s.top();
 
+            s.pop();
+
             result.push_back(curr->val);
 
             curr = curr->right;
 
         }
+
+
 
         return result;
 

@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 class Solution {
 
 public:
@@ -11,11 +10,11 @@ public:
 
         ListNode *lessPtr = &lessHead, *greaterPtr = &greaterHead;
 
-        
+
 
         while (head != nullptr) {
 
-            if (head->val <= x) {
+            if (head->val < x) {
 
                 lessPtr->next = head;
 
@@ -25,7 +24,7 @@ public:
 
                 greaterPtr->next = head;
 
-                greaterPtr = greaterPtr;
+                greaterPtr = greaterPtr->next;
 
             }
 
@@ -33,7 +32,7 @@ public:
 
         }
 
-        
+
 
         // Connect the two partitions
 
@@ -41,9 +40,9 @@ public:
 
         greaterPtr->next = nullptr;  // Important to end the list
 
-        
 
-        return lessHead;
+
+        return lessHead.next;
 
     }
 

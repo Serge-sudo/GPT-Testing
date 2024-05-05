@@ -6,31 +6,39 @@ using namespace std;
 class Solution {
 public:
     vector<int> beautifulIndices(string s, string a, string b, int k) {
-        vector<int> indicesA, indicesB, result;
-        int n = s.length(), alen = a.length(), blen = b.length();
+        int n = s.size();
+        int len_a = a.size();
+        int len_b = b.size();
         
-        // Find all start indices where substring a appears
-        for (int i = 0; i <= n - alen; ++i) {
-            if (s.substr(i, alen) == a) {
-                indicesA.push_back(i);
+        vector<int> indices_a;
+        vector<int> indices_b;
+        
+        // Find all occurrences of a in s
+        for (int i = 0; i <= n - len_a; ++i) {
+            if (s.substr(i, len_a) == a) {
+                indices_a.push_back(i);
             }
         }
         
-        // Find all start indices where substring b appears
-        for (int i = 0; i <= n - blen; ++i) {
-            if (s.substr(i, blen) == b) {
-                indicesB.push_back(i);
+        // Find all occurrences of b in s
+        for (int i = 0; i <= n - len_b; ++i) {
+            if (s.substr(i, len_b) == b) {
+                indices_b.push_back(i);
             }
         }
         
-        // For each index in indicesA, check if there is an index in indicesB
-        // that satisfies the condition |j - i| <= k
-        for (int i : indicesA) {
-            for (int j : indicesB) {
+        vector<int> result;
+        // For each index of a, check for proximity of any index of b
+        for (int i : indices_a) {
+            bool found = false;
+            for (int j : indices_b) {
                 if (abs(j - i) <= k) {
-                    result.push_back(i);
+                    found = true;
                     break;
                 }
+            }
+            if (found) {
+                result.push_back(i);
             }
         }
         

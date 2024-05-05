@@ -1,47 +1,59 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class Solution {
     public int maxPartitionsAfterOperations(String s, int k) {
-        int n = s.length();
-        if (k >= 26) return 1; // With k>=26 we can always take the whole string as one partition.
+        if (k == 0) return s.length();
 
-        // Helper function to calculate the maximum partitions without changing any character
-        int maxPartitions = maxPartitionsWithNoChanges(s, k);
-        
-        // Attempt to change each character and calculate the possible maximum partitions
-        for (int i = 0; i < n; i++) {
-            char original = s.charAt(i);
-            for (char newChar = 'a'; newChar <= 'z'; newChar++) {
-                if (original != newChar) {
-                    String modifiedString = s.substring(0, i) + newChar + s.substring(i + 1);
-                    maxPartitions = Math.max(maxPartitions, maxPartitionsWithNoChanges(modifiedString, k));
+        int n = s.length();
+        int maxPartitions = 0;
+
+        // Helper function to count maximum partitions for a given string
+        java.util.function.ToIntFunction<String> getMaxPartitions = (str) -> {
+            int count = 0;
+            int start = 0;
+            while (start < str.length()) {
+                Map<Character, Integer> freq = new HashMap<>();
+                int end = start;
+                while (end < str.length() && freq.size() <= k) {
+                    char ch = str.charAt(end);
+                    freq.put(ch, freq.getOrDefault(ch, 0) + 1);
+                    if (freq.size() > k) {
+                        break;
+                    }
+                    end++;
+                }
+                count++;
+                start = end;
+            }
+            return count;
+        };
+
+        // First check partitions without any change
+        maxPartitions = getMaxPartitions.applyAsInt(s);
+
+        // If k is 1, there is no point in changing a character to any other character
+        if (k > 1) {
+            // Try changing each character to each of 26 possible characters and calculate max partitions
+            for (int i = 0; i < n; i++) {
+                char originalChar = s.charAt(i);
+                for (char newChar = 'a'; newChar <= 'z'; newChar++) {
+                    if (newChar != originalChar) {
+                        // Change s[i] to newChar
+                        String modified = s.substring(0, i) + newChar + s.substring(i + 1);
+                        maxPartitions = Math.max(maxPartitions, getMaxPartitions.applyAsInt(modified));
+                    }
                 }
             }
         }
+
         return maxPartitions;
     }
 
-    // Function to calculate maximum partitions when no changes are allowed
-    private int maxPartitionsWithNoChanges(String s, int k) {
-        int count = 0;
-        int i = 0;
-        int n = s.length();
-        while (i < n) {
-            count++;
-            int distinctCount = 0;
-            HashMap<Character, Integer> charMap = new HashMap<>();
-            int j = i;
-            while (j < n && (distinctCount < k || charMap.containsKey(s.charAt(j)))) {
-                char c = s.charAt(j);
-                if (!charMap.containsKey(c)) {
-                    distinctCount++;
-                }
-                charMap.put(c, charMap.getOrDefault(c, 0) + 1);
-                if (distinctCount > k) break;
-                j++;
-            }
-            i = j; // Move to next position after the current valid prefix
-        }
-        return count;
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.maxPartitionsAfterOperations("accca", 2)); // Example 1
+        System.out.println(sol.maxPartitionsAfterOperations("aabaab", 3)); // Example 2
+        System.out.println(sol.maxPartitionsAfterOperations("xxyz", 1)); // Example 3
     }
 }

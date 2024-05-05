@@ -1,8 +1,8 @@
 #include <math.h>
 
 int areaOfMaxDiagonal(int** dimensions, int dimensionsSize, int* dimensionsColSize) {
-    int maxArea = 0;
     double maxDiagonal = 0.0;
+    int maxArea = 0;
 
     for (int i = 0; i < dimensionsSize; i++) {
         int length = dimensions[i][0];

@@ -1,48 +1,43 @@
 class Solution:
     def maxPartitionsAfterOperations(self, s: str, k: int) -> int:
-        from collections import defaultdict, deque
+        from collections import defaultdict
         
-        # Function to calculate the number of partitions without any modification
-        def count_partitions(s):
-            n = len(s)
+        def max_partitions(s: str) -> int:
+            partitions = 0
             i = 0
-            parts = 0
-            while i < n:
-                char_count = defaultdict(int)
+            while i < len(s):
+                count = defaultdict(int)
                 distinct = 0
                 j = i
-                while j < n and (distinct < k or (distinct == k and s[j] in char_count)):
-                    if char_count[s[j]] == 0:
+                while j < len(s) and (distinct < k or (distinct == k and s[j] in count)):
+                    if count[s[j]] == 0:
                         distinct += 1
-                    char_count[s[j]] += 1
+                    count[s[j]] += 1
                     if distinct > k:
                         break
                     j += 1
-                parts += 1
+                partitions += 1
                 i = j
-            return parts
+            return partitions
         
-        # Early exit: if k is large enough to take the whole string in one go
-        if k >= 26:
-            return 1
+        # Check without any modification
+        max_partitions_result = max_partitions(s)
         
-        # Calculate partitions without any changes
-        max_partitions = count_partitions(s)
+        if k == 1:
+            # If k == 1, each character change potentially maximizes partitions
+            for i in range(len(s)):
+                for c in 'abcdefghijklmnopqrstuvwxyz':
+                    if s[i] != c:
+                        new_s = s[:i] + c + s[i+1:]
+                        max_partitions_result = max(max_partitions_result, max_partitions(new_s))
+            return max_partitions_result
         
-        # Optimally choosing to change one character to maximize partitions
-        n = len(s)
-        if n == 1:
-            return 1
-        
-        # We'll try changing each character to any other character
-        # and see if it improves the number of partitions
-        for i in range(n):
+        # Check by modifying each character once and replace it with every possible character
+        for i in range(len(s)):
             original_char = s[i]
-            for c in range(26):
-                new_char = chr(ord('a') + c)
-                if new_char == original_char:
-                    continue
-                new_s = s[:i] + new_char + s[i+1:]
-                max_partitions = max(max_partitions, count_partitions(new_s))
+            for c in 'abcdefghijklmnopqrstuvwxyz':
+                if c != original_char:
+                    new_s = s[:i] + c + s[i+1:]
+                    max_partitions_result = max(max_partitions_result, max_partitions(new_s))
         
-        return max_partitions
+        return max_partitions_result

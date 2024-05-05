@@ -1,0 +1,13 @@
+{
+    "name": "Count Prefix and Suffix Pairs I",
+    "id": 3042,
+    "difficulty": "Easy",
+    "tags": [
+        "Array",
+        "String",
+        "Trie",
+        "Rolling Hash",
+        "String Matching",
+        "Hash Function"
+    ]
+}

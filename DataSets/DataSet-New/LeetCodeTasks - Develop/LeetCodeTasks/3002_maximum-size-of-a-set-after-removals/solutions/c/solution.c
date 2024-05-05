@@ -1,50 +1,108 @@
 #include <stdlib.h>
 #include <string.h>
 
-int compare(const void *a, const void *b) {
+int cmpfunc(const void *a, const void *b) {
     return (*(int*)a - *(int*)b);
 }
 
 int maximumSetSize(int* nums1, int nums1Size, int* nums2, int nums2Size) {
-    qsort(nums1, nums1Size, sizeof(int), compare);
-    qsort(nums2, nums2Size, sizeof(int), compare);
+    qsort(nums1, nums1Size, sizeof(int), cmpfunc);
+    qsort(nums2, nums2Size, sizeof(int), cmpfunc);
     
-    int keep_count = nums1Size / 2;
-    int *counts1 = (int *)calloc(20000001, sizeof(int));
-    int *counts2 = (int *)calloc(20000001, sizeof(int));
-    int *s = (int *)calloc(20000001, sizeof(int));
-
-    for (int i = 0; i < nums1Size; ++i) {
-        counts1[nums1[i]]++;
-        counts2[nums2[i]]++;
-    }
+    int n = nums1Size;  // Since nums1Size == nums2Size == n
+    int *used1 = (int *)calloc(n, sizeof(int));
+    int *used2 = (int *)calloc(n, sizeof(int));
+    int i = 0, j = 0;
     
-    for (int i = 0; i < nums1Size; ++i) {
-        int min_count1 = counts1[nums1[i]] < keep_count ? counts1[nums1[i]] : keep_count;
-        int min_count2 = counts2[nums1[i]] < keep_count ? counts2[nums1[i]] : keep_count;
-        s[nums1[i]] += min_count1 + min_count2;
-        counts1[nums1[i]] -= min_count1;
-        counts2[nums1[i]] -= min_count2;
-    }
-    
-    for (int i = 0; i < nums2Size; ++i) {
-        int min_count1 = counts1[nums2[i]] < keep_count ? counts1[nums2[i]] : keep_count;
-        int min_count2 = counts2[nums2[i]] < keep_count ? counts2[nums2[i]] : keep_count;
-        s[nums2[i]] += min_count1 + min_count2;
-        counts1[nums2[i]] -= min_count1;
-        counts2[nums2[i]] -= min_count2;
-    }
-    
-    int result = 0;
-    for (int i = 0; i < 20000001; ++i) {
-        if (s[i] > 0) {
-            result++;
+    while (i < n && j < n) {
+        if (nums1[i] < nums2[j]) {
+            used1[i] = 1;
+            i++;
+        } else if (nums1[i] > nums2[j]) {
+            used2[j] = 1;
+            j++;
+        } else {
+            // nums1[i] == nums2[j]
+            i++;
+            j++;
         }
     }
-
-    free(counts1);
-    free(counts2);
-    free(s);
     
-    return result;
+    // At this point, mark remaining elements as used
+    while (i < n) {
+        used1[i++] = 1;
+    }
+    while (j < n) {
+        used2[j++] = 1;
+    }
+    
+    // Count how many are used in each array
+    int usedCount1 = 0, usedCount2 = 0;
+    for (i = 0; i < n; i++) {
+        usedCount1 += used1[i];
+        usedCount2 += used2[i];
+    }
+    
+    // Compute how many to remove based on 'used' marking
+    int toRemove1 = usedCount1 - n / 2;
+    int toRemove2 = usedCount2 - n / 2;
+    
+    // Calculate the number of unique elements in the final set
+    int *set = (int *)malloc(2 * n * sizeof(int));
+    int setCount = 0;
+    
+    i = 0, j = 0;
+    while (i < n && j < n) {
+        if (nums1[i] < nums2[j]) {
+            if (toRemove1 < 1 || !used1[i]) {
+                set[setCount++] = nums1[i];
+            } else {
+                toRemove1--;
+            }
+            i++;
+        } else if (nums1[i] > nums2[j]) {
+            if (toRemove2 < 1 || !used2[j]) {
+                set[setCount++] = nums2[j];
+            } else {
+                toRemove2--;
+            }
+            j++;
+        } else {
+            set[setCount++] = nums1[i];
+            i++;
+            j++;
+        }
+    }
+    
+    while (i < n) {
+        if (toRemove1 < 1 || !used1[i]) {
+            set[setCount++] = nums1[i];
+        } else {
+            toRemove1--;
+        }
+        i++;
+    }
+    
+    while (j < n) {
+        if (toRemove2 < 1 || !used2[j]) {
+            set[setCount++] = nums2[j];
+        } else {
+            toRemove2--;
+        }
+        j++;
+    }
+    
+    qsort(set, setCount, sizeof(int), cmpfunc);
+    int uniqueCount = 1;
+    for (i = 1; i < setCount; i++) {
+        if (set[i] != set[i - 1]) {
+            uniqueCount++;
+        }
+    }
+    
+    free(used1);
+    free(used2);
+    free(set);
+    
+    return uniqueCount;
 }

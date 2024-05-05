@@ -1,39 +1,37 @@
 #include <vector>
 #include <string>
-
-using namespace std;
+#include <algorithm>
 
 class Solution {
 public:
-    vector<int> beautifulIndices(string s, string a, string b, int k) {
-        vector<int> result;
-        int s_len = s.length(), a_len = a.length(), b_len = b.length();
+    std::vector<int> beautifulIndices(std::string s, std::string a, std::string b, int k) {
+        int s_len = s.length();
+        int a_len = a.length();
+        int b_len = b.length();
+        std::vector<int> a_indices;
+        std::vector<int> b_indices;
+        std::vector<int> result;
 
-        // Vectors to store the starting indices where substrings a and b are found
-        vector<int> indices_a;
-        vector<int> indices_b;
-
-        // Find all occurrences of substring a in s
+        // Find all starting indices where substring a is found
         for (int i = 0; i <= s_len - a_len; ++i) {
             if (s.substr(i, a_len) == a) {
-                indices_a.push_back(i);
+                a_indices.push_back(i);
             }
         }
 
-        // Find all occurrences of substring b in s
+        // Find all starting indices where substring b is found
         for (int i = 0; i <= s_len - b_len; ++i) {
             if (s.substr(i, b_len) == b) {
-                indices_b.push_back(i);
+                b_indices.push_back(i);
             }
         }
 
-        // Check each index i for a if there is any j for b such that |i - j| <= k
-        for (int i : indices_a) {
-            for (int j : indices_b) {
-                if (abs(i - j) <= k) {
-                    result.push_back(i);
-                    break;
-                }
+        // Check each a index to find if there is a b index within range k
+        for (int ai : a_indices) {
+            auto lower = std::lower_bound(b_indices.begin(), b_indices.end(), ai - k);
+            auto upper = std::upper_bound(b_indices.begin(), b_indices.end(), ai + k);
+            if (lower != upper) {
+                result.push_back(ai);
             }
         }
 

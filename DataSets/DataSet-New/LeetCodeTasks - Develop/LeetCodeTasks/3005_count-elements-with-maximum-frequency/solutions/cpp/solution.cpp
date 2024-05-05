@@ -1,20 +1,29 @@
 #include <vector>
 #include <unordered_map>
+using namespace std;
 
 class Solution {
 public:
-    int maxFrequencyElements(std::vector<int>& nums) {
-        std::unordered_map<int, int> freq;
-        int maxFreq = 0;
+    int maxFrequencyElements(vector<int>& nums) {
+        unordered_map<int, int> freq;
         for (int num : nums) {
-            maxFreq = std::max(maxFreq, ++freq[num]);
+            freq[num]++;
         }
-        int totalCount = 0;
-        for (auto& pair : freq) {
-            if (pair.second == maxFreq) {
-                totalCount += maxFreq;
+        
+        int maxFreq = 0;
+        for (auto& [_, count] : freq) {
+            if (count > maxFreq) {
+                maxFreq = count;
             }
         }
-        return totalCount;
+        
+        int count = 0;
+        for (auto& [num, freq] : freq) {
+            if (freq == maxFreq) {
+                count += freq;
+            }
+        }
+        
+        return count;
     }
 };

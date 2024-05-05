@@ -7,13 +7,13 @@ struct ListNode* deleteDuplicates(struct ListNode* head) {
 
     dummy.next = head;
 
-    struct ListNode *prev = &dummy;
+    struct ListNode* prev = &dummy;
 
 
 
     while (head != NULL) {
 
-        // Check if it's a start of duplicates
+        // Check if it's the start of duplicates
 
         if (head->next != NULL && head->val == head->next->val) {
 
@@ -27,7 +27,7 @@ struct ListNode* deleteDuplicates(struct ListNode* head) {
 
             // Connect prev to the node after the last duplicate
 
-            head->next = prev->next;
+            prev->next = head->next;
 
         } else {
 
@@ -40,6 +40,8 @@ struct ListNode* deleteDuplicates(struct ListNode* head) {
         head = head->next;
 
     }
+
+
 
     return dummy.next;
 

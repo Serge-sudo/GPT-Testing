@@ -1,0 +1,5 @@
+{
+    "output": "",
+    "errors": "...F.\n======================================================================\nFAIL: test_multiple_beautiful_indices (__main__.TestBeautifulIndices.test_multiple_beautiful_indices)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-New\\LeetCodeTasks - Testing\\Tests\\3006_find-beautiful-indices-in-the-given-array-i\\test.py\", line 83, in test_multiple_beautiful_indices\n    self.assertEqual(result, expected)\nAssertionError: Lists differ: [0, 4, 8, 12] != [0, 7, 9]\n\nFirst differing element 1:\n4\n7\n\nFirst list contains 1 additional elements.\nFirst extra element 3:\n12\n\n- [0, 4, 8, 12]\n+ [0, 7, 9]\n\n----------------------------------------------------------------------\nRan 5 tests in 0.340s\n\nFAILED (failures=1)\n",
+    "returncode": 1
+}

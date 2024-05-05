@@ -1,0 +1,5 @@
+{
+    "output": "",
+    "errors": ".F.....\n======================================================================\nFAIL: test_alternating_chars (__main__.TestSolution.test_alternating_chars)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-New\\LeetCodeTasks - Testing\\Tests\\3019_number-of-changing-keys\\test.py\", line 37, in test_alternating_chars\n    self.assertEqual(self.solution.countKeyChanges(\"abABabAB\"), 4)\nAssertionError: 7 != 4\n\n----------------------------------------------------------------------\nRan 7 tests in 0.001s\n\nFAILED (failures=1)\n",
+    "returncode": 1
+}

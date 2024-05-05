@@ -1,0 +1,13 @@
+{
+    "name": "Find Beautiful Indices in the Given Array I",
+    "id": 3006,
+    "difficulty": "Medium",
+    "tags": [
+        "Two Pointers",
+        "String",
+        "Binary Search",
+        "Rolling Hash",
+        "String Matching",
+        "Hash Function"
+    ]
+}

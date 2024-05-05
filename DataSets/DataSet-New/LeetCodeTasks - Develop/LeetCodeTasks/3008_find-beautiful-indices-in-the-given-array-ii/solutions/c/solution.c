@@ -1,55 +1,47 @@
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 #include <stdbool.h>
 
 int* beautifulIndices(char* s, char* a, char* b, int k, int* returnSize) {
-    int s_len = strlen(s);
-    int a_len = strlen(a);
-    int b_len = strlen(b);
-    
-    // Result dynamic array and size tracker
-    int* result = (int*)malloc(s_len * sizeof(int));
-    *returnSize = 0;
-    
-    // Find all occurrences of 'a' and 'b'
-    int* indices_a = (int*)malloc(s_len * sizeof(int));
-    int* indices_b = (int*)malloc(s_len * sizeof(int));
-    int count_a = 0, count_b = 0;
-    
-    // Collect indices where 'a' occurs
-    for (int i = 0; i <= s_len - a_len; i++) {
-        if (strncmp(s + i, a, a_len) == 0) {
-            indices_a[count_a++] = i;
+    int lenS = strlen(s);
+    int lenA = strlen(a);
+    int lenB = strlen(b);
+    int* result = malloc(sizeof(int) * lenS); // Maximum possible number of indices is lenS
+    int count = 0;
+
+    // Search indices for strings a and b in s
+    int* indicesA = malloc(sizeof(int) * lenS);
+    int countA = 0;
+    for (int i = 0; i <= lenS - lenA; i++) {
+        if (strncmp(s + i, a, lenA) == 0) {
+            indicesA[countA++] = i;
         }
     }
-    
-    // Collect indices where 'b' occurs
-    for (int i = 0; i <= s_len - b_len; i++) {
-        if (strncmp(s + i, b, b_len) == 0) {
-            indices_b[count_b++] = i;
+
+    int* indicesB = malloc(sizeof(int) * lenS);
+    int countB = 0;
+    for (int i = 0; i <= lenS - lenB; i++) {
+        if (strncmp(s + i, b, lenB) == 0) {
+            indicesB[countB++] = i;
         }
     }
-    
-    // Check each index in indices_a for the beautiful condition
-    for (int i = 0; i < count_a; i++) {
-        int idx_a = indices_a[i];
+
+    // Check for each index of a if there exists an index of b within distance k
+    for (int i = 0; i < countA; i++) {
+        int idxA = indicesA[i];
         bool found = false;
-        
-        for (int j = 0; j < count_b; j++) {
-            int idx_b = indices_b[j];
-            if (abs(idx_b - idx_a) <= k) {
+        for (int j = 0; j < countB && !found; j++) {
+            int idxB = indicesB[j];
+            if (abs(idxB - idxA) <= k) {
                 found = true;
-                break;
+                result[count++] = idxA;
             }
         }
-        
-        if (found) {
-            result[(*returnSize)++] = idx_a;
-        }
     }
-    
-    free(indices_a);
-    free(indices_b);
-    
+
+    free(indicesA);
+    free(indicesB);
+
+    *returnSize = count;
     return result;
 }

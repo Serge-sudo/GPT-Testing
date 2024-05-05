@@ -1,0 +1,18 @@
+{
+    "c": {
+        "pass_cnt": "768 / 782",
+        "result": "Time Limit Exceeded"
+    },
+    "cpp": {
+        "pass_cnt": "71 / 782",
+        "result": "Wrong Answer"
+    },
+    "java": {
+        "pass_cnt": "137 / 782",
+        "result": "Wrong Answer"
+    },
+    "python3": {
+        "pass_cnt": "103 / 782",
+        "result": "Wrong Answer"
+    }
+}

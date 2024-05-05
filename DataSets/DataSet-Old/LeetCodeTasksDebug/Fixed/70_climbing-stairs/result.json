@@ -1,7 +1,7 @@
 {
     "c": {
-        "pass_cnt": "1 / 1",
-        "result": "Accepted"
+        "pass_cnt": "0 / 0",
+        "result": "Compile Error"
     },
     "cpp": {
         "pass_cnt": "1 / 1",

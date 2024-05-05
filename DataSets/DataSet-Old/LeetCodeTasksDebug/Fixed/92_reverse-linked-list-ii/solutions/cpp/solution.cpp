@@ -41,11 +41,13 @@ public:
 
         for (int i = 0; i < right - left; ++i) {
 
-            reverseStart->next = curr->next;
+            ListNode* temp = curr->next;
 
-            curr->next = prev->next;
+            curr->next = temp->next;
 
-            curr = reverseStart->next;
+            temp->next = reverseStart->next;
+
+            reverseStart->next = temp;
 
         }
 

@@ -1,32 +1,20 @@
-class Solution:
-    def beautifulIndices(self, s: str, a: str, b: str, k: int) -> list[int]:
-        from bisect import bisect_left, bisect_right
+#include <limits.h>
 
-        # Helper function to find all starting indices of substring `sub` in string `s`
-        def find_indices(s, sub):
-            start = 0
-            indices = []
-            while True:
-                start = s.find(sub, start)
-                if start == -1:
-                    break
-                indices.append(start)
-                start += 1
-            return indices
-        
-        indices_a = find_indices(s, a)
-        indices_b = find_indices(s, b)
-        
-        beautiful_indices = []
-        
-        # Check each index of a if it can be called beautiful
-        for i in indices_a:
-            # We want to find if there exists j in indices_b such that |i - j| <= k
-            # Using binary search to find the first index that could be within k distance from i
-            low = bisect_left(indices_b, i - k)
-            high = bisect_right(indices_b, i + k) - 1
-            
-            if low <= high:
-                beautiful_indices.append(i)
-        
-        return beautiful_indices
+int minimumCost(int* nums, int numsSize) {
+    // Initialize a large enough value for comparison
+    int minSum = INT_MAX;
+    
+    // We need to choose two breakpoints for the array to split it into three parts
+    for (int i = 1; i < numsSize - 1; i++) {
+        for (int j = i + 1; j < numsSize; j++) {
+            // Calculate the sum of costs of the three subarrays
+            int currentSum = nums[0] + nums[i] + nums[j];
+            // Update minSum if the current sum of costs is lower
+            if (currentSum < minSum) {
+                minSum = currentSum;
+            }
+        }
+    }
+    
+    return minSum;
+}

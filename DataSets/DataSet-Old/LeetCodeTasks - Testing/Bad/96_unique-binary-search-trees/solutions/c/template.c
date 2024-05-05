@@ -1,3 +1,0 @@
-int numTrees(int n) {
-    
-}

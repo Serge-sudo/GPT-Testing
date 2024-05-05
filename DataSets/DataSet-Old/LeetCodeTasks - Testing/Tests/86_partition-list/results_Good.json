@@ -1,0 +1,5 @@
+{
+    "output": "",
+    "errors": "Traceback (most recent call last):\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\86_partition-list\\test.py\", line 5, in <module>\n    from solution import Solution, ListNode\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\86_partition-list\\solution.py\", line 3, in <module>\n    class Solution:\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\86_partition-list\\solution.py\", line 5, in Solution\n    def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:\n                                       ^^^^^^^^\nNameError: name 'ListNode' is not defined\n",
+    "returncode": 1
+}

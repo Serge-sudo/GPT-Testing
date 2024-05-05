@@ -1,0 +1,5 @@
+{
+    "output": "",
+    "errors": "F\n======================================================================\nFAIL: test_length_of_last_word (__main__.TestSolution.test_length_of_last_word)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\58_length-of-last-word\\test.py\", line 35, in test_length_of_last_word\n    self.assertEqual(solution.lengthOfLastWord(\"multiple   spaces     \"), 7)\nAssertionError: 6 != 7\n\n----------------------------------------------------------------------\nRan 1 test in 0.003s\n\nFAILED (failures=1)\n",
+    "returncode": 1
+}

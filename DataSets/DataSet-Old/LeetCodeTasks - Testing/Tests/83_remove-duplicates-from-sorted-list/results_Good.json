@@ -1,0 +1,5 @@
+{
+    "output": "",
+    "errors": "Traceback (most recent call last):\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\83_remove-duplicates-from-sorted-list\\test.py\", line 3, in <module>\n    from solution import Solution, ListNode\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\83_remove-duplicates-from-sorted-list\\solution.py\", line 3, in <module>\n    class Solution:\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\83_remove-duplicates-from-sorted-list\\solution.py\", line 5, in Solution\n    def deleteDuplicates(self, head: ListNode) -> ListNode:\n                                     ^^^^^^^^\nNameError: name 'ListNode' is not defined\n",
+    "returncode": 1
+}

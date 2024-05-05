@@ -1,0 +1,11 @@
+{
+    "name": "Wildcard Matching",
+    "id": 44,
+    "difficulty": "Hard",
+    "tags": [
+        "String",
+        "Dynamic Programming",
+        "Greedy",
+        "Recursion"
+    ]
+}

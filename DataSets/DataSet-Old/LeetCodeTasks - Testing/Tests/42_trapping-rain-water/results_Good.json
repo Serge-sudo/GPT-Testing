@@ -1,0 +1,5 @@
+{
+    "output": "",
+    "errors": ".....F..\n======================================================================\nFAIL: test_long_elevation_map (__main__.TestRainWaterTrapping.test_long_elevation_map)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\42_trapping-rain-water\\test.py\", line 71, in test_long_elevation_map\n    self.assertEqual(solution.trap(height), 21)\nAssertionError: 22 != 21\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nFAILED (failures=1)\n",
+    "returncode": 1
+}

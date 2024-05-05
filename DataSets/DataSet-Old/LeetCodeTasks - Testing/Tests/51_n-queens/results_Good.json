@@ -1,0 +1,5 @@
+{
+    "output": "",
+    "errors": "...F.\n======================================================================\nFAIL: test_n_6 (__main__.TestNQueens.test_n_6)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\51_n-queens\\test.py\", line 99, in test_n_6\n    self.assertEqual(sorted(result), sorted(expected))\nAssertionError: Lists differ: [['....Q.', '..Q...', 'Q.....', '.....Q', '...Q.[195 chars]Q.']] != [['.....Q', '..Q...', '....Q.', '.Q....', '...Q.[691 chars].Q']]\n\nFirst differing element 0:\n['....Q.', '..Q...', 'Q.....', '.....Q', '...Q..', '.Q....']\n['.....Q', '..Q...', '....Q.', '.Q....', '...Q..', 'Q.....']\n\nSecond list contains 8 additional elements.\nFirst extra element 4:\n['...Q..', '.....Q', '.Q....', '....Q.', '..Q...', 'Q.....']\n\nDiff is 1498 characters long. Set self.maxDiff to None to see it.\n\n----------------------------------------------------------------------\nRan 5 tests in 0.370s\n\nFAILED (failures=1)\n",
+    "returncode": 1
+}

@@ -1,0 +1,5 @@
+{
+    "output": "",
+    "errors": "Traceback (most recent call last):\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\92_reverse-linked-list-ii\\test.py\", line 5, in <module>\n    from solution import Solution\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\92_reverse-linked-list-ii\\solution.py\", line 2, in <module>\n    class Solution:\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\92_reverse-linked-list-ii\\solution.py\", line 4, in Solution\n    def reverseBetween(self, head: ListNode, left: int, right: int) -> ListNode:\n                                   ^^^^^^^^\nNameError: name 'ListNode' is not defined\n",
+    "returncode": 1
+}

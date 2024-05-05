@@ -1,0 +1,5 @@
+{
+    "output": "",
+    "errors": "F\n======================================================================\nFAIL: test_gray_code (__main__.TestGrayCode.test_gray_code)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\89_gray-code\\test.py\", line 23, in test_gray_code\n    self.assertEqual(len(result), expected_length)\nAssertionError: 8 != 4\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+    "returncode": 1
+}

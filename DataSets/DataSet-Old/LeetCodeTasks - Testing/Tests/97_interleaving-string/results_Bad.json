@@ -1,0 +1,5 @@
+{
+    "output": "",
+    "errors": "F..\n======================================================================\nFAIL: test_example_1 (__main__.TestIsInterleave.test_example_1)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\97_interleaving-string\\test.py\", line 17, in test_example_1\n    self.assertTrue(Solution().isInterleave(s1, s2, s3))\nAssertionError: False is not true\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nFAILED (failures=1)\n",
+    "returncode": 1
+}

@@ -1,3 +1,0 @@
-int lengthOfLastWord(char* s) {
-    
-}

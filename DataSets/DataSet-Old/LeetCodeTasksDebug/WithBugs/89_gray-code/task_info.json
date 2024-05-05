@@ -1,0 +1,10 @@
+{
+    "name": "Gray Code",
+    "id": 89,
+    "difficulty": "Medium",
+    "tags": [
+        "Math",
+        "Backtracking",
+        "Bit Manipulation"
+    ]
+}

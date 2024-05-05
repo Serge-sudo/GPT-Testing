@@ -1,60 +1,122 @@
 import os
 import json
 import pandas as pd
-import plotly.express as px
-import pandas as pd
+import plotly.graph_objs as go
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score
 
-# Path to the LeetCodeTasks directory
-dir_path = 'LeetCodeTasks'
+# Function to parse task_info.json and result_{Good,Bad}.json files
+def parse_folder(folder_path):
+    with open(os.path.join(folder_path, 'task_info.json'), 'r') as f:
+        task_info = json.load(f)
+    with open(os.path.join(folder_path, 'results_Good.json'), 'r') as f:
+        result_good = json.load(f)
+    with open(os.path.join(folder_path, 'results_Bad.json'), 'r') as f:
+        result_bad = json.load(f)
+    return {
+        'name': task_info['name'],
+        'id': task_info['id'],
+        'difficulty': task_info['difficulty'],
+        'tags': task_info['tags'],
+        'output_good': result_good['errors'],
+        'output_bad': result_bad['errors'],
+        'returncode_good': result_good['returncode'],
+        'returncode_bad': result_bad['returncode']
+    }
 
-# Check if the final DataFrame file already exists
-final_dataframe_path = 'final_dataframe.csv'
+# Function to collect data from folders inside Tests directory
+def collect_data():
+    data = []
+    for task_name in os.listdir('Tests'):
+        folder_path = os.path.join('Tests', task_name)
+        data.append(parse_folder(folder_path))
+    return data
 
-# Get all folders in the directory
-folders = [f for f in os.listdir(dir_path) if os.path.isdir(os.path.join(dir_path, f))]
-# Sort folders based on the numeric part of the folder name
-folders.sort(key=lambda x: int(x.split('_')[0]))
-print("Folders sorted.")
-folders = folders[:100]
-# List to keep track of all task data
-all_tasks = []
+# Function to build confusion matrix
+def build_confusion_matrix(y_true, y_pred):
+    tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()
+    return tn, fp, fn, tp
 
-for folder in folders:
-    folder_path = os.path.join(dir_path, folder)
-    print(f"Processing folder: {folder}")
+# Collect data
+data = collect_data()
+df = pd.DataFrame(data)
 
-    # Paths to the JSON files
-    task_info_path = os.path.join(folder_path, 'task_info.json')
-    result_path = os.path.join(folder_path, 'result.json')
+# Calculate TP, TN, FP, FN
+df['TP'] = (df['returncode_good'] == 0).astype(int)
+df['TN'] = (df['returncode_bad'] != 0).astype(int)
+df['FP'] = (df['returncode_bad'] == 0).astype(int)
+df['FN'] = (df['returncode_good'] != 0).astype(int)
 
-    # Read task_info.json
-    with open(task_info_path, 'r') as file:
-        task_info = json.load(file)
+# Define TP, TN, FP, FN
+TP = df['TP'].sum()
+TN = df['TN'].sum()
+FP = df['FP'].sum()
+FN = df['FN'].sum()
 
-    # Read result.json
-    with open(result_path, 'r') as file:
-        results = json.load(file)
+# Calculate recall and precision
+recall = TP / (TP + FN) 
+precision = TP / (TP + FP)
 
-    # Extract results for different programming languages
-    for lang, lang_data in results.items():
-        task_dict = {
-            'task_id': task_info['id'],
-            'task_name': task_info['name'],
-            'difficulty': task_info['difficulty'],
-            'tags': ', '.join(task_info['tags']),
-            'language': lang,
-            'result': lang_data['result'],
-            'pass_cnt': lang_data['pass_cnt']
-        }
-        all_tasks.append(task_dict)
-# Create a DataFrame from all collected task data
-if all_tasks:
-    df = pd.DataFrame(all_tasks)
-    df.to_csv(final_dataframe_path, index=False)
-    print(f"Final DataFrame saved to {final_dataframe_path}")
-else:
-    print("No task data collected.")
+# Calculate F1 score
+f1 = 2 * precision * recall / (precision + recall)
 
+# Build confusion matrix
+conf_matrix = build_confusion_matrix(df['returncode_good'], df['returncode_bad'])
+
+# Plot graphs
+fig = go.Figure(data=[
+    go.Bar(name='True Positive', x=['TP'], y=[df['TP'].sum()]),
+    go.Bar(name='True Negative', x=['TN'], y=[df['TN'].sum()]),
+    go.Bar(name='False Positive', x=['FP'], y=[df['FP'].sum()]),
+    go.Bar(name='False Negative', x=['FN'], y=[df['FN'].sum()])
+])
+fig.update_layout(barmode='group', title='TP TN FP FN Counts')
+
+fig2 = go.Figure()
+
+fig2.add_trace(go.Bar(x=['Precision'], y=[precision], name='Precision'))
+fig2.add_trace(go.Bar(x=['Recall'], y=[recall], name='Recall'))
+fig2.add_trace(go.Bar(x=['F1 Score'], y=[f1], name='F1 Score'))
+
+fig2.update_layout(title='Precision, Recall, and F1 Score',
+                  xaxis_title='Metrics',
+                  yaxis_title='Value')
+
+# Plot confusion matrix
+
+
+# Create a custom confusion matrix
+conf_matrix_data = [
+    [TP, FP],
+    [FN, TN]
+]
+
+# Plot confusion matrix
+fig_custom_conf_matrix = go.Figure(data=go.Heatmap(
+    z=conf_matrix_data,
+    x=['Predicted Positive', 'Predicted Negative'],
+    y=['Actual Positive', 'Actual Negative'],
+    colorscale='Viridis',
+    reversescale=True  # Reverse color scale for better visualization
+))
+
+# Customize layout
+fig_custom_conf_matrix.update_layout(
+    title='Custom Confusion Matrix',
+    xaxis_title='Predicted',
+    yaxis_title='Actual'
+)
+
+# Calculate successful and failed tests
+successful_tests = df[(df['returncode_good'] == 0) & (df['returncode_bad'] != 0)].shape[0]
+failed_tests = df[(df['returncode_good'] != 0) | (df['returncode_bad'] == 0)].shape[0]
+
+# Create pie chart data
+labels = ['Successful Tests', 'Failed Tests']
+values = [successful_tests, failed_tests]
+
+# Plot pie chart
+fig_pie_chart = go.Figure(data=[go.Pie(labels=labels, values=values)])
+fig_pie_chart.update_layout(title='Successful vs Failed Tests')
 
 # Base directory for charts
 charts_dir = 'plotly_charts'
@@ -65,8 +127,6 @@ html_dir = os.path.join(charts_dir, 'html')
 png_dir = os.path.join(charts_dir, 'png')
 os.makedirs(html_dir, exist_ok=True)
 os.makedirs(png_dir, exist_ok=True)
-# Assuming df is your DataFrame
-df = pd.read_csv(final_dataframe_path)
 
 # Define a function to save figures in both HTML and PNG formats
 def save_fig(fig, filename):
@@ -78,66 +138,8 @@ def save_fig(fig, filename):
     # Save as PNG
     fig.write_image(png_file)
 
-# Pie Chart of Task Results
-fig = px.pie(df, names='result', title='Overall Distribution of Task Results')
-save_fig(fig, 'task_results_distribution')
 
-# other graphs
-# Convert tags into a list
-# Tags vs. Acceptance Ratio
-tags_expanded = df.drop('tags', axis=1).join(
-    df['tags'].str.split(', ', expand=True).stack().reset_index(level=1, drop=True).rename('tag')
-)
-tag_acceptance = tags_expanded.pivot_table(index='tag', columns='result', aggfunc='size', fill_value=0)
-tag_acceptance['acceptance_ratio'] = tag_acceptance.get('Accepted', 0) / tag_acceptance.sum(axis=1)
-fig1 = px.bar(tag_acceptance, y='acceptance_ratio', title='Acceptance Ratio by Tag')
-save_fig(fig1, 'acceptance_ratio_by_tag')
-
-# Language vs. Acceptance Ratio
-lang_acceptance = df.pivot_table(index='language', columns='result', aggfunc='size', fill_value=0)
-lang_acceptance['acceptance_ratio'] = lang_acceptance.get('Accepted', 0) / lang_acceptance.sum(axis=1)
-fig2 = px.bar(lang_acceptance, y='acceptance_ratio', title='Acceptance Ratio by Language')
-save_fig(fig2, 'acceptance_ratio_by_language')
-
-# Difficulty vs. Acceptance Ratio
-difficulty_acceptance = df.pivot_table(index='difficulty', columns='result', aggfunc='size', fill_value=0)
-difficulty_acceptance['acceptance_ratio'] = difficulty_acceptance.get('Accepted', 0) / difficulty_acceptance.sum(axis=1)
-fig3 = px.bar(difficulty_acceptance, y='acceptance_ratio', title='Acceptance Ratio by Difficulty')
-save_fig(fig3, 'acceptance_ratio_by_difficulty'
-)
-
-# Count the number of languages each task was accepted in
-# Generate a DataFrame indicating if a task was accepted in a language
-df['accepted'] = (df['result'] == 'Accepted')
-
-# Group by task and language, and determine if any were accepted in each language
-task_language_accepted = df.groupby(['task_id', 'language'])['accepted'].any().unstack(fill_value=False)
-
-# Count how many languages each task was accepted in
-task_language_count = task_language_accepted.sum(axis=1)
-
-# Get the value counts for each number of languages (0 through the number of languages considered)
-distribution_across_languages = task_language_count.value_counts().reindex(range(task_language_accepted.shape[1] + 1), fill_value=0)
-
-# Generate the pie chart
-fig4 = px.pie(distribution_across_languages, values=distribution_across_languages, names=distribution_across_languages.index,
-              title='Number of Languages per Task where Accepted')
-save_fig(fig4, 'task_distribution_by_language_acceptance')
-
-
-# Filter out 'Accepted' and count errors by language
-errors = df[df['result'] != 'Accepted']
-error_types = errors.groupby(['language', 'result']).size().unstack().fillna(0)
-fig5 = px.bar(error_types, title='Error Types by Language')
-save_fig(fig5, 'error_types_by_language')
-
-
-# Define error types
-error_types = ['Wrong Answer', 'Runtime Error', 'Time Limit Exceeded', 'Memory Limit']
-
-# Calculate pass rate for error types
-error_pass_rate = df[df['result'].isin(error_types)]
-error_pass_rate['passed_half'] = error_pass_rate['pass_cnt'].map(lambda x : int(x.split("/")[0].strip())) >= error_pass_rate['pass_cnt'].map(lambda x : int(x.split("/")[0].strip())) / 2
-pass_rate = error_pass_rate.groupby('result')['passed_half'].mean()
-fig6 = px.bar(pass_rate, title='Test Pass Rate for Errors')
-save_fig(fig6, 'test_pass_rate_for_errors')
+save_fig(fig_pie_chart, 'Successful_vs_Failed_Tests')
+save_fig(fig_custom_conf_matrix, 'Confusion_Matrix')
+save_fig(fig, 'TP_TN_FP_FN')
+save_fig(fig2, 'Precision_Recall_F1')

@@ -1,0 +1,5 @@
+{
+    "output": "",
+    "errors": "......F.\n======================================================================\nFAIL: test_multiple_occurrences (__main__.TestMinWindow.test_multiple_occurrences)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\76_minimum-window-substring\\test.py\", line 35, in test_multiple_occurrences\n    self.assertEqual(self.sol.minWindow(\"ADOBECODEBANCBAB\", \"AABC\"), \"BANCBA\")\nAssertionError: 'ANCBA' != 'BANCBA'\n- ANCBA\n+ BANCBA\n? +\n\n\n----------------------------------------------------------------------\nRan 8 tests in 0.037s\n\nFAILED (failures=1)\n",
+    "returncode": 1
+}

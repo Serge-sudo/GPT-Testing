@@ -15,7 +15,7 @@ folders = [f for f in os.listdir(dir_path) if os.path.isdir(os.path.join(dir_pat
 # Sort folders based on the numeric part of the folder name
 folders.sort(key=lambda x: int(x.split('_')[0]))
 print("Folders sorted.")
-folders = folders[:100]
+folders = folders
 # List to keep track of all task data
 all_tasks = []
 

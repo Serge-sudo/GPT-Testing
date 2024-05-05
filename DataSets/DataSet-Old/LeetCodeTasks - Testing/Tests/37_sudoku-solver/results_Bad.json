@@ -1,0 +1,5 @@
+{
+    "output": "",
+    "errors": "F\n======================================================================\nFAIL: test_sudoku_solution (__main__.TestSudokuSolver.test_sudoku_solution)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Serge\\Desktop\\GPT-Testing\\DataSets\\DataSet-Old\\LeetCodeTasks - Testing\\Tests\\37_sudoku-solver\\test.py\", line 67, in test_sudoku_solution\n    self.assertEqual(board, expected_solution)\nAssertionError: Lists differ: [['5', '3', '1', '2', '7', '6', '4', '9', '8'], ['6', [364 chars]'9']] != [['5', '3', '4', '6', '7', '8', '9', '1', '2'], ['6', [364 chars]'9']]\n\nFirst differing element 0:\n['5', '3', '1', '2', '7', '6', '4', '9', '8']\n['5', '3', '4', '6', '7', '8', '9', '1', '2']\n\nDiff is 1062 characters long. Set self.maxDiff to None to see it.\n\n----------------------------------------------------------------------\nRan 1 test in 9.173s\n\nFAILED (failures=1)\n",
+    "returncode": 1
+}

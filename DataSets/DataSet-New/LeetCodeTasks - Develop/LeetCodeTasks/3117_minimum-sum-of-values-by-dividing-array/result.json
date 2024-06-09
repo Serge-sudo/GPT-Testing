@@ -1,17 +1,25 @@
 {
     "c": {
+        "Memory": null,
+        "Runtime": null,
         "pass_cnt": "501 / 511",
         "result": "Time Limit Exceeded"
     },
     "cpp": {
+        "Memory": null,
+        "Runtime": null,
         "pass_cnt": "54 / 511",
         "result": "Wrong Answer"
     },
     "java": {
-        "pass_cnt": "504 / 511",
+        "Memory": null,
+        "Runtime": null,
+        "pass_cnt": "503 / 511",
         "result": "Time Limit Exceeded"
     },
     "python3": {
+        "Memory": null,
+        "Runtime": null,
         "pass_cnt": "499 / 511",
         "result": "Time Limit Exceeded"
     }

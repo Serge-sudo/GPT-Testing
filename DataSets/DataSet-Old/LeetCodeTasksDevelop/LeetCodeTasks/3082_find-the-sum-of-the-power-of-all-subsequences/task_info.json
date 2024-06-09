@@ -1,9 +1,0 @@
-{
-    "name": "Find the Sum of the Power of All Subsequences",
-    "id": 3082,
-    "difficulty": "Hard",
-    "tags": [
-        "Array",
-        "Dynamic Programming"
-    ]
-}

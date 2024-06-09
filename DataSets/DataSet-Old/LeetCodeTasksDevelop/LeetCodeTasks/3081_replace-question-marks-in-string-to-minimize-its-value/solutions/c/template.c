@@ -1,3 +1,0 @@
-char* minimizeStringValue(char* s) {
-    
-}

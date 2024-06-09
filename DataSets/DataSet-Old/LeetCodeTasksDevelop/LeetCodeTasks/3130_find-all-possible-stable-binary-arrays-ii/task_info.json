@@ -1,9 +1,0 @@
-{
-    "name": "Find All Possible Stable Binary Arrays II",
-    "id": 3130,
-    "difficulty": "Hard",
-    "tags": [
-        "Dynamic Programming",
-        "Prefix Sum"
-    ]
-}

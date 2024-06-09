@@ -1,3 +1,0 @@
-char* findLatestTime(char* s) {
-    
-}

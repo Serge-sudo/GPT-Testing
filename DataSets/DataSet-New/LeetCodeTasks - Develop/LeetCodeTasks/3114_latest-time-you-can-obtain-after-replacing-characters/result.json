@@ -1,17 +1,25 @@
 {
     "c": {
-        "pass_cnt": "0 / 0",
-        "result": "Compile Error"
+        "Memory": 64.04,
+        "Runtime": 100.0,
+        "pass_cnt": "1 / 1",
+        "result": "Accepted"
     },
     "cpp": {
+        "Memory": null,
+        "Runtime": null,
         "pass_cnt": "882 / 908",
         "result": "Wrong Answer"
     },
     "java": {
+        "Memory": 73.25,
+        "Runtime": 100.0,
         "pass_cnt": "1 / 1",
         "result": "Accepted"
     },
     "python3": {
+        "Memory": null,
+        "Runtime": null,
         "pass_cnt": "565 / 908",
         "result": "Wrong Answer"
     }

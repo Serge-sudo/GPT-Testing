@@ -15,7 +15,7 @@ folders = [f for f in os.listdir(dir_path) if os.path.isdir(os.path.join(dir_pat
 # Sort folders based on the numeric part of the folder name
 folders.sort(key=lambda x: int(x.split('_')[0]))
 print("Folders sorted.")
-folders = folders[:100]
+folders = folders[:]
 # List to keep track of all task data
 all_tasks = []
 
@@ -44,7 +44,9 @@ for folder in folders:
             'tags': ', '.join(task_info['tags']),
             'language': lang,
             'result': lang_data['result'],
-            'pass_cnt': lang_data['pass_cnt']
+            'pass_cnt': lang_data['pass_cnt'],
+            'Memory': lang_data['Memory'],
+            'Runtime': lang_data['Runtime']
         }
         all_tasks.append(task_dict)
 # Create a DataFrame from all collected task data
@@ -77,6 +79,39 @@ def save_fig(fig, filename):
     fig.write_html(html_file)
     # Save as PNG
     fig.write_image(png_file)
+
+
+# Расчет средней производительности по языкам программирования
+avg_performance_by_lang = df.groupby('language')[['Runtime', 'Memory']].mean().reset_index()
+
+fig_lang = px.bar(avg_performance_by_lang, x='language', y=['Runtime', 'Memory'],
+                  labels={'value':'Эффективность (%)', 'variable':'Метрика', 'language' : 'Язык'},
+                  barmode='group')
+save_fig(fig_lang, 'average_runtime_memory_efficiency_by_language')
+
+fig_difficulty = px.box(df, x='difficulty', y=['Runtime', 'Memory'],
+                        labels={'value':'Эффективность (%)', 'variable':'Метрика', 'difficulty':'Сложность'},
+                        color='variable')  # Разные цвета для времени выполнения и использования памяти
+save_fig(fig_difficulty, 'efficiency_by_difficulty')
+
+# Сначала разделяем теги и расширяем DataFrame, так чтобы каждый тег был в отдельной строке
+df_exploded = df.assign(tags=df['tags'].str.split(', ')).explode('tags')
+
+# Расчет средней производительности и количества задач по тегам
+performance_count_by_tag = df_exploded.groupby('tags').agg({
+    'Runtime': 'mean',
+    'Memory': 'mean',
+    'task_id': 'count'  # Предполагая, что 'task_id' можно использовать для подсчета задач
+}).reset_index()
+
+# Создание диаграммы рассеивания
+fig_tags = px.scatter(performance_count_by_tag, x='Runtime', y='Memory', 
+                      color='tags', size='task_id',
+                      labels={'Runtime': 'Средняя эффективность времени выполнения (%)', 
+                              'Memory': 'Средняя эффективность использования памяти (%)',
+                              'task_id': 'Количество задач'})
+
+save_fig(fig_tags, 'scatter_plot_efficiency_by_tags')
 
 # Pie Chart of Task Results
 fig = px.pie(df, names='result')
@@ -140,3 +175,5 @@ error_pass_rate['Прошла 75% тестов'] = error_pass_rate['pass_cnt'].m
 pass_rate = error_pass_rate.groupby('result')['Прошла 75% тестов'].mean()
 fig6 = px.bar(pass_rate, labels={'value': 'Пропорция пройденных тестов', 'variable':'Переменная', 'result':'Результат'})
 save_fig(fig6, 'test_pass_rate_for_errors')
+
+

@@ -1,3 +1,0 @@
-int scoreOfString(char* s) {
-    
-}

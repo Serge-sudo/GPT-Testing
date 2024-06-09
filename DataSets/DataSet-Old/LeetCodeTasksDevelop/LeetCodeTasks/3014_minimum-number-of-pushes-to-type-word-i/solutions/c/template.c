@@ -1,3 +1,0 @@
-int minimumPushes(char* word) {
-    
-}

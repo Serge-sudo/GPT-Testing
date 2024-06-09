@@ -1,17 +1,25 @@
 {
     "c": {
+        "Memory": 18.45,
+        "Runtime": 100.0,
         "pass_cnt": "1 / 1",
         "result": "Accepted"
     },
     "cpp": {
+        "Memory": 86.2,
+        "Runtime": 100.0,
         "pass_cnt": "1 / 1",
         "result": "Accepted"
     },
     "java": {
+        "Memory": 83.08,
+        "Runtime": 100.0,
         "pass_cnt": "1 / 1",
         "result": "Accepted"
     },
     "python3": {
+        "Memory": 89.52,
+        "Runtime": 94.24,
         "pass_cnt": "1 / 1",
         "result": "Accepted"
     }

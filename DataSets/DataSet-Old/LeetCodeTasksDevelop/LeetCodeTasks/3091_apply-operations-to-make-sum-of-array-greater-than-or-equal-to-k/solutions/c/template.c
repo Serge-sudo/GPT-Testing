@@ -1,3 +1,0 @@
-int minOperations(int k) {
-    
-}

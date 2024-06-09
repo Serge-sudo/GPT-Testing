@@ -1,9 +1,0 @@
-{
-    "name": "Minimum Levels to Gain More Points",
-    "id": 3096,
-    "difficulty": "Medium",
-    "tags": [
-        "Array",
-        "Prefix Sum"
-    ]
-}
